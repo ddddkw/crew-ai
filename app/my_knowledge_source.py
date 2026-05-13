@@ -270,9 +270,14 @@ class MyKnowledgeSource:
                                     self.metadata.pop(key)
                                     st.rerun()
 
-                    # Save button for the entire form
-                    submitted = st.form_submit_button(t("button.save"))
-                    if submitted:
+                    col_save, col_cancel = st.columns(2)
+                    with col_save:
+                        submitted = st.form_submit_button(t("button.save"))
+                    with col_cancel:
+                        cancelled = st.form_submit_button(t("button.cancel"))
+                    if cancelled:
+                        self.cancel_edit()
+                    elif submitted:
                         db_utils.save_knowledge_source(self)
                         self.set_editable(False)
         else:
@@ -306,6 +311,14 @@ class MyKnowledgeSource:
 
     def set_editable(self, edit):
         self.edit = edit
+        self.is_new = False
         db_utils.save_knowledge_source(self)
         if not edit:
             st.rerun()
+
+    def cancel_edit(self):
+        if getattr(self, 'is_new', False):
+            self.delete()
+        else:
+            self.edit = False
+        st.rerun()

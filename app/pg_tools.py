@@ -48,7 +48,12 @@ class PageTools:
                     tool_class = self.available_tools[tool_name]
                     tool_instance = tool_class()
                     tool_description = tool_instance.description
-                    if st.button(tool_name, key=f"enable_{tool_name}", help=tool_description):
+                    if st.button(
+                        tool_name,
+                        key=f"enable_{tool_name}",
+                        help=tool_description,
+                        use_container_width=True,
+                    ):
                         self.create_tool(tool_name)
         with c2:
             with st.container(border=True, key="tools-enabled-card"):

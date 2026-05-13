@@ -17,6 +17,7 @@ class PageKnowledge:
         if 'knowledge_sources' not in ss:
             ss.knowledge_sources = []
         ss.knowledge_sources.append(knowledge_source)
+        knowledge_source.is_new = True
         knowledge_source.edit = True
         db_utils.save_knowledge_source(knowledge_source)
         return knowledge_source

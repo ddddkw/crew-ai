@@ -312,7 +312,11 @@ class MyCrew:
                 #         on_change=self.update_knowledge_sources
                 #     )
 
-                st.button(t("button.save"), on_click=self.set_editable, args=(False,), key=rnd_id())
+                col_save, col_cancel = st.columns(2)
+                with col_save:
+                    st.button(t("button.save"), on_click=self.set_editable, args=(False,), key=rnd_id())
+                with col_cancel:
+                    st.button(t("button.cancel"), on_click=self.cancel_edit, key=rnd_id())
         else:
             fix_columns_width()
             expander_title = t("crew.title", name=self.name) if self.is_valid() else f"❗ {t('crew.title', name=self.name)}"
@@ -358,7 +362,15 @@ class MyCrew:
 
     def set_editable(self, edit):
         self.edit = edit
+        self.is_new = False
         db_utils.save_crew(self)
+
+    def cancel_edit(self):
+        if getattr(self, 'is_new', False):
+            self.delete()
+        else:
+            self.edit = False
+        st.rerun()
 
     # ---------------------- Deletion & Cascade Handling ----------------------
     def request_delete_modal(self):

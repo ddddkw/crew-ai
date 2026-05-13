@@ -14,6 +14,7 @@ class PageTasks:
         if 'tasks' not in ss:
             ss.tasks = [MyTask]
         ss.tasks.append(task)
+        task.is_new = True
         task.edit = True                
         db_utils.save_task(task)  # Save task to database
 

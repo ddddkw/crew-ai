@@ -14,6 +14,7 @@ class PageAgents:
         if 'agents' not in ss:
             ss.agents = [MyAgent]
         ss.agents.append(agent)
+        agent.is_new = True
         agent.edit = True
         db_utils.save_agent(agent)  # Save agent to database
 

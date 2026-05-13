@@ -48,6 +48,19 @@ class WorkbenchUiTests(unittest.TestCase):
         self.assertIn('.st-key-tools-palette-card', source)
         self.assertIn('.st-key-model-settings-card', source)
 
+    def test_tools_palette_buttons_use_full_width_workbench_cards(self):
+        tools_source = (ROOT / "app" / "pg_tools.py").read_text(encoding="utf-8")
+        source = (ROOT / "app" / "ui_styles.py").read_text(encoding="utf-8")
+
+        self.assertIn("use_container_width=True", tools_source)
+        self.assertIn('.st-key-tools-palette-card button', source)
+        self.assertIn('[class*="st-key-enable"] button', source)
+        self.assertIn('.st-key-tools-palette-card button p', source)
+        self.assertIn("width: 100%;", source)
+        self.assertIn("display: flex;", source)
+        self.assertIn("justify-content: flex-start;", source)
+        self.assertIn("white-space: normal;", source)
+
     def test_execution_page_has_cockpit_sections(self):
         source = (ROOT / "app" / "pg_crew_run.py").read_text(encoding="utf-8")
 
@@ -93,15 +106,16 @@ class WorkbenchUiTests(unittest.TestCase):
         self.assertIn(".st-key-nav-card-workspace", style_source)
         self.assertIn(".st-key-nav-card-run", style_source)
         self.assertIn(".st-key-nav-card-system", style_source)
-        self.assertIn("background: rgba(15, 23, 42, 0.34);", style_source)
-        self.assertIn("border: 1px solid rgba(148, 163, 184, 0.12);", style_source)
+        self.assertIn("background: linear-gradient(180deg, rgba(23, 32, 51, 0.58), rgba(12, 19, 32, 0.64));", style_source)
+        self.assertIn("border: 1px solid rgba(148, 163, 184, 0.14);", style_source)
 
     def test_streamlit_header_uses_workbench_palette(self):
         source = (ROOT / "app" / "ui_styles.py").read_text(encoding="utf-8")
 
         self.assertIn('header[data-testid="stHeader"]', source)
-        self.assertIn("background: rgba(8, 12, 19, 0.72);", source)
-        self.assertIn("border-bottom: 1px solid rgba(148, 163, 184, 0.10);", source)
+        self.assertIn("radial-gradient(circle at 22% 0%, rgba(59, 130, 246, 0.18), transparent 28rem)", source)
+        self.assertIn("linear-gradient(135deg, rgba(16, 24, 39, 0.96), rgba(24, 34, 53, 0.94) 58%, rgba(16, 24, 39, 0.96));", source)
+        self.assertIn("border-bottom: 1px solid rgba(148, 163, 184, 0.08);", source)
 
     def test_main_content_uses_soft_panel_surface(self):
         source = (ROOT / "app" / "ui_styles.py").read_text(encoding="utf-8")
@@ -141,9 +155,10 @@ class WorkbenchUiTests(unittest.TestCase):
         self.assertIn('key="agent-list-unassigned"', app_source)
         self.assertIn('key=f"agent-list-crew-{i}"', app_source)
         self.assertIn('[class*="st-key-agent-list-"] div[data-testid="stExpander"]', style_source)
-        self.assertIn("margin-bottom: 0.38rem;", style_source)
-        self.assertIn("min-height: 2.25rem;", style_source)
-        self.assertIn("padding: 0.5rem 0.78rem !important;", style_source)
+        self.assertIn("margin-bottom: 0 !important;", style_source)
+        self.assertIn("min-height: 2.05rem;", style_source)
+        self.assertIn("padding: 0.42rem 0.72rem !important;", style_source)
+        self.assertIn("gap: 0.45rem !important;", style_source)
 
     def test_sidebar_collapse_button_is_persistent_lower_and_larger(self):
         source = (ROOT / "app" / "ui_styles.py").read_text(encoding="utf-8")

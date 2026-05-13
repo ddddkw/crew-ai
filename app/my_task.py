@@ -65,8 +65,14 @@ class MyTask:
                     self.async_execution = st.checkbox(t("task.async_execution"), value=self.async_execution)
                     self.context_from_async_tasks_ids = st.multiselect(t("task.context_async"), options=[task.id for task in ss.tasks if task.async_execution], default=self.context_from_async_tasks_ids, format_func=lambda x: [task.description[:120] for task in ss.tasks if task.id == x][0])
                     self.context_from_sync_tasks_ids = st.multiselect(t("task.context_sync"), options=[task.id for task in ss.tasks if not task.async_execution], default=self.context_from_sync_tasks_ids, format_func=lambda x: [task.description[:120] for task in ss.tasks if task.id == x][0])
-                    submitted = st.form_submit_button(t("button.save"))
-                    if submitted:
+                    col_save, col_cancel = st.columns(2)
+                    with col_save:
+                        submitted = st.form_submit_button(t("button.save"))
+                    with col_cancel:
+                        cancelled = st.form_submit_button(t("button.cancel"))
+                    if cancelled:
+                        self.cancel_edit()
+                    elif submitted:
                         self.set_editable(False)
         else:
             fix_columns_width()
@@ -86,6 +92,18 @@ class MyTask:
 
     def set_editable(self, edit):
         self.edit = edit
+        self.is_new = False
         save_task(self)
         if not edit:
             st.rerun()
+
+    def cancel_edit(self):
+        if getattr(self, 'is_new', False):
+            for crew in ss.get('crews', []):
+                crew.tasks = [task for task in crew.tasks if task.id != self.id]
+                from db_utils import save_crew
+                save_crew(crew)
+            self.delete()
+        else:
+            self.edit = False
+        st.rerun()

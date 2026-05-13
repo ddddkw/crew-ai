@@ -14,6 +14,7 @@ class PageCrews:
         if 'crews' not in ss:
             ss.crews = [MyCrew]
         ss.crews.append(crew)
+        crew.is_new = True
         crew.edit = True
         db_utils.save_crew(crew)  # Save crew to database
         return crew

@@ -1,5 +1,6 @@
 venv
 venv/
+.venv*/
 miniconda/
 miniconda
 *.db
@@ -16,6 +17,7 @@ app/__pycache__
 app/__pycache__/*
 app/tools/__pycache__
 app/tools/__pycache__/*
+tests/__pycache__/
 data
 data/*
 db/
@@ -24,3 +26,5 @@ stop_venv.bat
 /.idea/
 /.omx/
 /.superpowers/
+.omx/
+.crewai_storage/

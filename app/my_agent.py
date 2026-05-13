@@ -153,8 +153,14 @@ class MyAgent:
                             key=ks_key
                         )
                         self.knowledge_source_ids = selected_knowledge_sources
-                    submitted = st.form_submit_button(t('button.save'))
-                    if submitted:
+                    col_save, col_cancel = st.columns(2)
+                    with col_save:
+                        submitted = st.form_submit_button(t('button.save'))
+                    with col_cancel:
+                        cancelled = st.form_submit_button(t('button.cancel'))
+                    if cancelled:
+                        self.cancel_edit()
+                    elif submitted:
                         self.tools = [tool for tool in enabled_tools if self.get_tool_display_name(tool) in selected_tools]
                         self.set_editable(False)
         else:
@@ -188,6 +194,18 @@ class MyAgent:
 
     def set_editable(self, edit):
         self.edit = edit
+        self.is_new = False
         save_agent(self)
         if not edit:
             st.rerun()
+
+    def cancel_edit(self):
+        if getattr(self, 'is_new', False):
+            for crew in ss.get('crews', []):
+                crew.agents = [agent for agent in crew.agents if agent.id != self.id]
+                from db_utils import save_crew
+                save_crew(crew)
+            self.delete()
+        else:
+            self.edit = False
+        st.rerun()

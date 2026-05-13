@@ -30,20 +30,41 @@ def apply_global_styles():
         }
 
         header[data-testid="stHeader"] {
-          background: rgba(8, 12, 19, 0.72);
-          border-bottom: 1px solid rgba(148, 163, 184, 0.10);
-          box-shadow: none;
-          backdrop-filter: blur(10px);
+          background:
+            radial-gradient(circle at 22% 0%, rgba(59, 130, 246, 0.18), transparent 28rem),
+            linear-gradient(135deg, rgba(16, 24, 39, 0.96), rgba(24, 34, 53, 0.94) 58%, rgba(16, 24, 39, 0.96));
+          border-bottom: 1px solid rgba(148, 163, 184, 0.08);
+          box-shadow:
+            inset 0 -1px 0 rgba(255, 255, 255, 0.02),
+            0 16px 48px rgba(15, 23, 42, 0.20);
+          backdrop-filter: blur(12px);
         }
 
         header[data-testid="stHeader"]::before {
-          background: transparent;
+          background: linear-gradient(90deg, transparent, rgba(96, 165, 250, 0.10), transparent);
+          height: 1px;
+          top: auto;
+          bottom: 0;
+        }
+
+        header[data-testid="stHeader"] [data-testid="stToolbar"] {
+          color: var(--studio-text);
+        }
+
+        header[data-testid="stHeader"] button:hover,
+        header[data-testid="stHeader"] a:hover {
+          background: rgba(96, 165, 250, 0.10) !important;
+          border-radius: 7px;
         }
 
         section[data-testid="stSidebar"] {
-          background: linear-gradient(180deg, rgba(9, 13, 20, 0.98), rgba(8, 12, 19, 0.96));
-          border-right: 1px solid rgba(148, 163, 184, 0.10);
-          box-shadow: 16px 0 42px rgba(0, 0, 0, 0.16);
+          background:
+            radial-gradient(circle at 85% 8%, rgba(59, 130, 246, 0.13), transparent 16rem),
+            linear-gradient(180deg, rgba(15, 23, 42, 0.98), rgba(11, 18, 30, 0.98) 54%, rgba(8, 13, 22, 0.98));
+          border-right: 1px solid rgba(96, 165, 250, 0.10);
+          box-shadow:
+            inset -1px 0 0 rgba(255, 255, 255, 0.025),
+            16px 0 42px rgba(0, 0, 0, 0.14);
         }
 
         section[data-testid="stSidebar"] > div {
@@ -113,10 +134,12 @@ def apply_global_styles():
         section[data-testid="stSidebar"] .st-key-nav-card-workspace,
         section[data-testid="stSidebar"] .st-key-nav-card-run,
         section[data-testid="stSidebar"] .st-key-nav-card-system {
-          background: rgba(15, 23, 42, 0.34);
-          border: 1px solid rgba(148, 163, 184, 0.12);
+          background: linear-gradient(180deg, rgba(23, 32, 51, 0.58), rgba(12, 19, 32, 0.64));
+          border: 1px solid rgba(148, 163, 184, 0.14);
           border-radius: 10px;
-          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+          box-shadow:
+            inset 0 1px 0 rgba(255, 255, 255, 0.035),
+            0 12px 30px rgba(0, 0, 0, 0.10);
           margin-bottom: 0.75rem;
           padding: 0.55rem 0.45rem 0.45rem;
         }
@@ -133,17 +156,18 @@ def apply_global_styles():
         }
 
         section[data-testid="stSidebar"] .stButton > button:hover {
-          background: rgba(59, 130, 246, 0.11);
-          border-color: rgba(59, 130, 246, 0.28);
+          background: rgba(96, 165, 250, 0.12);
+          border-color: rgba(96, 165, 250, 0.26);
           color: white;
         }
 
         section[data-testid="stSidebar"] .stButton > button[kind="primary"],
         section[data-testid="stSidebar"] .stButton > button:disabled {
-          background: rgba(37, 99, 235, 0.17);
-          border-color: rgba(96, 165, 250, 0.34);
+          background: linear-gradient(135deg, rgba(37, 99, 235, 0.24), rgba(14, 53, 112, 0.30));
+          border-color: rgba(96, 165, 250, 0.42);
           color: white;
           opacity: 1;
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
         }
 
         .main .block-container {
@@ -246,6 +270,46 @@ def apply_global_styles():
           box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035);
         }
 
+        .st-key-tools-palette-card .stButton,
+        .st-key-tools-palette-card [data-testid="stElementContainer"],
+        [class*="st-key-enable"] {
+          width: 100%;
+        }
+
+        .st-key-tools-palette-card .stButton > button,
+        .st-key-tools-palette-card button,
+        [class*="st-key-enable"] button {
+          width: 100%;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          min-height: 2.45rem;
+          padding: 0.58rem 0.72rem;
+          border-radius: 8px;
+          border: 1px solid rgba(148, 163, 184, 0.18);
+          background: linear-gradient(180deg, rgba(30, 41, 59, 0.72), rgba(15, 23, 42, 0.76));
+          color: var(--studio-text);
+          white-space: normal;
+          text-align: left;
+          line-height: 1.25;
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035);
+        }
+
+        .st-key-tools-palette-card button p,
+        [class*="st-key-enable"] button p {
+          width: 100%;
+          text-align: left;
+          line-height: 1.25;
+        }
+
+        .st-key-tools-palette-card .stButton > button:hover,
+        .st-key-tools-palette-card button:hover,
+        [class*="st-key-enable"] button:hover {
+          border-color: rgba(96, 165, 250, 0.38);
+          background: linear-gradient(180deg, rgba(37, 50, 72, 0.88), rgba(16, 32, 57, 0.86));
+          color: white;
+        }
+
         div[data-testid="stExpander"] {
           border: 1px solid rgba(148, 163, 184, 0.18);
           border-radius: 9px;
@@ -269,13 +333,36 @@ def apply_global_styles():
         }
 
         [class*="st-key-agent-list-"] div[data-testid="stExpander"] {
-          margin-bottom: 0.38rem;
-          box-shadow: 0 8px 22px rgba(0, 0, 0, 0.14);
+          margin-bottom: 0 !important;
+          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
         }
 
         [class*="st-key-agent-list-"] div[data-testid="stExpander"] summary {
-          min-height: 2.25rem;
-          padding: 0.5rem 0.78rem !important;
+          min-height: 2.05rem;
+          padding: 0.42rem 0.72rem !important;
+        }
+
+        [class*="st-key-agent-list-"][data-testid="stVerticalBlock"],
+        [class*="st-key-agent-list-"] [data-testid="stVerticalBlock"] {
+          gap: 0.45rem !important;
+        }
+
+        [class*="st-key-agent-list-"].st-emotion-cache-1n6tfoc,
+        [class*="st-key-agent-list-"] .st-emotion-cache-1n6tfoc {
+          gap: 0.45rem !important;
+        }
+
+        [class*="st-key-agent-list-"] [data-testid="element-container"] {
+          margin-top: 0 !important;
+          margin-bottom: 0.12rem !important;
+        }
+
+        [class*="st-key-agent-list-"] [data-testid="stExpander"] details {
+          margin-bottom: 0 !important;
+        }
+
+        [class*="st-key-agent-list-"] + .stButton {
+          margin-top: 0.24rem;
         }
 
         div[data-testid="stForm"] {
@@ -301,6 +388,15 @@ def apply_global_styles():
         div[data-testid="stTabs"] [aria-selected="true"] {
           color: white;
           background: rgba(37, 99, 235, 0.14);
+        }
+
+        div[data-testid="stTabs"] [aria-selected="true"]::after,
+        div[data-testid="stTabs"] [data-baseweb="tab-highlight"] {
+          background-color: #60a5fa !important;
+        }
+
+        div[data-testid="stTabs"] [data-baseweb="tab-border"] {
+          background-color: rgba(148, 163, 184, 0.14) !important;
         }
 
         div[data-testid="stFileUploader"] {

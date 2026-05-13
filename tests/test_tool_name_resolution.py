@@ -13,6 +13,8 @@ if str(APP_DIR) not in sys.path:
 class ToolNameResolutionTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
+        os.environ.setdefault("CREWAI_STORAGE_DIR", str(ROOT / ".crewai_storage"))
+
         import db_utils
         import my_tools
 
