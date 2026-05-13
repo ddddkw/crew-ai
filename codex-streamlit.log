@@ -1,0 +1,601 @@
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8501
+  Network URL: http://172.20.10.3:8501
+  External URL: http://111.55.209.121:8501
+
+©°©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤ Crew Execution Started ©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©´
+©¦                                                                             ©¦
+©¦  Crew Execution Started                                                     ©¦
+©¦  Name: crew                                                                 ©¦
+©¦  ID: de771b72-1c93-47d7-aa4f-b39ea3f8fd60                                   ©¦
+©¦  Tool Args:                                                                 ©¦
+©¦                                                                             ©¦
+©¦                                                                             ©¦
+©¸©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¼
+
+ERROR:root:OpenAI API call failed: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}
+ERROR:root:OpenAI API call failed: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}[0m
+[CrewAIEventsBus] Sync handler error in on_llm_call_failed: 'gbk' codec can't 
+encode character '\U0001f680' in position 0: illegal multibyte sequence
+*** You may need to add PYTHONIOENCODING=utf-8 to your environment ***
+[91mAn unknown error occurred. Please check the details below.[0m
+[CrewAIEventsBus] Sync handler error in on_llm_call_failed: 'gbk' codec can't 
+encode character '\u274c' in position 165: illegal multibyte sequence
+*** You may need to add PYTHONIOENCODING=utf-8 to your environment ***
+[91mError details: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}[0m
+ERROR:root:OpenAI API call failed: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}
+ERROR:root:OpenAI API call failed: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}[0m
+[CrewAIEventsBus] Sync handler error in on_llm_call_failed: 'gbk' codec can't 
+encode character '\u274c' in position 165: illegal multibyte sequence
+*** You may need to add PYTHONIOENCODING=utf-8 to your environment ***
+[91mAn unknown error occurred. Please check the details below.[0m
+[CrewAIEventsBus] Sync handler error in on_llm_call_failed: 'gbk' codec can't 
+encode character '\U0001f680' in position 0: illegal multibyte sequence
+*** You may need to add PYTHONIOENCODING=utf-8 to your environment ***
+[91mError details: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}[0m
+ERROR:root:OpenAI API call failed: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}
+ERROR:root:OpenAI API call failed: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}
+[91mAn unknown error occurred. Please check the details below.[0m
+[CrewAIEventsBus] Sync handler error in on_llm_call_failed: 'gbk' codec can't 
+encode character '\u274c' in position 165: illegal multibyte sequence
+*** You may need to add PYTHONIOENCODING=utf-8 to your environment ***
+[91mError details: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}[0m
+[CrewAIEventsBus] Sync handler error in on_llm_call_failed: 'gbk' codec can't 
+encode character '\U0001f680' in position 0: illegal multibyte sequence
+*** You may need to add PYTHONIOENCODING=utf-8 to your environment ***
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}[0m
+[CrewAIEventsBus] Sync handler error in on_crew_failed: 'gbk' codec can't 
+encode character '\u274c' in position 0: illegal multibyte sequence
+*** You may need to add PYTHONIOENCODING=utf-8 to your environment ***
+©°©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤ Task Failure ©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©´
+©¦                                                                             ©¦
+©¦  Task Failed                                                                ©¦
+©¦  Name: bfff1bc6-d274-440f-9916-511e9f30bc36                                 ©¦
+©¦  Agent: ×ÊÉî Python ºó¶Ë¿ª·¢¹¤³ÌÊ¦                                          ©¦
+©¦  Tool Args:                                                                 ©¦
+©¦                                                                             ©¦
+©¦                                                                             ©¦
+©¸©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¼
+
+Error running crew: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}
+Traceback (most recent call last):
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\app\pg_crew_run.py", line 84, in run_crew
+    result = crewai_crew.kickoff(inputs=inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\crew.py", line 706, in kickoff
+    result = self._run_sequential_process()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\crew.py", line 823, in _run_sequential_process
+    return self._execute_tasks(self.tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\crew.py", line 931, in _execute_tasks
+    task_output = task.execute_sync(
+                  ^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\task.py", line 458, in execute_sync
+    return self._execute_core(agent, context, tools)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\task.py", line 591, in _execute_core
+    raise e  # Re-raise the exception after emitting the event
+    ^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\task.py", line 522, in _execute_core
+    result = agent.execute_task(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\agent\core.py", line 526, in execute_task
+    result = self.execute_task(task, context, tools)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\agent\core.py", line 526, in execute_task
+    result = self.execute_task(task, context, tools)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\agent\core.py", line 525, in execute_task
+    raise e
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\agent\core.py", line 490, in execute_task
+    result = self._execute_without_timeout(task_prompt, task)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\agent\core.py", line 598, in _execute_without_timeout
+    return self.agent_executor.invoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 188, in invoke
+    formatted_answer = self._invoke_loop()
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 299, in _invoke_loop
+    raise e
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 229, in _invoke_loop
+    answer = get_llm_response(
+             ^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\utilities\agent_utils.py", line 276, in get_llm_response
+    raise e
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\utilities\agent_utils.py", line 268, in get_llm_response
+    answer = llm.call(
+             ^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\llms\providers\openai\completion.py", line 196, in call
+    return self._handle_completion(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\llms\providers\openai\completion.py", line 414, in _handle_completion
+    raise e from e
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\llms\providers\openai\completion.py", line 330, in _handle_completion
+    response: ChatCompletion = self.client.chat.completions.create(**params)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1189, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}
+
+©°©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤ Crew Execution Started ©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©´
+©¦                                                                             ©¦
+©¦  Crew Execution Started                                                     ©¦
+©¦  Name: crew                                                                 ©¦
+©¦  ID: 26aacfe1-a9f3-4212-ab64-1c33ca3bb8c0                                   ©¦
+©¦  Tool Args:                                                                 ©¦
+©¦                                                                             ©¦
+©¦                                                                             ©¦
+©¸©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¼
+
+ERROR:root:OpenAI API call failed: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}
+ERROR:root:OpenAI API call failed: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}
+[91mAn unknown error occurred. Please check the details below.[0m
+[CrewAIEventsBus] Sync handler error in on_llm_call_failed: 'gbk' codec can't 
+encode character '\u274c' in position 165: illegal multibyte sequence
+*** You may need to add PYTHONIOENCODING=utf-8 to your environment ***
+[91mError details: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}[0m
+[CrewAIEventsBus] Sync handler error in on_llm_call_failed: 'gbk' codec can't 
+encode character '\u274c' in position 165: illegal multibyte sequence
+*** You may need to add PYTHONIOENCODING=utf-8 to your environment ***
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}[0m
+ERROR:root:OpenAI API call failed: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}
+ERROR:root:OpenAI API call failed: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}
+[91mAn unknown error occurred. Please check the details below.[0m
+[CrewAIEventsBus] Sync handler error in on_llm_call_failed: 'gbk' codec can't 
+encode character '\U0001f680' in position 0: illegal multibyte sequence
+*** You may need to add PYTHONIOENCODING=utf-8 to your environment ***
+[91mError details: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}[0m
+[CrewAIEventsBus] Sync handler error in on_llm_call_failed: 'gbk' codec can't 
+encode character '\u274c' in position 165: illegal multibyte sequence
+*** You may need to add PYTHONIOENCODING=utf-8 to your environment ***
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}[0m
+ERROR:root:OpenAI API call failed: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}
+ERROR:root:OpenAI API call failed: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}
+[91mAn unknown error occurred. Please check the details below.[0m
+[CrewAIEventsBus] Sync handler error in on_llm_call_failed: 'gbk' codec can't 
+encode character '\u274c' in position 0: illegal multibyte sequence
+*** You may need to add PYTHONIOENCODING=utf-8 to your environment ***
+[91mError details: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}[0m
+[CrewAIEventsBus] Sync handler error in on_llm_call_failed: 'gbk' codec can't 
+encode character '\u274c' in position 165: illegal multibyte sequence
+*** You may need to add PYTHONIOENCODING=utf-8 to your environment ***
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}[0m
+[CrewAIEventsBus] Sync handler error in on_crew_failed: 'gbk' codec can't 
+encode character '\U0001f680' in position 0: illegal multibyte sequence
+*** You may need to add PYTHONIOENCODING=utf-8 to your environment ***
+©°©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤ Task Failure ©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©´
+©¦                                                                             ©¦
+©¦  Task Failed                                                                ©¦
+©¦  Name: 5b022b69-d420-4a5e-b197-841901d5318f                                 ©¦
+©¦  Agent: ×ÊÉî Python ºó¶Ë¿ª·¢¹¤³ÌÊ¦                                          ©¦
+©¦  Tool Args:                                                                 ©¦
+©¦                                                                             ©¦
+©¦                                                                             ©¦
+©¸©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¼
+
+Error running crew: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}
+Traceback (most recent call last):
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\app\pg_crew_run.py", line 84, in run_crew
+    result = crewai_crew.kickoff(inputs=inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\crew.py", line 706, in kickoff
+    result = self._run_sequential_process()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\crew.py", line 823, in _run_sequential_process
+    return self._execute_tasks(self.tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\crew.py", line 931, in _execute_tasks
+    task_output = task.execute_sync(
+                  ^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\task.py", line 458, in execute_sync
+    return self._execute_core(agent, context, tools)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\task.py", line 591, in _execute_core
+    raise e  # Re-raise the exception after emitting the event
+    ^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\task.py", line 522, in _execute_core
+    result = agent.execute_task(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\agent\core.py", line 526, in execute_task
+    result = self.execute_task(task, context, tools)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\agent\core.py", line 526, in execute_task
+    result = self.execute_task(task, context, tools)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\agent\core.py", line 525, in execute_task
+    raise e
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\agent\core.py", line 490, in execute_task
+    result = self._execute_without_timeout(task_prompt, task)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\agent\core.py", line 598, in _execute_without_timeout
+    return self.agent_executor.invoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 188, in invoke
+    formatted_answer = self._invoke_loop()
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 299, in _invoke_loop
+    raise e
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 229, in _invoke_loop
+    answer = get_llm_response(
+             ^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\utilities\agent_utils.py", line 276, in get_llm_response
+    raise e
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\utilities\agent_utils.py", line 268, in get_llm_response
+    answer = llm.call(
+             ^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\llms\providers\openai\completion.py", line 196, in call
+    return self._handle_completion(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\llms\providers\openai\completion.py", line 414, in _handle_completion
+    raise e from e
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\llms\providers\openai\completion.py", line 330, in _handle_completion
+    response: ChatCompletion = self.client.chat.completions.create(**params)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1189, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}
+
+[CrewAIEventsBus] Sync handler error in on_crew_started: 'gbk' codec can't 
+encode character '\u274c' in position 165: illegal multibyte sequence
+*** You may need to add PYTHONIOENCODING=utf-8 to your environment ***
+ERROR:root:OpenAI API call failed: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}
+ERROR:root:OpenAI API call failed: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}[0m
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}[0m
+[CrewAIEventsBus] Sync handler error in on_llm_call_failed: 'gbk' codec can't 
+encode character '\u274c' in position 0: illegal multibyte sequence
+*** You may need to add PYTHONIOENCODING=utf-8 to your environment ***
+[CrewAIEventsBus] Sync handler error in on_llm_call_failed: 'gbk' codec can't 
+encode character '\u274c' in position 165: illegal multibyte sequence
+*** You may need to add PYTHONIOENCODING=utf-8 to your environment ***
+ERROR:root:OpenAI API call failed: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}
+ERROR:root:OpenAI API call failed: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}[0m
+[91mAn unknown error occurred. Please check the details below.[0m
+[CrewAIEventsBus] Sync handler error in on_llm_call_failed: 'gbk' codec can't 
+encode character '\u274c' in position 165: illegal multibyte sequence
+*** You may need to add PYTHONIOENCODING=utf-8 to your environment ***
+[91mError details: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}[0m
+[CrewAIEventsBus] Sync handler error in on_llm_call_failed: 'gbk' codec can't 
+encode character '\U0001f680' in position 0: illegal multibyte sequence
+*** You may need to add PYTHONIOENCODING=utf-8 to your environment ***
+ERROR:root:OpenAI API call failed: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}
+ERROR:root:OpenAI API call failed: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}[0m
+[CrewAIEventsBus] Sync handler error in on_llm_call_failed: 'gbk' codec can't 
+encode character '\U0001f680' in position 0: illegal multibyte sequence
+*** You may need to add PYTHONIOENCODING=utf-8 to your environment ***
+[91mAn unknown error occurred. Please check the details below.[0m
+[91mError details: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}[0m
+[CrewAIEventsBus] Sync handler error in on_llm_call_failed: 'gbk' codec can't 
+encode character '\u274c' in position 0: illegal multibyte sequence
+*** You may need to add PYTHONIOENCODING=utf-8 to your environment ***
+[CrewAIEventsBus] Sync handler error in on_crew_failed: 'gbk' codec can't 
+encode character '\u274c' in position 0: illegal multibyte sequence
+*** You may need to add PYTHONIOENCODING=utf-8 to your environment ***
+©°©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤ Task Failure ©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©´
+©¦                                                                             ©¦
+©¦  Task Failed                                                                ©¦
+©¦  Name: d5e3159b-fcc5-46d9-8a5c-206925d6ce97                                 ©¦
+©¦  Agent: ×ÊÉî Python ºó¶Ë¿ª·¢¹¤³ÌÊ¦                                          ©¦
+©¦  Tool Args:                                                                 ©¦
+©¦                                                                             ©¦
+©¦                                                                             ©¦
+©¸©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¼
+
+Error running crew: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}
+Traceback (most recent call last):
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\app\pg_crew_run.py", line 84, in run_crew
+    result = crewai_crew.kickoff(inputs=inputs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\crew.py", line 706, in kickoff
+    result = self._run_sequential_process()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\crew.py", line 823, in _run_sequential_process
+    return self._execute_tasks(self.tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\crew.py", line 931, in _execute_tasks
+    task_output = task.execute_sync(
+                  ^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\task.py", line 458, in execute_sync
+    return self._execute_core(agent, context, tools)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\task.py", line 591, in _execute_core
+    raise e  # Re-raise the exception after emitting the event
+    ^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\task.py", line 522, in _execute_core
+    result = agent.execute_task(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\agent\core.py", line 526, in execute_task
+    result = self.execute_task(task, context, tools)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\agent\core.py", line 526, in execute_task
+    result = self.execute_task(task, context, tools)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\agent\core.py", line 525, in execute_task
+    raise e
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\agent\core.py", line 490, in execute_task
+    result = self._execute_without_timeout(task_prompt, task)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\agent\core.py", line 598, in _execute_without_timeout
+    return self.agent_executor.invoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 188, in invoke
+    formatted_answer = self._invoke_loop()
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 299, in _invoke_loop
+    raise e
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\agents\crew_agent_executor.py", line 229, in _invoke_loop
+    answer = get_llm_response(
+             ^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\utilities\agent_utils.py", line 276, in get_llm_response
+    raise e
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\utilities\agent_utils.py", line 268, in get_llm_response
+    answer = llm.call(
+             ^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\llms\providers\openai\completion.py", line 196, in call
+    return self._handle_completion(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\llms\providers\openai\completion.py", line 414, in _handle_completion
+    raise e from e
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\crewai\llms\providers\openai\completion.py", line 330, in _handle_completion
+    response: ChatCompletion = self.client.chat.completions.create(**params)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1189, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Invalid API Key', 'param': 'Please provide valid API Key', 'code': '401', 'type': 'invalid_key'}}
+
+[31m©¤©¤[0m[31m©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤[0m[31m©¤©¤[0m
+[31m [0m C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\streamlit\ru [31m [0m
+[31m [0m ntime\scriptrunner\exec_code.py:129 in exec_func_with_error_handling                 [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\streamlit\ru [31m [0m
+[31m [0m ntime\scriptrunner\script_runner.py:669 in code_to_exec                              [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\app\app.py:74 in <module>           [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m71 [0m[2m©¦   [0mpages()[ss.page].draw()                                                     [31m [0m
+[31m [0m   [2m72 [0m                                                                                [31m [0m
+[31m [0m   [2m73 [0m[94mif[0m [91m__name__[0m == [33m'[0m[33m__main__[0m[33m'[0m:                                                      [31m [0m
+[31m [0m [31m> [0m74 [2m©¦   [0m[1;4mmain()[0m                                                                      [31m [0m
+[31m [0m   [2m75 [0m                                                                                [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\app\app.py:71 in main               [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m68 [0m[2m©¦   [0mload_data()                                                                 [31m [0m
+[31m [0m   [2m69 [0m[2m©¦   [0mdraw_sidebar()                                                              [31m [0m
+[31m [0m   [2m70 [0m[2m©¦   [0mPageCrewRun.maintain_session_state() [2m#this will persist the session state f[0m [31m [0m
+[31m [0m [31m> [0m71 [2m©¦   [0m[1;4mpages()[ss.page].draw()[0m                                                     [31m [0m
+[31m [0m   [2m72 [0m                                                                                [31m [0m
+[31m [0m   [2m73 [0m[94mif[0m [91m__name__[0m == [33m'[0m[33m__main__[0m[33m'[0m:                                                      [31m [0m
+[31m [0m   [2m74 [0m[2m©¦   [0mmain()                                                                      [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\app\pg_crew_run.py:367 in draw      [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m364 [0m[2m©¦   [0m[94mdef[0m[90m [0m[92mdraw[0m([96mself[0m):                                                            [31m [0m
+[31m [0m   [2m365 [0m[2m©¦   ©¦   [0mst.subheader([96mself[0m.name)                                                [31m [0m
+[31m [0m   [2m366 [0m[2m©¦   ©¦   [0m[96mself[0m.draw_crews()                                                      [31m [0m
+[31m [0m [31m> [0m367 [2m©¦   ©¦   [0m[1;4;96mself[0m[1;4m.display_result()[0m                                                  [31m [0m
+[31m [0m   [2m368 [0m                                                                               [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\app\pg_crew_run.py:285 in           [31m [0m
+[31m [0m display_result                                                                       [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m282 [0m[2m©¦   ©¦   ©¦   ©¦   [0mcurr_crew = [96mself[0m.get_mycrew_by_name(ss.selected_crew_name)     [31m [0m
+[31m [0m   [2m283 [0m[2m©¦   ©¦   ©¦   ©¦   [0mtask_list = curr_crew.tasks [94mif[0m curr_crew [94melse[0m [94mNone[0m             [31m [0m
+[31m [0m   [2m284 [0m[2m©¦   ©¦   ©¦   ©¦   [0mtasks_result = get_tasks_outputs_str(                          [31m [0m
+[31m [0m [31m> [0m285 [2m©¦   ©¦   ©¦   ©¦   ©¦   [0m[1;4mss.result[[0m[1;4;33m"[0m[1;4;33mresult[0m[1;4;33m"[0m[1;4m].tasks_output[0m,                          [31m [0m
+[31m [0m   [2m286 [0m[2m©¦   ©¦   ©¦   ©¦   ©¦   [0mtask_list                                                  [31m [0m
+[31m [0m   [2m287 [0m[2m©¦   ©¦   ©¦   ©¦   [0m)                                                              [31m [0m
+[31m [0m   [2m288 [0m[2m©¦   ©¦   ©¦   ©¦   [0mformatted_tasks_result = format_result(tasks_result)           [31m [0m
+[31m©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤[0m
+[1;91mAttributeError: [0m[32m'str'[0m object has no attribute [32m'tasks_output'[0m
+[31m©¤©¤[0m[31m©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤[0m[31m©¤©¤[0m
+[31m [0m C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\streamlit\ru [31m [0m
+[31m [0m ntime\scriptrunner\exec_code.py:129 in exec_func_with_error_handling                 [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\streamlit\ru [31m [0m
+[31m [0m ntime\scriptrunner\script_runner.py:669 in code_to_exec                              [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\app\app.py:74 in <module>           [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m71 [0m[2m©¦   [0mpages()[ss.page].draw()                                                     [31m [0m
+[31m [0m   [2m72 [0m                                                                                [31m [0m
+[31m [0m   [2m73 [0m[94mif[0m [91m__name__[0m == [33m'[0m[33m__main__[0m[33m'[0m:                                                      [31m [0m
+[31m [0m [31m> [0m74 [2m©¦   [0m[1;4mmain()[0m                                                                      [31m [0m
+[31m [0m   [2m75 [0m                                                                                [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\app\app.py:71 in main               [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m68 [0m[2m©¦   [0mload_data()                                                                 [31m [0m
+[31m [0m   [2m69 [0m[2m©¦   [0mdraw_sidebar()                                                              [31m [0m
+[31m [0m   [2m70 [0m[2m©¦   [0mPageCrewRun.maintain_session_state() [2m#this will persist the session state f[0m [31m [0m
+[31m [0m [31m> [0m71 [2m©¦   [0m[1;4mpages()[ss.page].draw()[0m                                                     [31m [0m
+[31m [0m   [2m72 [0m                                                                                [31m [0m
+[31m [0m   [2m73 [0m[94mif[0m [91m__name__[0m == [33m'[0m[33m__main__[0m[33m'[0m:                                                      [31m [0m
+[31m [0m   [2m74 [0m[2m©¦   [0mmain()                                                                      [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\app\pg_crew_run.py:367 in draw      [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m364 [0m[2m©¦   [0m[94mdef[0m[90m [0m[92mdraw[0m([96mself[0m):                                                            [31m [0m
+[31m [0m   [2m365 [0m[2m©¦   ©¦   [0mst.subheader([96mself[0m.name)                                                [31m [0m
+[31m [0m   [2m366 [0m[2m©¦   ©¦   [0m[96mself[0m.draw_crews()                                                      [31m [0m
+[31m [0m [31m> [0m367 [2m©¦   ©¦   [0m[1;4;96mself[0m[1;4m.display_result()[0m                                                  [31m [0m
+[31m [0m   [2m368 [0m                                                                               [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\app\pg_crew_run.py:285 in           [31m [0m
+[31m [0m display_result                                                                       [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m282 [0m[2m©¦   ©¦   ©¦   ©¦   [0mcurr_crew = [96mself[0m.get_mycrew_by_name(ss.selected_crew_name)     [31m [0m
+[31m [0m   [2m283 [0m[2m©¦   ©¦   ©¦   ©¦   [0mtask_list = curr_crew.tasks [94mif[0m curr_crew [94melse[0m [94mNone[0m             [31m [0m
+[31m [0m   [2m284 [0m[2m©¦   ©¦   ©¦   ©¦   [0mtasks_result = get_tasks_outputs_str(                          [31m [0m
+[31m [0m [31m> [0m285 [2m©¦   ©¦   ©¦   ©¦   ©¦   [0m[1;4mss.result[[0m[1;4;33m"[0m[1;4;33mresult[0m[1;4;33m"[0m[1;4m].tasks_output[0m,                          [31m [0m
+[31m [0m   [2m286 [0m[2m©¦   ©¦   ©¦   ©¦   ©¦   [0mtask_list                                                  [31m [0m
+[31m [0m   [2m287 [0m[2m©¦   ©¦   ©¦   ©¦   [0m)                                                              [31m [0m
+[31m [0m   [2m288 [0m[2m©¦   ©¦   ©¦   ©¦   [0mformatted_tasks_result = format_result(tasks_result)           [31m [0m
+[31m©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤[0m
+[1;91mAttributeError: [0m[32m'str'[0m object has no attribute [32m'tasks_output'[0m
+[CrewAIEventsBus] Sync handler error in on_crew_started: 'gbk' codec can't 
+encode character '\u274c' in position 165: illegal multibyte sequence
+*** You may need to add PYTHONIOENCODING=utf-8 to your environment ***
+[CrewAIEventsBus] Sync handler error in on_task_completed: 'gbk' codec can't 
+encode character '\U0001f680' in position 0: illegal multibyte sequence
+*** You may need to add PYTHONIOENCODING=utf-8 to your environment ***
+[CrewAIEventsBus] Sync handler error in on_task_started: 'gbk' codec can't 
+encode character '\u274c' in position 0: illegal multibyte sequence
+*** You may need to add PYTHONIOENCODING=utf-8 to your environment ***
+[CrewAIEventsBus] Sync handler error in on_llm_call_started: 'gbk' codec can't 
+encode character '\u274c' in position 165: illegal multibyte sequence
+*** You may need to add PYTHONIOENCODING=utf-8 to your environment ***
+[CrewAIEventsBus] Sync handler error in on_llm_call_completed: 'gbk' codec 
+can't encode character '\u274c' in position 165: illegal multibyte sequence
+*** You may need to add PYTHONIOENCODING=utf-8 to your environment ***
+[CrewAIEventsBus] Sync handler error in on_task_completed: 'gbk' codec can't 
+encode character '\u274c' in position 165: illegal multibyte sequence
+*** You may need to add PYTHONIOENCODING=utf-8 to your environment ***
+[CrewAIEventsBus] Sync handler error in on_crew_completed: 'gbk' codec can't 
+encode character '\u274c' in position 0: illegal multibyte sequence
+*** You may need to add PYTHONIOENCODING=utf-8 to your environment ***
+[31m©¤©¤[0m[31m©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤[0m[31m©¤©¤[0m
+[31m [0m C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\streamlit\ru [31m [0m
+[31m [0m ntime\scriptrunner\exec_code.py:129 in exec_func_with_error_handling                 [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\streamlit\ru [31m [0m
+[31m [0m ntime\scriptrunner\script_runner.py:669 in code_to_exec                              [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\app\app.py:117 in <module>          [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\app\app.py:111 in main              [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\app\app.py:51 in load_data          [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m48 [0m[2m©¦   ©¦   [0mselected_page = st.radio(t([33m'[0m[33mlanguage.select[0m[33m'[0m), page_keys, index=page_ke [31m [0m
+[31m [0m   [2m49 [0m[2m©¦   ©¦   [0m[94mif[0m selected_page != ss.page:                                            [31m [0m
+[31m [0m   [2m50 [0m[2m©¦   ©¦   ©¦   [0mss.page = selected_page                                             [31m [0m
+[31m [0m [31m> [0m51 [2m©¦   ©¦   ©¦   [0mst.r[1;4merun()[0m                                                          [31m [0m
+[31m [0m   [2m52 [0m[2m©¦   ©¦   [0m                                                                        [31m [0m
+[31m [0m   [2m53 [0m[2m©¦   ©¦   [0msetup_language_selector()                                               [31m [0m
+[31m [0m   [2m54 [0m                                                                                [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\app\db_utils.py:143 in load_agents  [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m140 [0m[94mdef[0m[90m [0m[92mload_agents[0m():                                                             [31m [0m
+[31m [0m   [2m141 [0m[2m©¦   [0m[94mfrom[0m[90m [0m[4;96mmy_agent[0m[90m [0m[94mimport[0m MyAgent                                               [31m [0m
+[31m [0m   [2m142 [0m[2m©¦   [0mrows = load_entities([33m'[0m[33magent[0m[33m'[0m)                                              [31m [0m
+[31m [0m [31m> [0m143 [2m©¦   [0mtools_dict = {tool.tool_id: tool [94mfor[0m tool [95min[0m [1;4mload_tools()[0m}                 [31m [0m
+[31m [0m   [2m144 [0m[2m©¦   [0magents = []                                                                [31m [0m
+[31m [0m   [2m145 [0m[2m©¦   [0m[94mfor[0m row [95min[0m rows:                                                           [31m [0m
+[31m [0m   [2m146 [0m[2m©¦   ©¦   [0mdata = row[[94m1[0m]                                                          [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\app\db_utils.py:248 in load_tools   [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m245 [0m[2m©¦   [0mtools = []                                                                 [31m [0m
+[31m [0m   [2m246 [0m[2m©¦   [0m[94mfor[0m row [95min[0m rows:                                                           [31m [0m
+[31m [0m   [2m247 [0m[2m©¦   ©¦   [0mdata = row[[94m1[0m]                                                          [31m [0m
+[31m [0m [31m> [0m248 [2m©¦   ©¦   [0mtool_class = [1;4mTOOL_CLASSES[data[[0m[1;4;33m'[0m[1;4;33mname[0m[1;4;33m'[0m[1;4m]][0m                                [31m [0m
+[31m [0m   [2m249 [0m[2m©¦   ©¦   [0mtool = tool_class(tool_id=row[[94m0[0m])                                      [31m [0m
+[31m [0m   [2m250 [0m[2m©¦   ©¦   [0mtool.set_parameters(**data[[33m'[0m[33mparameters[0m[33m'[0m])                              [31m [0m
+[31m [0m   [2m251 [0m[2m©¦   ©¦   [0mtools.append(tool)                                                     [31m [0m
+[31m©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤[0m
+[1;91mKeyError: [0m[32m'DuckDuckGo ËÑË÷'[0m
+[31m©¤©¤[0m[31m©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤[0m[31m©¤©¤[0m
+[31m [0m C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\streamlit\ru [31m [0m
+[31m [0m ntime\scriptrunner\exec_code.py:129 in exec_func_with_error_handling                 [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\streamlit\ru [31m [0m
+[31m [0m ntime\scriptrunner\script_runner.py:669 in code_to_exec                              [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\app\app.py:117 in <module>          [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m114 [0m[2m©¦   [0mpages()[ss.page].draw()                                                    [31m [0m
+[31m [0m   [2m115 [0m                                                                               [31m [0m
+[31m [0m   [2m116 [0m[94mif[0m [91m__name__[0m == [33m'[0m[33m__main__[0m[33m'[0m:                                                     [31m [0m
+[31m [0m [31m> [0m117 [2m©¦   [0m[1;4mmain()[0m                                                                     [31m [0m
+[31m [0m   [2m118 [0m                                                                               [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\app\app.py:111 in main              [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m108 [0m[2m©¦   ©¦   ©¦   [0m[96mprint[0m([33mf[0m[33m"[0m[33mError initializing AgentOps: [0m[33m{[0m[96mstr[0m(e)[33m}[0m[33m"[0m)                    [31m [0m
+[31m [0m   [2m109 [0m[2m©¦   [0m                                                                           [31m [0m
+[31m [0m   [2m110 [0m[2m©¦   [0mdb_utils.initialize_db()                                                   [31m [0m
+[31m [0m [31m> [0m111 [2m©¦   [0m[1;4mload_data()[0m                                                                [31m [0m
+[31m [0m   [2m112 [0m[2m©¦   [0mdraw_sidebar()                                                             [31m [0m
+[31m [0m   [2m113 [0m[2m©¦   [0mPageCrewRun.maintain_session_state() [2m#this will persist the session state [0m [31m [0m
+[31m [0m   [2m114 [0m[2m©¦   [0mpages()[ss.page].draw()                                                    [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\app\app.py:51 in load_data          [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m 48 [0m[2m©¦   [0m}                                                                          [31m [0m
+[31m [0m   [2m 49 [0m                                                                               [31m [0m
+[31m [0m   [2m 50 [0m[94mdef[0m[90m [0m[92mload_data[0m():                                                               [31m [0m
+[31m [0m [31m> [0m 51 [2m©¦   [0mss.agents = [1;4mdb_utils.load_agents()[0m                                         [31m [0m
+[31m [0m   [2m 52 [0m[2m©¦   [0mss.tasks = db_utils.load_tasks()                                           [31m [0m
+[31m [0m   [2m 53 [0m[2m©¦   [0mss.crews = db_utils.load_crews()                                           [31m [0m
+[31m [0m   [2m 54 [0m[2m©¦   [0mss.tools = db_utils.load_tools()                                           [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\app\db_utils.py:143 in load_agents  [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m140 [0m[94mdef[0m[90m [0m[92mload_agents[0m():                                                             [31m [0m
+[31m [0m   [2m141 [0m[2m©¦   [0m[94mfrom[0m[90m [0m[4;96mmy_agent[0m[90m [0m[94mimport[0m MyAgent                                               [31m [0m
+[31m [0m   [2m142 [0m[2m©¦   [0mrows = load_entities([33m'[0m[33magent[0m[33m'[0m)                                              [31m [0m
+[31m [0m [31m> [0m143 [2m©¦   [0mtools_dict = {tool.tool_id: tool [94mfor[0m tool [95min[0m [1;4mload_tools()[0m}                 [31m [0m
+[31m [0m   [2m144 [0m[2m©¦   [0magents = []                                                                [31m [0m
+[31m [0m   [2m145 [0m[2m©¦   [0m[94mfor[0m row [95min[0m rows:                                                           [31m [0m
+[31m [0m   [2m146 [0m[2m©¦   ©¦   [0mdata = row[[94m1[0m]                                                          [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\app\db_utils.py:248 in load_tools   [31m [0m
+[31m [0m                                                                                      [31m [0m
+[31m [0m   [2m245 [0m[2m©¦   [0mtools = []                                                                 [31m [0m
+[31m [0m   [2m246 [0m[2m©¦   [0m[94mfor[0m row [95min[0m rows:                                                           [31m [0m
+[31m [0m   [2m247 [0m[2m©¦   ©¦   [0mdata = row[[94m1[0m]                                                          [31m [0m
+[31m [0m [31m> [0m248 [2m©¦   ©¦   [0mtool_class = [1;4mTOOL_CLASSES[data[[0m[1;4;33m'[0m[1;4;33mname[0m[1;4;33m'[0m[1;4m]][0m                                [31m [0m
+[31m [0m   [2m249 [0m[2m©¦   ©¦   [0mtool = tool_class(tool_id=row[[94m0[0m])                                      [31m [0m
+[31m [0m   [2m250 [0m[2m©¦   ©¦   [0mtool.set_parameters(**data[[33m'[0m[33mparameters[0m[33m'[0m])                              [31m [0m
+[31m [0m   [2m251 [0m[2m©¦   ©¦   [0mtools.append(tool)                                                     [31m [0m
+[31m©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤[0m
+[1;91mKeyError: [0m[32m'DuckDuckGo ËÑË÷'[0m
