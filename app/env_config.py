@@ -178,8 +178,11 @@ def _legacy_model_configs(values: dict[str, str]) -> list[dict[str, str]]:
 
 def read_model_configs(env_path: str | Path = ENV_PATH) -> list[dict[str, str]]:
     values = read_env_file(env_path)
-    raw_configs = os.getenv(MODEL_CONFIGS_ENV_KEY)
-    if raw_configs is None:
+    if Path(env_path) == ENV_PATH:
+        raw_configs = os.getenv(MODEL_CONFIGS_ENV_KEY)
+        if raw_configs is None:
+            raw_configs = values.get(MODEL_CONFIGS_ENV_KEY)
+    else:
         raw_configs = values.get(MODEL_CONFIGS_ENV_KEY)
 
     configs = _read_model_configs_json(raw_configs)

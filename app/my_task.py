@@ -5,13 +5,15 @@ from streamlit import session_state as ss
 from db_utils import save_task, delete_task
 from datetime import datetime
 from i18n import t
+from edit_form_chrome import draw_editor_header, draw_form_section
 
 class MyTask:
     def __init__(self, id=None, description=None, expected_output=None, agent=None, async_execution=None, created_at=None, context_from_async_tasks_ids=None, context_from_sync_tasks_ids=None, **kwargs):
         self.id = id or "T_" + rnd_id()
         self.description = description or "Identify the next big trend in AI. Focus on identifying pros and cons and the overall narrative."
         self.expected_output = expected_output or "A comprehensive 3 paragraphs long report on the latest AI trends."
-        self.agent = agent or ss.agents[0] if ss.agents else None
+        available_agents = ss.get("agents", [])
+        self.agent = agent if agent is not None else (available_agents[0] if available_agents else None)
         self.async_execution = async_execution or False
         self.context_from_async_tasks_ids = context_from_async_tasks_ids or None
         self.context_from_sync_tasks_ids = context_from_sync_tasks_ids or None
@@ -58,22 +60,37 @@ class MyTask:
         expander_title = f"({self.agent.role if self.agent else 'unassigned'}) - {self.description}" if self.is_valid() else f"❗ ({self.agent.role if self.agent else 'unassigned'}) - {self.description}"
         if self.edit:
             with st.expander(expander_title, expanded=True):
-                with st.form(key=f'form_{self.id}' if key is None else key):
-                    self.description = st.text_area(t("task.description"), value=self.description)
-                    self.expected_output = st.text_area(t("task.expected_output"), value=self.expected_output)
-                    self.agent = st.selectbox(t("task.agent"), options=ss.agents, format_func=lambda x: x.role, index=0 if self.agent is None else agent_options.index(self.agent.role))
-                    self.async_execution = st.checkbox(t("task.async_execution"), value=self.async_execution)
-                    self.context_from_async_tasks_ids = st.multiselect(t("task.context_async"), options=[task.id for task in ss.tasks if task.async_execution], default=self.context_from_async_tasks_ids, format_func=lambda x: [task.description[:120] for task in ss.tasks if task.id == x][0])
-                    self.context_from_sync_tasks_ids = st.multiselect(t("task.context_sync"), options=[task.id for task in ss.tasks if not task.async_execution], default=self.context_from_sync_tasks_ids, format_func=lambda x: [task.description[:120] for task in ss.tasks if task.id == x][0])
-                    col_save, col_cancel = st.columns(2)
-                    with col_save:
-                        submitted = st.form_submit_button(t("button.save"))
-                    with col_cancel:
-                        cancelled = st.form_submit_button(t("button.cancel"))
-                    if cancelled:
-                        self.cancel_edit()
-                    elif submitted:
-                        self.set_editable(False)
+                editor_key = f"task-editor-shell-{self.id}-{key}" if key else f"task-editor-shell-{self.id}"
+                with st.container(border=True, key=editor_key):
+                    draw_editor_header(
+                        t("editor.task_title"),
+                        t("editor.task_subtitle"),
+                        self.agent.role if self.agent else t("editor.unassigned"),
+                    )
+                    with st.form(key=f'form_{self.id}' if key is None else key):
+                        draw_form_section(t("editor.section_task_brief"), t("editor.task_brief_desc"))
+                        self.description = st.text_area(t("task.description"), value=self.description, height=150)
+                        self.expected_output = st.text_area(t("task.expected_output"), value=self.expected_output, height=130)
+
+                        draw_form_section(t("editor.section_assignment"), t("editor.task_assignment_desc"))
+                        col_agent, col_async = st.columns([2, 1])
+                        with col_agent:
+                            self.agent = st.selectbox(t("task.agent"), options=ss.agents, format_func=lambda x: x.role, index=0 if self.agent is None else agent_options.index(self.agent.role))
+                        with col_async:
+                            self.async_execution = st.checkbox(t("task.async_execution"), value=self.async_execution)
+                        self.context_from_async_tasks_ids = st.multiselect(t("task.context_async"), options=[task.id for task in ss.tasks if task.async_execution], default=self.context_from_async_tasks_ids, format_func=lambda x: [task.description[:120] for task in ss.tasks if task.id == x][0])
+                        self.context_from_sync_tasks_ids = st.multiselect(t("task.context_sync"), options=[task.id for task in ss.tasks if not task.async_execution], default=self.context_from_sync_tasks_ids, format_func=lambda x: [task.description[:120] for task in ss.tasks if task.id == x][0])
+                        st.markdown('<div class="studio-editor-actions">', unsafe_allow_html=True)
+                        col_save, col_cancel = st.columns(2)
+                        with col_save:
+                            submitted = st.form_submit_button(t("button.save"), type="primary")
+                        with col_cancel:
+                            cancelled = st.form_submit_button(t("button.cancel"))
+                        st.markdown('</div>', unsafe_allow_html=True)
+                        if cancelled:
+                            self.cancel_edit()
+                        elif submitted:
+                            self.set_editable(False)
         else:
             fix_columns_width()
             with st.expander(expander_title):

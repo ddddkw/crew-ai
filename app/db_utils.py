@@ -1,7 +1,6 @@
 import sqlite3
 import os
 import json
-from my_tools import get_tool_class_key, resolve_tool_class
 from sqlalchemy import create_engine, text
 
 # If you have an environment variable DB_URL for Postgres, use that. 
@@ -232,7 +231,67 @@ def load_crews():
 def delete_crew(crew_id):
     delete_entity('crew', crew_id)
 
+def save_workspace(workspace):
+    workspace.touch()
+    data = {
+        'name': workspace.name,
+        'path': workspace.path,
+        'tech_stack': workspace.tech_stack,
+        'start_command': workspace.start_command,
+        'test_command': workspace.test_command,
+        'allow_read': workspace.allow_read,
+        'allow_write': workspace.allow_write,
+        'allow_command': workspace.allow_command,
+        'created_at': workspace.created_at,
+        'updated_at': workspace.updated_at,
+    }
+    save_entity('workspace', workspace.id, data)
+
+def load_workspaces():
+    from my_workspace import MyWorkspace
+    rows = load_entities('workspace')
+    workspaces = []
+    for row in rows:
+        data = row[1]
+        workspaces.append(MyWorkspace(id=row[0], **data))
+    return sorted(workspaces, key=lambda x: x.created_at)
+
+def delete_workspace(workspace_id):
+    delete_entity('workspace', workspace_id)
+
+def save_dev_session(dev_session):
+    dev_session.touch()
+    data = {
+        'workspace_id': dev_session.workspace_id,
+        'requirement': dev_session.requirement,
+        'llm_provider_model': dev_session.llm_provider_model,
+        'messages': dev_session.messages,
+        'status': dev_session.status,
+        'plan': dev_session.plan,
+        'logs': dev_session.logs,
+        'diff': dev_session.diff,
+        'test_result': dev_session.test_result,
+        'summary': dev_session.summary,
+        'created_at': dev_session.created_at,
+        'updated_at': dev_session.updated_at,
+    }
+    save_entity('dev_session', dev_session.id, data)
+
+def load_dev_sessions():
+    from dev_session import DevSession
+    rows = load_entities('dev_session')
+    dev_sessions = []
+    for row in rows:
+        data = row[1]
+        dev_sessions.append(DevSession(id=row[0], **data))
+    return sorted(dev_sessions, key=lambda x: x.created_at, reverse=True)
+
+def delete_dev_session(dev_session_id):
+    delete_entity('dev_session', dev_session_id)
+
 def save_tool(tool):
+    from my_tools import get_tool_class_key
+
     tool_key = get_tool_class_key(tool) or tool.name
     data = {
         'name': tool_key,
@@ -243,6 +302,8 @@ def save_tool(tool):
     save_entity('tool', tool.tool_id, data)
 
 def load_tools():
+    from my_tools import resolve_tool_class
+
     rows = load_entities('tool')
     tools = []
     for row in rows:

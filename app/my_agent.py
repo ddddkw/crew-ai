@@ -6,6 +6,7 @@ from db_utils import save_agent, delete_agent
 from llms import llm_providers_and_models, create_llm
 from datetime import datetime
 from i18n import t
+from edit_form_chrome import draw_editor_header, draw_form_section
 
 class MyAgent:
     def __init__(self, id=None, role=None, backstory=None, goal=None, temperature=None, allow_delegation=False, verbose=False, cache= None, llm_provider_model=None, max_iter=None, created_at=None, tools=None, knowledge_source_ids=None):
@@ -105,64 +106,84 @@ class MyAgent:
         form_key = f'form_{self.id}_{key}' if key else f'form_{self.id}'
         if self.edit:
             with st.expander(t('agent.title', role=self.role), expanded=True):
-                with st.form(key=form_key):
-                    self.role = st.text_input(t('agent.role'), value=self.role)
-                    self.backstory = st.text_area(t('agent.backstory'), value=self.backstory)
-                    self.goal = st.text_area(t('agent.goal'), value=self.goal)
-                    self.allow_delegation = st.checkbox(t('agent.allow_delegation'), value=self.allow_delegation)
-                    self.verbose = st.checkbox(t('agent.verbose'), value=self.verbose)
-                    self.cache = st.checkbox(t('agent.cache'), value=self.cache)
-                    available_models = llm_providers_and_models()
-                    if available_models:
-                        self.llm_provider_model = st.selectbox(t('agent.llm_provider'), options=available_models, index=available_models.index(self.llm_provider_model))
-                    else:
-                        self.llm_provider_model = None
-                        st.warning(t('agent.no_llm_configured'))
-                    self.temperature = st.slider(t('agent.temperature'), value=self.temperature, min_value=0.0, max_value=1.0)
-                    self.max_iter = st.number_input(t('agent.max_iterations'), value=self.max_iter, min_value=1, max_value=100)                    
-                    enabled_tools = [tool for tool in ss.tools]
-                    tools_key = f"{self.id}_tools_{key}" if key else f"{self.id}_tools"
-                    selected_tools = st.multiselect(
-                        t('agent.tools'),
-                        [self.get_tool_display_name(tool) for tool in enabled_tools],
-                        default=[self.get_tool_display_name(tool) for tool in self.tools],
-                        key=tools_key
+                editor_key = f"agent-editor-shell-{self.id}-{key}" if key else f"agent-editor-shell-{self.id}"
+                with st.container(border=True, key=editor_key):
+                    draw_editor_header(
+                        t("editor.agent_title"),
+                        t("editor.agent_subtitle"),
+                        model_name,
                     )
-                    if 'knowledge_sources' in ss and len(ss.knowledge_sources) > 0:
-                        knowledge_source_options = [ks.id for ks in ss.knowledge_sources]
-                        knowledge_source_labels = {ks.id: ks.name for ks in ss.knowledge_sources}
+                    with st.form(key=form_key):
+                        draw_form_section(t("editor.section_identity"), t("editor.agent_identity_desc"))
+                        self.role = st.text_input(t('agent.role'), value=self.role)
+                        col_story, col_goal = st.columns(2)
+                        with col_story:
+                            self.backstory = st.text_area(t('agent.backstory'), value=self.backstory, height=150)
+                        with col_goal:
+                            self.goal = st.text_area(t('agent.goal'), value=self.goal, height=150)
 
-                        # Filter out any knowledge source IDs that no longer exist
-                        valid_knowledge_sources = [ks_id for ks_id in self.knowledge_source_ids
-                                                if ks_id in knowledge_source_options]
+                        draw_form_section(t("editor.section_model_behavior"), t("editor.agent_model_desc"))
+                        available_models = llm_providers_and_models()
+                        if available_models:
+                            self.llm_provider_model = st.selectbox(t('agent.llm_provider'), options=available_models, index=available_models.index(self.llm_provider_model))
+                        else:
+                            self.llm_provider_model = None
+                            st.warning(t('agent.no_llm_configured'))
+                        col_temp, col_iter = st.columns(2)
+                        with col_temp:
+                            self.temperature = st.slider(t('agent.temperature'), value=self.temperature, min_value=0.0, max_value=1.0)
+                        with col_iter:
+                            self.max_iter = st.number_input(t('agent.max_iterations'), value=self.max_iter, min_value=1, max_value=100)
+                        col_delegation, col_verbose, col_cache = st.columns(3)
+                        with col_delegation:
+                            self.allow_delegation = st.checkbox(t('agent.allow_delegation'), value=self.allow_delegation)
+                        with col_verbose:
+                            self.verbose = st.checkbox(t('agent.verbose'), value=self.verbose)
+                        with col_cache:
+                            self.cache = st.checkbox(t('agent.cache'), value=self.cache)
 
-                        # If we filtered out any IDs, update the agent's knowledge sources
-                        if len(valid_knowledge_sources) != len(self.knowledge_source_ids):
-                            self.knowledge_source_ids = valid_knowledge_sources
-                            save_agent(self)
-
-                        # Generate a unique key for the knowledge sources multiselect
-                        ks_key = f"knowledge_sources_{self.id}_{key}" if key else f"knowledge_sources_{self.id}"
-
-                        # Now use the filtered list for the multiselect with the unique key
-                        selected_knowledge_sources = st.multiselect(
-                            t('agent.knowledge_sources'),
-                            options=knowledge_source_options,
-                            default=valid_knowledge_sources,
-                            format_func=lambda x: knowledge_source_labels.get(x, "Unknown"),
-                            key=ks_key
+                        draw_form_section(t("editor.section_resources"), t("editor.agent_resources_desc"))
+                        enabled_tools = [tool for tool in ss.tools]
+                        tools_key = f"{self.id}_tools_{key}" if key else f"{self.id}_tools"
+                        selected_tools = st.multiselect(
+                            t('agent.tools'),
+                            [self.get_tool_display_name(tool) for tool in enabled_tools],
+                            default=[self.get_tool_display_name(tool) for tool in self.tools],
+                            key=tools_key
                         )
-                        self.knowledge_source_ids = selected_knowledge_sources
-                    col_save, col_cancel = st.columns(2)
-                    with col_save:
-                        submitted = st.form_submit_button(t('button.save'))
-                    with col_cancel:
-                        cancelled = st.form_submit_button(t('button.cancel'))
-                    if cancelled:
-                        self.cancel_edit()
-                    elif submitted:
-                        self.tools = [tool for tool in enabled_tools if self.get_tool_display_name(tool) in selected_tools]
-                        self.set_editable(False)
+                        if 'knowledge_sources' in ss and len(ss.knowledge_sources) > 0:
+                            knowledge_source_options = [ks.id for ks in ss.knowledge_sources]
+                            knowledge_source_labels = {ks.id: ks.name for ks in ss.knowledge_sources}
+
+                            valid_knowledge_sources = [ks_id for ks_id in self.knowledge_source_ids
+                                                    if ks_id in knowledge_source_options]
+
+                            if len(valid_knowledge_sources) != len(self.knowledge_source_ids):
+                                self.knowledge_source_ids = valid_knowledge_sources
+                                save_agent(self)
+
+                            ks_key = f"knowledge_sources_{self.id}_{key}" if key else f"knowledge_sources_{self.id}"
+
+                            selected_knowledge_sources = st.multiselect(
+                                t('agent.knowledge_sources'),
+                                options=knowledge_source_options,
+                                default=valid_knowledge_sources,
+                                format_func=lambda x: knowledge_source_labels.get(x, "Unknown"),
+                                key=ks_key
+                            )
+                            self.knowledge_source_ids = selected_knowledge_sources
+                        st.markdown('<div class="studio-editor-actions">', unsafe_allow_html=True)
+                        col_save, col_cancel = st.columns([1, 1])
+                        with col_save:
+                            submitted = st.form_submit_button(t('button.save'), type="primary")
+                        with col_cancel:
+                            cancelled = st.form_submit_button(t('button.cancel'))
+                        st.markdown('</div>', unsafe_allow_html=True)
+                        if cancelled:
+                            self.cancel_edit()
+                        elif submitted:
+                            self.tools = [tool for tool in enabled_tools if self.get_tool_display_name(tool) in selected_tools]
+                            self.set_editable(False)
         else:
             fix_columns_width()
             with st.expander(expander_title, expanded=False):

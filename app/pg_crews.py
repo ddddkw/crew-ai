@@ -32,10 +32,11 @@ class PageCrews:
 
         with st.container(border=True, key="crews-list-card"):
             editing = False
-            for crew in ss.crews:
-                crew.draw()
-                if crew.edit:
-                    editing = True
+            with st.container(key="crew-list-all"):
+                for crew in ss.crews:
+                    crew.draw()
+                    if crew.edit:
+                        editing = True
             if len(ss.crews) == 0:
                 st.write(t("crew.none_defined"))
             st.button(t("button.create_crew"), on_click=self.create_crew, disabled=editing)

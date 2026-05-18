@@ -54,21 +54,23 @@ class PageTasks:
             # Display all tasks
             with tab_objects[0]:
                 st.markdown(f"#### {t('task.all_tasks')}")
-                for task in ss.tasks:
-                    task.draw()
-                    if task.edit:
-                        editing = True
+                with st.container(key="task-list-all"):
+                    for task in ss.tasks:
+                        task.draw()
+                        if task.edit:
+                            editing = True
                 st.button(t("button.create_task"), on_click=self.create_task, disabled=editing, key="create_task_all")
 
             # Display unassigned tasks
             with tab_objects[1]:
                 st.markdown(f"#### {t('task.unassigned_tasks')}")
                 unassigned_tasks = [task for task in ss.tasks if not task_assignment[task.id]]
-                for task in unassigned_tasks:
-                    unique_key = f"{task.id}_unasigned"
-                    task.draw(key=unique_key)
-                    if task.edit:
-                        editing = True
+                with st.container(key="task-list-unassigned"):
+                    for task in unassigned_tasks:
+                        unique_key = f"{task.id}_unasigned"
+                        task.draw(key=unique_key)
+                        if task.edit:
+                            editing = True
                 st.button(t("button.create_task"), on_click=self.create_task, disabled=editing, key="create_task_unassigned")
 
             # Display tasks grouped by crew
@@ -76,11 +78,12 @@ class PageTasks:
                 with tab_objects[i]:
                     st.markdown(f"#### {crew.name}")
                     assigned_tasks = [task for task in crew.tasks]
-                    for task in assigned_tasks:
-                        unique_key = f"{task.id}_{crew.name}"
-                        task.draw(key=unique_key)
-                        if task.edit:
-                            editing = True
+                    with st.container(key=f"task-list-crew-{i}"):
+                        for task in assigned_tasks:
+                            unique_key = f"{task.id}_{crew.name}"
+                            task.draw(key=unique_key)
+                            if task.edit:
+                                editing = True
                     st.button(t("button.create_task"), on_click=self.create_task, disabled=editing,kwargs={'crew': crew}, key=f"create_task_{crew.id}")
 
 

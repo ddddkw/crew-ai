@@ -28,3 +28,1489 @@ stop_venv.bat
 /.superpowers/
 .omx/
 .crewai_storage/
+/codex-cdp-profile/Ad Blocking/blocklist
+/codex-cdp-profile/Autofill/4.0.1.32/autofill_bypass_cache_forms.json
+/codex-cdp-profile/Autofill/4.0.1.32/edge_autofill_global_block_list.json
+/codex-cdp-profile/Autofill/4.0.1.32/manifest.json
+/codex-cdp-profile/Autofill/4.0.1.32/regex_patterns.json
+/codex-cdp-profile/Autofill/4.0.1.32/v1FieldTypes.json
+/codex-cdp-profile/AutoLaunchProtocolsComponent/1.0.0.10/manifest.json
+/codex-cdp-profile/AutoLaunchProtocolsComponent/1.0.0.10/protocols.json
+/codex-cdp-profile/CertificateRevocation/6498.2025.9.4/crl-set
+/codex-cdp-profile/CertificateRevocation/6498.2025.9.4/manifest.json
+/codex-cdp-profile/component_crx_cache/00af3f07b5abb71f6d30337e1eef62fa280f06ef19485c0cf6b72171f92ccc0a
+/codex-cdp-profile/component_crx_cache/000ac7dc9366969db9d1e41810a3a27c747a7623535d856eecc2de86cfed80c7
+/codex-cdp-profile/component_crx_cache/1e1174204f8a0a13de2e224a1be882d2724a6fd13ba18a895fd5098fd5552460
+/codex-cdp-profile/component_crx_cache/4a84f2bdd63dabe6abde22b9047a6942eeb7bdf93d8435cc4b188dbe72d9e30d
+/codex-cdp-profile/component_crx_cache/04fad2fb7a1c552147e0b471ede01a383d6bd5d027e9399c9eab28f402014517
+/codex-cdp-profile/component_crx_cache/5a8a5a5d1f948d724847c005c9875507c34e5b76e73192fc1f2d22605fd69bd7
+/codex-cdp-profile/component_crx_cache/07e0ad6da3d30a27962c6e09da9798ba1745856eaad71a036e2f639e93ea0b27
+/codex-cdp-profile/component_crx_cache/8a5ae7ba183c6349a26d5b81ca4379b1e9e147ecfdc7d3bd0e7d205410e32fb4
+/codex-cdp-profile/component_crx_cache/8d64e3a35ee2c3e0b9e33afd63069fdc917a5647dd1e20c5ead97955fb6979f9
+/codex-cdp-profile/component_crx_cache/017cd1932d44fa3f5b7dcfd7ace33af995856842862c48ffbdb1df11e661a0ee
+/codex-cdp-profile/component_crx_cache/25f8a4427ac08e5c338206ddb34f0ffe9a6469100c33d3aa1ca0c66f5d1f421e
+/codex-cdp-profile/component_crx_cache/38b9a60260c000df8eadd64719d86020e30480df9afb893e60b5ef7d780616a5
+/codex-cdp-profile/component_crx_cache/77ab8c118fd534ab1cf48f984963d6d35ebf06580b0041ec7d594ce88561ad84
+/codex-cdp-profile/component_crx_cache/86db8339707145aece80862a555f623b36c23a4a7983742b4452b374d7de0864
+/codex-cdp-profile/component_crx_cache/95fd9d48e4fc245a3f3a99a3a16ecd1355050ba3f4afc555f19a97c7f9b49677
+/codex-cdp-profile/component_crx_cache/96b9640eef0668f4d266932438731ee473f9c1186e1c64440512025567be62b7
+/codex-cdp-profile/component_crx_cache/720517793663c90e0dbd77cb42709bac49af733f83f73320ba89859d9b0310e0
+/codex-cdp-profile/component_crx_cache/a8c7c2ff8c16f63b54bd7ee1428a3dac61002e572529eb98c1cabb18a685e04d
+/codex-cdp-profile/component_crx_cache/a81d1959892ae4180554347df1b97834abba2e1a5e6b9aeba000ecea26eabecc
+/codex-cdp-profile/component_crx_cache/a00289af85d31d698a0f6753b6ce67dbab4bdff639bde5fc588a5d5d8a3885d5
+/codex-cdp-profile/component_crx_cache/a922b7d113e67ce71528805d3c6780f7a207cada8ad56642047577358e46ba3d
+/codex-cdp-profile/component_crx_cache/a9592ae40712c6cfdf7d142e2563ca4ec8f696cfe53e267ad0ea630c43beaa33
+/codex-cdp-profile/component_crx_cache/aac07b6f14d6fe0ca9755403cd814ff6ab4a013a04e0507a70feab5803b027f4
+/codex-cdp-profile/component_crx_cache/b27bec7581505715364f132de1998818c82462dbf55a1f55f9b15e29e988d791
+/codex-cdp-profile/component_crx_cache/bd5f9a7c7933559330c04eacbdb3456a6c95305600ffb89209e3f38cee35b177
+/codex-cdp-profile/component_crx_cache/bec8ead1da3c9600fe66bbcc0e7a9bed9a184c1be821b4d23570c6b7af7f0410
+/codex-cdp-profile/component_crx_cache/cdff9e6a793fd77b105ed2ef1bf1788c1820af7d6f283202385434487672be8f
+/codex-cdp-profile/component_crx_cache/d8be2f29efefc8adf8b3dff2dfed8ba2f2c796ff5009bf026cff7ebf9d08b73b
+/codex-cdp-profile/component_crx_cache/e49e08605c0aef671657dd880b748c1d0cc4887972b65a68e40e93b329056e51
+/codex-cdp-profile/component_crx_cache/f081de18a604e95a175eaf4dd91b35b7f17ad4de24ee2f20eeb034c979bbcccb
+/codex-cdp-profile/component_crx_cache/fa29a6d5775ff340900a65b39b02fc8b4b77d403c048d8debf22f2f5d09c61a0
+/codex-cdp-profile/component_crx_cache/metadata.json
+/codex-cdp-profile/Crashpad/metadata
+/codex-cdp-profile/Crashpad/settings.dat
+/codex-cdp-profile/Crashpad/throttle_store.dat
+/codex-cdp-profile/Default/AutofillAiModelCache/LOCK
+/codex-cdp-profile/Default/AutofillAiModelCache/LOG
+/codex-cdp-profile/Default/AutofillAiModelCache/LOG.old
+/codex-cdp-profile/Default/AutofillStrikeDatabase/LOCK
+/codex-cdp-profile/Default/AutofillStrikeDatabase/LOG
+/codex-cdp-profile/Default/AutofillStrikeDatabase/LOG.old
+/codex-cdp-profile/Default/BudgetDatabase/LOCK
+/codex-cdp-profile/Default/BudgetDatabase/LOG
+/codex-cdp-profile/Default/BudgetDatabase/LOG.old
+/codex-cdp-profile/Default/Cache/Cache_Data/data_0
+/codex-cdp-profile/Default/Cache/Cache_Data/data_1
+/codex-cdp-profile/Default/Cache/Cache_Data/data_2
+/codex-cdp-profile/Default/Cache/Cache_Data/data_3
+/codex-cdp-profile/Default/Cache/Cache_Data/f_000001
+/codex-cdp-profile/Default/Cache/Cache_Data/f_000002
+/codex-cdp-profile/Default/Cache/Cache_Data/f_000003
+/codex-cdp-profile/Default/Cache/Cache_Data/f_000004
+/codex-cdp-profile/Default/Cache/Cache_Data/f_000005
+/codex-cdp-profile/Default/Cache/Cache_Data/f_000006
+/codex-cdp-profile/Default/Cache/Cache_Data/index
+/codex-cdp-profile/Default/Cache/No_Vary_Search/journal.baj
+/codex-cdp-profile/Default/Cache/No_Vary_Search/snapshot.baf
+/codex-cdp-profile/Default/ClientCertificates/LOCK
+/codex-cdp-profile/Default/ClientCertificates/LOG
+/codex-cdp-profile/Default/ClientCertificates/LOG.old
+/codex-cdp-profile/Default/Code Cache/js/index-dir/the-real-index
+/codex-cdp-profile/Default/Code Cache/js/2a8a6f695a3ff316_0
+/codex-cdp-profile/Default/Code Cache/js/2cca9bc741a6516d_0
+/codex-cdp-profile/Default/Code Cache/js/5cce1706364839f1_0
+/codex-cdp-profile/Default/Code Cache/js/5fbb54f36261c413_0
+/codex-cdp-profile/Default/Code Cache/js/6af99d583d5c6f76_0
+/codex-cdp-profile/Default/Code Cache/js/7de0dc67a2b3a69c_0
+/codex-cdp-profile/Default/Code Cache/js/8bb1867be67136eb_0
+/codex-cdp-profile/Default/Code Cache/js/050b8bd4af352aa4_0
+/codex-cdp-profile/Default/Code Cache/js/945cb8fb56d09a8e_0
+/codex-cdp-profile/Default/Code Cache/js/7347d5b81ee7e30e_0
+/codex-cdp-profile/Default/Code Cache/js/8020acacb3d13763_0
+/codex-cdp-profile/Default/Code Cache/js/b21fb45197b9c728_0
+/codex-cdp-profile/Default/Code Cache/js/ba678a2fbd8c358c_0
+/codex-cdp-profile/Default/Code Cache/js/baded5730168391f_0
+/codex-cdp-profile/Default/Code Cache/js/e9a142a21b9ad9ef_0
+/codex-cdp-profile/Default/Code Cache/js/e94999eac39dfd99_0
+/codex-cdp-profile/Default/Code Cache/js/ebce9e52a869b921_0
+/codex-cdp-profile/Default/Code Cache/js/index
+/codex-cdp-profile/Default/Code Cache/wasm/index-dir/the-real-index
+/codex-cdp-profile/Default/Code Cache/wasm/index
+/codex-cdp-profile/Default/Collections/collectionsSQLite
+/codex-cdp-profile/Default/Collections/collectionsSQLite-journal
+/codex-cdp-profile/Default/commerce_subscription_db/LOCK
+/codex-cdp-profile/Default/commerce_subscription_db/LOG
+/codex-cdp-profile/Default/commerce_subscription_db/LOG.old
+/codex-cdp-profile/Default/DawnGraphiteCache/data_0
+/codex-cdp-profile/Default/DawnGraphiteCache/data_1
+/codex-cdp-profile/Default/DawnGraphiteCache/data_2
+/codex-cdp-profile/Default/DawnGraphiteCache/data_3
+/codex-cdp-profile/Default/DawnGraphiteCache/index
+/codex-cdp-profile/Default/DawnWebGPUCache/data_0
+/codex-cdp-profile/Default/DawnWebGPUCache/data_1
+/codex-cdp-profile/Default/DawnWebGPUCache/data_2
+/codex-cdp-profile/Default/DawnWebGPUCache/data_3
+/codex-cdp-profile/Default/DawnWebGPUCache/index
+/codex-cdp-profile/Default/discount_infos_db/LOCK
+/codex-cdp-profile/Default/discount_infos_db/LOG
+/codex-cdp-profile/Default/discount_infos_db/LOG.old
+/codex-cdp-profile/Default/discounts_db/LOCK
+/codex-cdp-profile/Default/discounts_db/LOG
+/codex-cdp-profile/Default/discounts_db/LOG.old
+/codex-cdp-profile/Default/DualEngine/SiteList-Consumer.json
+/codex-cdp-profile/Default/EdgeEDrop/EdgeEDropSQLite.db-journal
+/codex-cdp-profile/Default/EdgeHubAppUsage/EdgeHubAppUsageSQLite.db-journal
+/codex-cdp-profile/Default/EdgePushStorageWithConnectTokenAndKey/LOCK
+/codex-cdp-profile/Default/EdgePushStorageWithConnectTokenAndKey/LOG
+/codex-cdp-profile/Default/EdgePushStorageWithConnectTokenAndKey/LOG.old
+/codex-cdp-profile/Default/EntityExtraction/domains_config.json
+/codex-cdp-profile/Default/Extension Rules/000003.log
+/codex-cdp-profile/Default/Extension Rules/CURRENT
+/codex-cdp-profile/Default/Extension Rules/LOCK
+/codex-cdp-profile/Default/Extension Rules/LOG
+/codex-cdp-profile/Default/Extension Rules/LOG.old
+/codex-cdp-profile/Default/Extension Rules/MANIFEST-000001
+/codex-cdp-profile/Default/Extension Scripts/000003.log
+/codex-cdp-profile/Default/Extension Scripts/CURRENT
+/codex-cdp-profile/Default/Extension Scripts/LOCK
+/codex-cdp-profile/Default/Extension Scripts/LOG
+/codex-cdp-profile/Default/Extension Scripts/LOG.old
+/codex-cdp-profile/Default/Extension Scripts/MANIFEST-000001
+/codex-cdp-profile/Default/Extension State/000003.log
+/codex-cdp-profile/Default/Extension State/CURRENT
+/codex-cdp-profile/Default/Extension State/LOCK
+/codex-cdp-profile/Default/Extension State/LOG
+/codex-cdp-profile/Default/Extension State/LOG.old
+/codex-cdp-profile/Default/Extension State/MANIFEST-000001
+/codex-cdp-profile/Default/Extensions/jmjflgjpcpepeafmmgdpfkogkghcpiha/1.2.1_0/_metadata/computed_hashes.json
+/codex-cdp-profile/Default/Extensions/jmjflgjpcpepeafmmgdpfkogkghcpiha/1.2.1_0/_metadata/verified_contents.json
+/codex-cdp-profile/Default/Extensions/jmjflgjpcpepeafmmgdpfkogkghcpiha/1.2.1_0/content.js
+/codex-cdp-profile/Default/Extensions/jmjflgjpcpepeafmmgdpfkogkghcpiha/1.2.1_0/content_new.js
+/codex-cdp-profile/Default/Extensions/jmjflgjpcpepeafmmgdpfkogkghcpiha/1.2.1_0/manifest.json
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/_locales/en/messages.json
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/_locales/zh_CN/messages.json
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/_metadata/verified_contents.json
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/assets/icon.svg
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/assets/icon-16.png
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/assets/icon-48.png
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/assets/icon-128.png
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/assets/icon-512.png
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/kdocs/assets/__uno-bcdf16b1.js
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/kdocs/assets/__uno-d621b2c3.css
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/kdocs/assets/content-script-1b827b1e.js
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/kdocs/assets/el-button-6a4ccddc.js
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/kdocs/assets/el-button-190cf4ea.css
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/kdocs/assets/icon-21a12526.js
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/kdocs/assets/icon-f201c060.svg
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/kdocs/assets/index.vue_vue_type_style_index_0_lang-8a82b6b6.js
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/kdocs/assets/index.vue_vue_type_style_index_0_lang-c7f026fb.js
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/kdocs/assets/index-8a5dbfa0.css
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/kdocs/assets/index-13d15f9e.css
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/kdocs/assets/index-28ec3cbd.js
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/kdocs/assets/index-511ba7f4.css
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/kdocs/assets/index-3936d92d.css
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/kdocs/assets/index-c2d291ee.css
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/kdocs/assets/index-d1314f1d.css
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/kdocs/assets/index-ec261fab.css
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/kdocs/assets/loading-d6234caf.js
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/kdocs/assets/login-917d5e81.js
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/kdocs/assets/notice-cc8b7b23.js
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/kdocs/assets/options-4f83534d.js
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/kdocs/assets/path-2d5bdb60.js
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/kdocs/assets/permission-2eb1009c.js
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/kdocs/assets/toast-0e809f12.js
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/kdocs/assets/url-4ec7d24b.js
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/kdocs/assets/url-68a935bf.js
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/kdocs/assets/useConvertInfo-d030bf05.js
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/kdocs/assets/usePath-adfe87b0.css
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/kdocs/assets/usePath-d701627a.js
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/kdocs/assets/useSettingConfig-df0ef83e.js
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/kdocs/background/index.mjs
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/kdocs/contentScripts/index.global.js
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/kdocs/contentScripts/style.css
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/kdocs/loading/index.html
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/kdocs/login/index.html
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/kdocs/notice/index.html
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/kdocs/options/index.html
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/kdocs/path/index.html
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/kdocs/permission/index.html
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/kdocs/toast/index.html
+/codex-cdp-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.7_0/manifest.json
+/codex-cdp-profile/Default/GPUCache/data_0
+/codex-cdp-profile/Default/GPUCache/data_1
+/codex-cdp-profile/Default/GPUCache/data_2
+/codex-cdp-profile/Default/GPUCache/data_3
+/codex-cdp-profile/Default/GPUCache/index
+/codex-cdp-profile/Default/Local Extension Settings/jdiccldimpdaibmpdkjnbmckianbfold/000003.log
+/codex-cdp-profile/Default/Local Extension Settings/jdiccldimpdaibmpdkjnbmckianbfold/CURRENT
+/codex-cdp-profile/Default/Local Extension Settings/jdiccldimpdaibmpdkjnbmckianbfold/LOCK
+/codex-cdp-profile/Default/Local Extension Settings/jdiccldimpdaibmpdkjnbmckianbfold/LOG
+/codex-cdp-profile/Default/Local Extension Settings/jdiccldimpdaibmpdkjnbmckianbfold/MANIFEST-000001
+/codex-cdp-profile/Default/Local Storage/leveldb/000003.log
+/codex-cdp-profile/Default/Local Storage/leveldb/CURRENT
+/codex-cdp-profile/Default/Local Storage/leveldb/LOCK
+/codex-cdp-profile/Default/Local Storage/leveldb/LOG
+/codex-cdp-profile/Default/Local Storage/leveldb/LOG.old
+/codex-cdp-profile/Default/Local Storage/leveldb/MANIFEST-000001
+/codex-cdp-profile/Default/Network/Cookies
+/codex-cdp-profile/Default/Network/Cookies-journal
+/codex-cdp-profile/Default/Network/Device Bound Sessions
+/codex-cdp-profile/Default/Network/Device Bound Sessions-journal
+/codex-cdp-profile/Default/Network/Network Persistent State
+/codex-cdp-profile/Default/Network/NetworkDataMigrated
+/codex-cdp-profile/Default/Network/Reporting and NEL
+/codex-cdp-profile/Default/Network/Reporting and NEL-journal
+/codex-cdp-profile/Default/Network/SCT Auditing Pending Reports
+/codex-cdp-profile/Default/Network/Sdch Dictionaries
+/codex-cdp-profile/Default/Network/TransportSecurity
+/codex-cdp-profile/Default/Network/Trust Tokens
+/codex-cdp-profile/Default/Network/Trust Tokens-journal
+/codex-cdp-profile/Default/Nurturing/campaign_history
+/codex-cdp-profile/Default/Nurturing/campaign_history-journal
+/codex-cdp-profile/Default/optimization_guide_hint_cache_store/LOCK
+/codex-cdp-profile/Default/optimization_guide_hint_cache_store/LOG
+/codex-cdp-profile/Default/optimization_guide_hint_cache_store/LOG.old
+/codex-cdp-profile/Default/parcel_tracking_db/LOCK
+/codex-cdp-profile/Default/parcel_tracking_db/LOG
+/codex-cdp-profile/Default/parcel_tracking_db/LOG.old
+/codex-cdp-profile/Default/PersistentOriginTrials/LOCK
+/codex-cdp-profile/Default/PersistentOriginTrials/LOG
+/codex-cdp-profile/Default/PersistentOriginTrials/LOG.old
+/codex-cdp-profile/Default/Safe Browsing Network/NetworkDataMigrated
+/codex-cdp-profile/Default/Safe Browsing Network/Safe Browsing Cookies
+/codex-cdp-profile/Default/Safe Browsing Network/Safe Browsing Cookies-journal
+/codex-cdp-profile/Default/Segmentation Platform/SegmentInfoDB/LOCK
+/codex-cdp-profile/Default/Segmentation Platform/SegmentInfoDB/LOG
+/codex-cdp-profile/Default/Segmentation Platform/SegmentInfoDB/LOG.old
+/codex-cdp-profile/Default/Segmentation Platform/SignalDB/LOCK
+/codex-cdp-profile/Default/Segmentation Platform/SignalDB/LOG
+/codex-cdp-profile/Default/Segmentation Platform/SignalDB/LOG.old
+/codex-cdp-profile/Default/Segmentation Platform/SignalStorageConfigDB/LOCK
+/codex-cdp-profile/Default/Segmentation Platform/SignalStorageConfigDB/LOG
+/codex-cdp-profile/Default/Segmentation Platform/SignalStorageConfigDB/LOG.old
+/codex-cdp-profile/Default/Session Storage/000003.log
+/codex-cdp-profile/Default/Session Storage/CURRENT
+/codex-cdp-profile/Default/Session Storage/LOCK
+/codex-cdp-profile/Default/Session Storage/LOG
+/codex-cdp-profile/Default/Session Storage/LOG.old
+/codex-cdp-profile/Default/Session Storage/MANIFEST-000001
+/codex-cdp-profile/Default/Sessions/Session_13423577095592398
+/codex-cdp-profile/Default/Sessions/Tabs_13423579492348936
+/codex-cdp-profile/Default/Shared Dictionary/cache/index-dir/the-real-index
+/codex-cdp-profile/Default/Shared Dictionary/cache/index
+/codex-cdp-profile/Default/Shared Dictionary/db
+/codex-cdp-profile/Default/Shared Dictionary/db-journal
+/codex-cdp-profile/Default/shared_proto_db/metadata/000003.log
+/codex-cdp-profile/Default/shared_proto_db/metadata/CURRENT
+/codex-cdp-profile/Default/shared_proto_db/metadata/LOCK
+/codex-cdp-profile/Default/shared_proto_db/metadata/LOG
+/codex-cdp-profile/Default/shared_proto_db/metadata/LOG.old
+/codex-cdp-profile/Default/shared_proto_db/metadata/MANIFEST-000001
+/codex-cdp-profile/Default/shared_proto_db/000003.log
+/codex-cdp-profile/Default/shared_proto_db/CURRENT
+/codex-cdp-profile/Default/shared_proto_db/LOCK
+/codex-cdp-profile/Default/shared_proto_db/LOG
+/codex-cdp-profile/Default/shared_proto_db/LOG.old
+/codex-cdp-profile/Default/shared_proto_db/MANIFEST-000001
+/codex-cdp-profile/Default/Site Characteristics Database/000003.log
+/codex-cdp-profile/Default/Site Characteristics Database/CURRENT
+/codex-cdp-profile/Default/Site Characteristics Database/LOCK
+/codex-cdp-profile/Default/Site Characteristics Database/LOG
+/codex-cdp-profile/Default/Site Characteristics Database/LOG.old
+/codex-cdp-profile/Default/Site Characteristics Database/MANIFEST-000001
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index-dir/the-real-index
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/6f3a0dc5e6916f1e_0
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index-dir/the-real-index
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_0
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_1
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_2
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_3
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/index
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_0
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_1
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_2
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_3
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/index
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_0
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_1
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_2
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_3
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/index
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Local Storage/leveldb/000003.log
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Local Storage/leveldb/CURRENT
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Local Storage/leveldb/LOCK
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Local Storage/leveldb/LOG
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Local Storage/leveldb/MANIFEST-000001
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/Device Bound Sessions
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/Device Bound Sessions-journal
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/Network Persistent State
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/NetworkDataMigrated
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/SCT Auditing Pending Reports
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/Sdch Dictionaries
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/Trust Tokens
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/Trust Tokens-journal
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Session Storage/000003.log
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Session Storage/CURRENT
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Session Storage/LOCK
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Session Storage/LOG
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Session Storage/MANIFEST-000001
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Shared Dictionary/cache/index-dir/the-real-index
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Shared Dictionary/cache/index
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Shared Dictionary/db
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Shared Dictionary/db-journal
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/SharedStorage
+/codex-cdp-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/SharedStorage-wal
+/codex-cdp-profile/Default/Sync Data/LevelDB/000003.log
+/codex-cdp-profile/Default/Sync Data/LevelDB/CURRENT
+/codex-cdp-profile/Default/Sync Data/LevelDB/LOCK
+/codex-cdp-profile/Default/Sync Data/LevelDB/LOG
+/codex-cdp-profile/Default/Sync Data/LevelDB/LOG.old
+/codex-cdp-profile/Default/Sync Data/LevelDB/MANIFEST-000001
+/codex-cdp-profile/Default/Sync Data/Logs/cv_debug.log
+/codex-cdp-profile/Default/Sync Data/Logs/sync_diagnostic.log
+/codex-cdp-profile/Default/WebStorage/QuotaManager
+/codex-cdp-profile/Default/WebStorage/QuotaManager-journal
+/codex-cdp-profile/Default/Workspaces/Logs/Workspaces Internals Logs
+/codex-cdp-profile/Default/Affiliation Database
+/codex-cdp-profile/Default/Affiliation Database-journal
+/codex-cdp-profile/Default/arbitration_service_config.json
+/codex-cdp-profile/Default/BookmarkMergedSurfaceOrdering
+/codex-cdp-profile/Default/BrowsingTopicsSiteData
+/codex-cdp-profile/Default/BrowsingTopicsSiteData-journal
+/codex-cdp-profile/Default/BrowsingTopicsState
+/codex-cdp-profile/Default/DashTrackerDatabase
+/codex-cdp-profile/Default/DashTrackerDatabase-journal
+/codex-cdp-profile/Default/DIPS
+/codex-cdp-profile/Default/DIPS-wal
+/codex-cdp-profile/Default/ExtensionActivityComp
+/codex-cdp-profile/Default/ExtensionActivityEdge
+/codex-cdp-profile/Default/ExtensionActivityEdge-journal
+/codex-cdp-profile/Default/Favicons
+/codex-cdp-profile/Default/Favicons-journal
+/codex-cdp-profile/Default/favorites_diagnostic.log
+/codex-cdp-profile/Default/heavy_ad_intervention_opt_out.db-journal
+/codex-cdp-profile/Default/History
+/codex-cdp-profile/Default/History-journal
+/codex-cdp-profile/Default/HubApps
+/codex-cdp-profile/Default/HubApps Icons
+/codex-cdp-profile/Default/HubApps Icons-journal
+/codex-cdp-profile/Default/load_statistics.db-shm
+/codex-cdp-profile/Default/load_statistics.db-wal
+/codex-cdp-profile/Default/LOCK
+/codex-cdp-profile/Default/LOG
+/codex-cdp-profile/Default/LOG.old
+/codex-cdp-profile/Default/Login Data
+/codex-cdp-profile/Default/Login Data For Account
+/codex-cdp-profile/Default/Login Data For Account-journal
+/codex-cdp-profile/Default/Login Data-journal
+/codex-cdp-profile/Default/Network Action Predictor
+/codex-cdp-profile/Default/Network Action Predictor-journal
+/codex-cdp-profile/Default/passkey_enclave_state
+/codex-cdp-profile/Default/Preferences
+/codex-cdp-profile/Default/PreferredApps
+/codex-cdp-profile/Default/README
+/codex-cdp-profile/Default/Secure Preferences
+/codex-cdp-profile/Default/ServerCertificate
+/codex-cdp-profile/Default/ServerCertificate-journal
+/codex-cdp-profile/Default/SharedStorage
+/codex-cdp-profile/Default/SharedStorage-wal
+/codex-cdp-profile/Default/Shortcuts
+/codex-cdp-profile/Default/Shortcuts-journal
+/codex-cdp-profile/Default/SiteList.xml
+/codex-cdp-profile/Default/Top Sites
+/codex-cdp-profile/Default/Top Sites-journal
+/codex-cdp-profile/Default/trusted_vault.pb
+/codex-cdp-profile/Default/Vpn Tokens
+/codex-cdp-profile/Default/Vpn Tokens-journal
+/codex-cdp-profile/Default/Web Data
+/codex-cdp-profile/Default/Web Data-journal
+/codex-cdp-profile/Domain Actions/3.0.0.18/domain_actions.dll
+/codex-cdp-profile/Domain Actions/3.0.0.18/manifest.json
+/codex-cdp-profile/EADPData Component/4.0.4.7/data.txt
+/codex-cdp-profile/EADPData Component/4.0.4.7/manifest.json
+/codex-cdp-profile/Edge Data Protection Lists/2.0.0.0/manifest.json
+/codex-cdp-profile/Edge Data Protection Lists/2.0.0.0/office_endpoints_list.json
+/codex-cdp-profile/Edge Data Protection Lists/2.0.0.0/smart_switch_list.json
+/codex-cdp-profile/Edge Entity Extraction/2026.3.5.5/domains_config_gz/2.0.0/asset
+/codex-cdp-profile/Edge Entity Extraction/2026.3.5.5/domains_config_gz/2.0.0/metadata.json
+/codex-cdp-profile/Edge Entity Extraction/2026.3.5.5/domains_config_gz/2.0.0-DeepEEEnUs/asset
+/codex-cdp-profile/Edge Entity Extraction/2026.3.5.5/domains_config_gz/2.0.0-DeepEEEnUs/metadata.json
+/codex-cdp-profile/Edge Entity Extraction/2026.3.5.5/domains_config_gz/2.0.0-DeepEEEnUsProductByRegexOnly/asset
+/codex-cdp-profile/Edge Entity Extraction/2026.3.5.5/domains_config_gz/2.0.0-DeepEEEnUsProductByRegexOnly/metadata.json
+/codex-cdp-profile/Edge Entity Extraction/2026.3.5.5/domains_config_gz/3.0.0/asset
+/codex-cdp-profile/Edge Entity Extraction/2026.3.5.5/domains_config_gz/3.0.0/metadata.json
+/codex-cdp-profile/Edge Entity Extraction/2026.3.5.5/domains_config_gz/3.0.0-DeepEEEnUs/asset
+/codex-cdp-profile/Edge Entity Extraction/2026.3.5.5/domains_config_gz/3.0.0-DeepEEEnUs/metadata.json
+/codex-cdp-profile/Edge Entity Extraction/2026.3.5.5/domains_config_gz/3.0.0-DeepEEEnUsProductByRegexOnly/asset
+/codex-cdp-profile/Edge Entity Extraction/2026.3.5.5/domains_config_gz/3.0.0-DeepEEEnUsProductByRegexOnly/metadata.json
+/codex-cdp-profile/Edge Entity Extraction/2026.3.5.5/domains_config_gz/3.0.0-DeepEEEnUsRegexOnly/asset
+/codex-cdp-profile/Edge Entity Extraction/2026.3.5.5/domains_config_gz/3.0.0-DeepEEEnUsRegexOnly/metadata.json
+/codex-cdp-profile/Edge Entity Extraction/2026.3.5.5/domains_config_gz/3.0.0-DeepEEUrlCategoryRegex/asset
+/codex-cdp-profile/Edge Entity Extraction/2026.3.5.5/domains_config_gz/3.0.0-DeepEEUrlCategoryRegex/metadata.json
+/codex-cdp-profile/Edge Entity Extraction/2026.3.5.5/domains_config_gz/3.0.0-DeepEEUrlCategoryRegexCustom/asset
+/codex-cdp-profile/Edge Entity Extraction/2026.3.5.5/domains_config_gz/3.0.0-DeepEEUrlCategoryRegexCustom/metadata.json
+/codex-cdp-profile/Edge Entity Extraction/2026.3.5.5/domains_config_gz/3.0.0-HeuristicClassifierOptimization/asset
+/codex-cdp-profile/Edge Entity Extraction/2026.3.5.5/domains_config_gz/3.0.0-HeuristicClassifierOptimization/metadata.json
+/codex-cdp-profile/Edge Entity Extraction/2026.3.5.5/onnx.product.desktop.en/3.1.0/asset
+/codex-cdp-profile/Edge Entity Extraction/2026.3.5.5/onnx.product.desktop.en/3.1.0/metadata.json
+/codex-cdp-profile/Edge Entity Extraction/2026.3.5.5/manifest.json
+/codex-cdp-profile/Edge Notifications/0.0.0.46/arbitration_metadata.txt
+/codex-cdp-profile/Edge Notifications/0.0.0.46/manifest.json
+/codex-cdp-profile/Edge Shopping/2.1.105.0/auto_open_controller.js
+/codex-cdp-profile/Edge Shopping/2.1.105.0/edge_checkout_page_validator.js
+/codex-cdp-profile/Edge Shopping/2.1.105.0/edge_confirmation_page_validator.js
+/codex-cdp-profile/Edge Shopping/2.1.105.0/edge_driver.js
+/codex-cdp-profile/Edge Shopping/2.1.105.0/edge_tracking_page_validator.js
+/codex-cdp-profile/Edge Shopping/2.1.105.0/manifest.json
+/codex-cdp-profile/Edge Shopping/2.1.105.0/product_page.js
+/codex-cdp-profile/Edge Shopping/2.1.105.0/shopping.html
+/codex-cdp-profile/Edge Shopping/2.1.105.0/shopping.js
+/codex-cdp-profile/Edge Shopping/2.1.105.0/shopping_fre.html
+/codex-cdp-profile/Edge Shopping/2.1.105.0/shopping_iframe_driver.js
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_activity_hub_dark.png/0.0.10/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_activity_hub_dark.png/0.0.10/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_activity_hub_hc.png/0.0.10/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_activity_hub_hc.png/0.0.10/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_activity_hub_light.png/0.0.10/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_activity_hub_light.png/0.0.10/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_amazon_music_dark.png/0.0.1/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_amazon_music_dark.png/0.0.1/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_amazon_music_hc.png/0.0.1/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_amazon_music_hc.png/0.0.1/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_amazon_music_light.png/0.0.1/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_amazon_music_light.png/0.0.1/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_amazon_music_light.png/1.4.13/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_amazon_music_light.png/1.4.13/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_apple_music.png/0.0.8/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_apple_music.png/0.0.8/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_apple_music.png/1.4.12/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_apple_music.png/1.4.12/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_apple_music_hc.png/0.0.8/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_apple_music_hc.png/0.0.8/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_chatB_active_dark.png/1.6.8/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_chatB_active_dark.png/1.6.8/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_chatB_active_light.png/1.6.8/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_chatB_active_light.png/1.6.8/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_chatB_hc.png/1.6.8/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_chatB_hc.png/1.6.8/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_compose_hc.png/1.0.2/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_compose_hc.png/1.0.2/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_compose_maximal_dark.png/1.0.2/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_compose_maximal_dark.png/1.0.2/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_compose_maximal_light.png/1.0.2/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_compose_maximal_light.png/1.0.2/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_controller_hc.png/1.0.11/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_controller_hc.png/1.0.11/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_controller_maximal_dark.png/1.0.11/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_controller_maximal_dark.png/1.0.11/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_controller_maximal_light.png/1.0.11/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_controller_maximal_light.png/1.0.11/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_copilot_hc.png/1.3.26/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_copilot_hc.png/1.3.26/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_copilot_rainbow.png/1.3.26/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_copilot_rainbow.png/1.3.26/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_designer_color.png/0.0.1/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_designer_color.png/0.0.1/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_designer_color.png/1.0.27/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_designer_color.png/1.0.27/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_designer_hc.png/0.0.1/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_designer_hc.png/0.0.1/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_designer_hc.png/1.0.27/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_designer_hc.png/1.0.27/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_discover_maximal_color_dark.png/0.0.8/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_discover_maximal_color_dark.png/0.0.8/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_discover_maximal_color_light.png/0.0.8/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_discover_maximal_color_light.png/0.0.8/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_discover_maximal_monoline_light.png/0.0.8/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_discover_maximal_monoline_light.png/0.0.8/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_edrop_hc.png/1.1.18/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_edrop_hc.png/1.1.18/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_edrop_maximal_dark.png/1.1.18/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_edrop_maximal_dark.png/1.1.18/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_edrop_maximal_light.png/1.1.18/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_edrop_maximal_light.png/1.1.18/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_etree_hc.png/1.2.3/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_etree_hc.png/1.2.3/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_etree_maximal_dark.png/1.2.3/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_etree_maximal_dark.png/1.2.3/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_etree_maximal_light.png/1.2.3/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_etree_maximal_light.png/1.2.3/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_excel.png/1.7.43/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_excel.png/1.7.43/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_facebook_messenger.png/0.0.8/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_facebook_messenger.png/0.0.8/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_facebook_messenger.png/1.5.15/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_facebook_messenger.png/1.5.15/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_facebook_messenger_hc.png/0.0.8/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_facebook_messenger_hc.png/0.0.8/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_fluent_discover_hc.png/0.0.8/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_fluent_discover_hc.png/0.0.8/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_fluent_edrop_hc.png/0.0.5/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_fluent_edrop_hc.png/0.0.5/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_fluent_games_hc.png/0.0.13/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_fluent_games_hc.png/0.0.13/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_fluent_office_hc.png/0.0.11/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_fluent_office_hc.png/0.0.11/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_fluent_office_hc.png/1.7.43/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_fluent_office_hc.png/1.7.43/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_fluent_onenote_hc.png/0.0.8/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_fluent_onenote_hc.png/0.0.8/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_fluent_outlook_hc.png/0.0.12/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_fluent_outlook_hc.png/0.0.12/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_fluent_search_hc.png/0.0.7/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_fluent_search_hc.png/0.0.7/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_fluent_shopping_hc.png/0.0.7/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_fluent_shopping_hc.png/0.0.7/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_fluent_teams_hc.png/0.0.2/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_fluent_teams_hc.png/0.0.2/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_fluent_toolbox_hc.png/0.0.7/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_fluent_toolbox_hc.png/0.0.7/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_games_hc.png/1.7.18/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_games_hc.png/1.7.18/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_games_hc_card.png/1.7.18/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_games_hc_card.png/1.7.18/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_games_hc_controller.png/1.7.18/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_games_hc_controller.png/1.7.18/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_games_hc_joystick.png/1.7.18/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_games_hc_joystick.png/1.7.18/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_games_hc_puzzle.png/1.7.18/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_games_hc_puzzle.png/1.7.18/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_games_maximal_dark.png/1.7.18/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_games_maximal_dark.png/1.7.18/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_games_maximal_dark_card.png/1.7.18/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_games_maximal_dark_card.png/1.7.18/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_games_maximal_dark_controller.png/1.7.18/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_games_maximal_dark_controller.png/1.7.18/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_games_maximal_dark_joystick.png/1.7.18/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_games_maximal_dark_joystick.png/1.7.18/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_games_maximal_dark_puzzle.png/1.7.18/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_games_maximal_dark_puzzle.png/1.7.18/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_games_maximal_light.png/1.7.18/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_games_maximal_light.png/1.7.18/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_games_maximal_light_card.png/1.7.18/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_games_maximal_light_card.png/1.7.18/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_games_maximal_light_controller.png/1.7.18/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_games_maximal_light_controller.png/1.7.18/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_games_maximal_light_joystick.png/1.7.18/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_games_maximal_light_joystick.png/1.7.18/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_games_maximal_light_puzzle.png/1.7.18/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_games_maximal_light_puzzle.png/1.7.18/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_gmail.png/0.0.7/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_gmail.png/0.0.7/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_gmail.png/1.5.4/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_gmail.png/1.5.4/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_gmail_hc.png/0.0.7/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_gmail_hc.png/0.0.7/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_help.png/1.0.1/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_help.png/1.0.1/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_iHeart.png/1.0.3/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_iHeart.png/1.0.3/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_ImageCreator_DarkMode.png/1.0.25/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_ImageCreator_DarkMode.png/1.0.25/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_ImageCreator_HighContrast.png/1.0.25/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_ImageCreator_HighContrast.png/1.0.25/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_ImageCreator_LightMode.png/1.0.25/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_ImageCreator_LightMode.png/1.0.25/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_instagram.png/0.0.8/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_instagram.png/0.0.8/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_instagram.png/1.4.13/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_instagram.png/1.4.13/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_instagram_hc.png/0.0.8/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_instagram_hc.png/0.0.8/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_M365_dark.png/1.7.43/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_M365_dark.png/1.7.43/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_M365_hc.png/1.7.43/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_M365_hc.png/1.7.43/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_M365_light.png/1.7.43/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_M365_light.png/1.7.43/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_manifest_gz/4.11.81/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_manifest_gz/4.11.81/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_discover_dark.png/0.0.8/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_discover_dark.png/0.0.8/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_discover_hc.png/0.0.8/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_discover_hc.png/0.0.8/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_discover_light.png/0.0.8/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_discover_light.png/0.0.8/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_edrop_dark.png/0.0.5/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_edrop_dark.png/0.0.5/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_edrop_hc.png/0.0.5/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_edrop_hc.png/0.0.5/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_edrop_light.png/0.0.5/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_edrop_light.png/0.0.5/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_etree_dark.png/0.0.9/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_etree_dark.png/0.0.9/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_etree_hc.png/0.0.9/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_etree_hc.png/0.0.9/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_etree_light.png/0.0.9/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_etree_light.png/0.0.9/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_follow_dark.png/1.1.2/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_follow_dark.png/1.1.2/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_follow_hc.png/1.1.2/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_follow_hc.png/1.1.2/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_follow_light.png/1.1.2/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_follow_light.png/1.1.2/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_games_dark.png/0.0.13/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_games_dark.png/0.0.13/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_games_hc.png/0.0.13/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_games_hc.png/0.0.13/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_games_light.png/0.0.13/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_games_light.png/0.0.13/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_search_dark.png/0.0.7/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_search_dark.png/0.0.7/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_search_hc.png/0.0.7/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_search_hc.png/0.0.7/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_search_light.png/0.0.7/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_search_light.png/0.0.7/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_shopping_dark.png/0.0.7/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_shopping_dark.png/0.0.7/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_shopping_hc.png/0.0.7/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_shopping_hc.png/0.0.7/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_shopping_light.png/0.0.7/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_shopping_light.png/0.0.7/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_toolbox_dark.png/0.0.7/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_toolbox_dark.png/0.0.7/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_toolbox_hc.png/0.0.7/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_toolbox_hc.png/0.0.7/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_toolbox_light.png/0.0.7/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_maximal_toolbox_light.png/0.0.7/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_msstart_logo_dark.png/1.2.17/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_msstart_logo_dark.png/1.2.17/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_msstart_logo_light.png/1.2.17/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_msstart_logo_light.png/1.2.17/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_mstravel_logo_dark.png/1.0.0/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_mstravel_logo_dark.png/1.0.0/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_mstravel_logo_hc.png/1.0.0/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_mstravel_logo_hc.png/1.0.0/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_mstravel_logo_light.png/1.0.0/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_mstravel_logo_light.png/1.0.0/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_office.png/0.0.11/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_office.png/0.0.11/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_office.png/1.7.43/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_office.png/1.7.43/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_onenote.png/0.0.8/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_onenote.png/0.0.8/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_onenote_dark.png/1.4.13/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_onenote_dark.png/1.4.13/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_onenote_hc.png/1.4.13/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_onenote_hc.png/1.4.13/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_onenote_light.png/1.4.13/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_onenote_light.png/1.4.13/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_outlook.png/0.0.12/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_outlook.png/0.0.12/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_outlook_dark.png/1.12.17/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_outlook_dark.png/1.12.17/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_outlook_hc.png/1.12.17/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_outlook_hc.png/1.12.17/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_outlook_light.png/1.12.17/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_outlook_light.png/1.12.17/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_performance_dark.png/0.0.4/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_performance_dark.png/0.0.4/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_performance_hc.png/0.0.4/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_performance_hc.png/0.0.4/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_performance_hc.png/1.1.3/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_performance_hc.png/1.1.3/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_performance_light.png/0.0.4/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_performance_light.png/0.0.4/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_performance_maximal_dark.png/1.1.3/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_performance_maximal_dark.png/1.1.3/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_performance_maximal_light.png/1.1.3/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_performance_maximal_light.png/1.1.3/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_power_point.png/1.7.43/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_power_point.png/1.7.43/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_rewards_hc.png/1.2.1/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_rewards_hc.png/1.2.1/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_rewards_maximal_dark.png/1.2.1/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_rewards_maximal_dark.png/1.2.1/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_rewards_maximal_light.png/1.2.1/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_rewards_maximal_light.png/1.2.1/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_search_hc.png/1.3.20/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_search_hc.png/1.3.20/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_search_maximal_dark.png/1.3.20/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_search_maximal_dark.png/1.3.20/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_search_maximal_light.png/1.3.20/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_search_maximal_light.png/1.3.20/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_settings_dark.png/1.1.18/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_settings_dark.png/1.1.18/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_settings_dark.png/1.5.7/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_settings_dark.png/1.5.7/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_settings_dark.png/1.5.18/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_settings_dark.png/1.5.18/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_settings_hc.png/1.1.18/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_settings_hc.png/1.1.18/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_settings_hc.png/1.5.7/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_settings_hc.png/1.5.7/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_settings_hc.png/1.5.18/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_settings_hc.png/1.5.18/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_settings_light.png/1.1.18/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_settings_light.png/1.1.18/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_settings_light.png/1.5.7/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_settings_light.png/1.5.7/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_settings_light.png/1.5.18/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_settings_light.png/1.5.18/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_shopping_hc.png/1.5.7/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_shopping_hc.png/1.5.7/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_shopping_maximal_dark.png/1.5.7/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_shopping_maximal_dark.png/1.5.7/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_shopping_maximal_light.png/1.5.7/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_shopping_maximal_light.png/1.5.7/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_sound_cloud.png/1.0.3/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_sound_cloud.png/1.0.3/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_spotify.png/0.0.6/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_spotify.png/0.0.6/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_spotify.png/1.4.14/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_spotify.png/1.4.14/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_spotify_hc.png/0.0.6/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_spotify_hc.png/0.0.6/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_StreamCameraIcon_Dark.png/0.0.8/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_StreamCameraIcon_Dark.png/0.0.8/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_StreamCameraIcon_HC.png/0.0.8/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_StreamCameraIcon_HC.png/0.0.8/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_StreamCameraIcon_Light.png/0.0.8/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_StreamCameraIcon_Light.png/0.0.8/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_teams.png/0.0.2/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_teams.png/0.0.2/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_teams_dark.png/1.5.15/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_teams_dark.png/1.5.15/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_teams_hc.png/1.5.15/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_teams_hc.png/1.5.15/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_teams_light.png/1.5.15/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_teams_light.png/1.5.15/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_telegram.png/1.0.4/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_telegram.png/1.0.4/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_theater_hc.png/1.0.9/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_theater_hc.png/1.0.9/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_theater_maximal_dark.png/1.0.9/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_theater_maximal_dark.png/1.0.9/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_theater_maximal_light.png/1.0.9/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_theater_maximal_light.png/1.0.9/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_tidal.png/1.0.3/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_tidal.png/1.0.3/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_toolbox_hc.png/1.5.18/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_toolbox_hc.png/1.5.18/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_toolbox_maximal_dark.png/1.5.18/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_toolbox_maximal_dark.png/1.5.18/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_toolbox_maximal_light.png/1.5.18/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_toolbox_maximal_light.png/1.5.18/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_twitter_light.png/1.0.9/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_twitter_light.png/1.0.9/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_whats_new.png/1.0.1/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_whats_new.png/1.0.1/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_whatsapp.png/0.0.8/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_whatsapp.png/0.0.8/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_whatsapp_hc.png/0.0.8/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_whatsapp_hc.png/0.0.8/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_whatsapp_light.png/1.4.12/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_whatsapp_light.png/1.4.12/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_word.png/1.7.43/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_word.png/1.7.43/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_wrench.png/1.0.1/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_wrench.png/1.0.1/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_yandex_music.png/1.0.10/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_yandex_music.png/1.0.10/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_youtube.png/0.0.4/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_youtube.png/0.0.4/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_youtube.png/1.4.14/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_youtube.png/1.4.14/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_youtube_hc.png/0.0.4/asset
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/edge_hub_apps_youtube_hc.png/0.0.4/metadata.json
+/codex-cdp-profile/Edge Sidebar/2026.2.24.1/manifest.json
+/codex-cdp-profile/Edge Signal Triggers/2026.3.4.1/large_signal_triggers/0.1.4/asset
+/codex-cdp-profile/Edge Signal Triggers/2026.3.4.1/large_signal_triggers/0.1.4/metadata.json
+/codex-cdp-profile/Edge Signal Triggers/2026.3.4.1/signal_triggers/1.40.0/asset
+/codex-cdp-profile/Edge Signal Triggers/2026.3.4.1/signal_triggers/1.40.0/metadata.json
+/codex-cdp-profile/Edge Signal Triggers/2026.3.4.1/signal_triggers/1.41.0/asset
+/codex-cdp-profile/Edge Signal Triggers/2026.3.4.1/signal_triggers/1.41.0/metadata.json
+/codex-cdp-profile/Edge Signal Triggers/2026.3.4.1/signal_triggers/1.42.2/asset
+/codex-cdp-profile/Edge Signal Triggers/2026.3.4.1/signal_triggers/1.42.2/metadata.json
+/codex-cdp-profile/Edge Signal Triggers/2026.3.4.1/manifest.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/bnpl/bnpl.bundle.js
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/bnpl/bnpl.bundle.js.LICENSE.txt
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/bnpl/bnpl.html
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-ec/ar/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-ec/cs/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-ec/da/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-ec/de/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-ec/el/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-ec/en-GB/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-ec/es/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-ec/fi/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-ec/fr/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-ec/fr-CA/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-ec/hu/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-ec/id/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-ec/it/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-ec/ja/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-ec/ko/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-ec/nl/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-ec/pl/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-ec/pt-BR/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-ec/pt-PT/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-ec/ru/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-ec/sv/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-ec/th/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-ec/zh-Hans/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-ec/zh-Hant/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-hub/ar/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-hub/cs/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-hub/da/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-hub/de/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-hub/el/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-hub/en-GB/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-hub/es/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-hub/fi/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-hub/fr/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-hub/fr-CA/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-hub/hu/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-hub/id/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-hub/it/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-hub/ja/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-hub/ko/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-hub/nl/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-hub/pl/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-hub/pt-BR/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-hub/pt-PT/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-hub/ru/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-hub/sv/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-hub/th/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-hub/zh-Hans/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-hub/zh-Hant/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-mobile-hub/ar/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-mobile-hub/de/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-mobile-hub/en-GB/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-mobile-hub/es/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-mobile-hub/fr/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-mobile-hub/fr-CA/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-mobile-hub/id/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-mobile-hub/it/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-mobile-hub/ja/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-mobile-hub/nl/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-mobile-hub/pt-BR/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-mobile-hub/pt-PT/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-mobile-hub/ru/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-mobile-hub/sv/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-mobile-hub/zh-Hans/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-mobile-hub/zh-Hant/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-notification/ar/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-notification/de/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-notification/el/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-notification/en-GB/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-notification/es/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-notification/fi/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-notification/fr/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-notification/fr-CA/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-notification/id/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-notification/it/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-notification/ja/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-notification/ko/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-notification/nl/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-notification/pt-BR/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-notification/pt-PT/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-notification/ru/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-notification/sv/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-notification/zh-Hans/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-notification/zh-Hant/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-notification-shared/ar/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-notification-shared/de/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-notification-shared/el/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-notification-shared/en-GB/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-notification-shared/es/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-notification-shared/fi/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-notification-shared/fr/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-notification-shared/fr-CA/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-notification-shared/id/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-notification-shared/it/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-notification-shared/ja/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-notification-shared/ko/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-notification-shared/nl/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-notification-shared/pt-BR/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-notification-shared/pt-PT/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-notification-shared/ru/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-notification-shared/sv/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-notification-shared/zh-Hans/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-notification-shared/zh-Hant/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-shared-components/ar/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-shared-components/cs/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-shared-components/da/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-shared-components/de/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-shared-components/el/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-shared-components/en-GB/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-shared-components/es/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-shared-components/fi/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-shared-components/fr/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-shared-components/fr-CA/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-shared-components/hu/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-shared-components/id/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-shared-components/it/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-shared-components/ja/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-shared-components/ko/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-shared-components/nl/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-shared-components/pl/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-shared-components/pt-BR/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-shared-components/pt-PT/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-shared-components/ru/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-shared-components/sv/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-shared-components/th/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-shared-components/zh-Hans/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-shared-components/zh-Hant/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-tokenized-card/ar/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-tokenized-card/de/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-tokenized-card/en-GB/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-tokenized-card/es/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-tokenized-card/fr/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-tokenized-card/fr-CA/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-tokenized-card/id/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-tokenized-card/it/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-tokenized-card/ja/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-tokenized-card/nl/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-tokenized-card/pt-BR/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-tokenized-card/pt-PT/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-tokenized-card/ru/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-tokenized-card/sv/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-tokenized-card/zh-Hans/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/i18n-tokenized-card/zh-Hant/strings.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/wallet/wallet-checkout/checkoutdata.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/wallet/wallet-checkout/merchant-site-info.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/wallet/README.md
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/wallet/super_coupon.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/wallet/wallet-checkout-eligible-sites.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/wallet/wallet-checkout-eligible-sites-pre-stable.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/wallet/wallet-eligibile-aad-users.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/wallet/wallet-notification-config.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/wallet/wallet-pre-stable.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/wallet/wallet-stable.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/json/wallet/wallet-tokenization-config.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/Mini-Wallet/mini-wallet.html
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/Mini-Wallet/miniwallet.bundle.js
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/Mini-Wallet/miniwallet.bundle.js.LICENSE.txt
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/Notification/notification.bundle.js
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/Notification/notification.bundle.js.LICENSE.txt
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/Notification/notification.html
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/Notification/notification_fast.bundle.js
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/Notification/notification_fast.bundle.js.LICENSE.txt
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/Notification/notification_fast.html
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/Tokenized-Card/tokenized-card.bundle.js
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/Tokenized-Card/tokenized-card.bundle.js.LICENSE.txt
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/Tokenized-Card/tokenized-card.html
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/Wallet-BuyNow/wallet-buynow.bundle.js
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/Wallet-BuyNow/wallet-buynow.html
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/Wallet-Checkout/app-setup.js
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/Wallet-Checkout/load-ec-deps.bundle.js
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/Wallet-Checkout/load-ec-i18n.bundle.js
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/Wallet-Checkout/wallet-drawer.bundle.js
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/Wallet-Checkout/wallet-drawer.bundle.js.LICENSE.txt
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/Wallet-Checkout/wallet-drawer.html
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/app-setup.js
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/bnpl_driver.js
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/buynow_driver.js
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/crypto.bundle.js
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/driver-signature.txt
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/edge_driver.js
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/hub-signature.txt
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/load-hub-i18n.bundle.js
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/manifest.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/manifest.webapp.json
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/runtime.bundle.js
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/shopping_iframe_driver.js
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/vendor.bundle.js
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/vendor.bundle.js.LICENSE.txt
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/wallet.bundle.js
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/wallet.html
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/wallet-crypto.html
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/wallet-icon.svg
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/wallet-webui-101.079f5d74a18127cd9d6a.chunk.js
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/wallet-webui-227.bb2c3c84778e2589775f.chunk.js
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/wallet-webui-560.da6c8914bf5007e1044c.chunk.js
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/wallet-webui-708.de49febeeb0e9c77883f.chunk.js
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/wallet-webui-792.b1180305c186d50631a2.chunk.js
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/wallet-webui-925.baa79171a74ad52b0a67.chunk.js
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/wallet-webui-992.268aa821c3090dce03cb.chunk.js
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/wallet_checkout_autofill_driver.js
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/wallet_donation_driver.js
+/codex-cdp-profile/Edge Wallet/128.18367.18366.1/webui-setup.js
+/codex-cdp-profile/Edge3pSerp/2026.1.8.2/baidu_web_serp_config/1.0.2/asset
+/codex-cdp-profile/Edge3pSerp/2026.1.8.2/baidu_web_serp_config/1.0.2/metadata.json
+/codex-cdp-profile/Edge3pSerp/2026.1.8.2/google_image_config/1.0.3/asset
+/codex-cdp-profile/Edge3pSerp/2026.1.8.2/google_image_config/1.0.3/metadata.json
+/codex-cdp-profile/Edge3pSerp/2026.1.8.2/google_image_v2_config/1.0.2/asset
+/codex-cdp-profile/Edge3pSerp/2026.1.8.2/google_image_v2_config/1.0.2/metadata.json
+/codex-cdp-profile/Edge3pSerp/2026.1.8.2/google_news_config/1.0.3/asset
+/codex-cdp-profile/Edge3pSerp/2026.1.8.2/google_news_config/1.0.3/metadata.json
+/codex-cdp-profile/Edge3pSerp/2026.1.8.2/google_shopping_config/1.0.0/asset
+/codex-cdp-profile/Edge3pSerp/2026.1.8.2/google_shopping_config/1.0.0/metadata.json
+/codex-cdp-profile/Edge3pSerp/2026.1.8.2/google_shopping_v2_config/1.0.1/asset
+/codex-cdp-profile/Edge3pSerp/2026.1.8.2/google_shopping_v2_config/1.0.1/metadata.json
+/codex-cdp-profile/Edge3pSerp/2026.1.8.2/google_video_config/1.0.2/asset
+/codex-cdp-profile/Edge3pSerp/2026.1.8.2/google_video_config/1.0.2/metadata.json
+/codex-cdp-profile/Edge3pSerp/2026.1.8.2/google_video_v2_config/1.0.1/asset
+/codex-cdp-profile/Edge3pSerp/2026.1.8.2/google_video_v2_config/1.0.1/metadata.json
+/codex-cdp-profile/Edge3pSerp/2026.1.8.2/google_web_config/1.0.8/asset
+/codex-cdp-profile/Edge3pSerp/2026.1.8.2/google_web_config/1.0.8/metadata.json
+/codex-cdp-profile/Edge3pSerp/2026.1.8.2/main_serp_config/1.0.20/asset
+/codex-cdp-profile/Edge3pSerp/2026.1.8.2/main_serp_config/1.0.20/metadata.json
+/codex-cdp-profile/Edge3pSerp/2026.1.8.2/serp_config/1.0.21/asset
+/codex-cdp-profile/Edge3pSerp/2026.1.8.2/serp_config/1.0.21/metadata.json
+/codex-cdp-profile/Edge3pSerp/2026.1.8.2/youtube_homepage_config/1.0.0/asset
+/codex-cdp-profile/Edge3pSerp/2026.1.8.2/youtube_homepage_config/1.0.0/metadata.json
+/codex-cdp-profile/Edge3pSerp/2026.1.8.2/youtube_search_config/1.0.3/asset
+/codex-cdp-profile/Edge3pSerp/2026.1.8.2/youtube_search_config/1.0.3/metadata.json
+/codex-cdp-profile/Edge3pSerp/2026.1.8.2/youtube_watch_config/1.0.0/asset
+/codex-cdp-profile/Edge3pSerp/2026.1.8.2/youtube_watch_config/1.0.0/metadata.json
+/codex-cdp-profile/Edge3pSerp/2026.1.8.2/manifest.json
+/codex-cdp-profile/EdgeArbitration/2026.2.26.1/arbitration_priority_list/37.0.1/asset
+/codex-cdp-profile/EdgeArbitration/2026.2.26.1/arbitration_priority_list/37.0.1/metadata.json
+/codex-cdp-profile/EdgeArbitration/2026.2.26.1/arbitration_priority_list/38.0.1/asset
+/codex-cdp-profile/EdgeArbitration/2026.2.26.1/arbitration_priority_list/38.0.1/metadata.json
+/codex-cdp-profile/EdgeArbitration/2026.2.26.1/arbitration_priority_list/39.0.3/asset
+/codex-cdp-profile/EdgeArbitration/2026.2.26.1/arbitration_priority_list/39.0.3/metadata.json
+/codex-cdp-profile/EdgeArbitration/2026.2.26.1/arbitration_priority_list/40.0.2/asset
+/codex-cdp-profile/EdgeArbitration/2026.2.26.1/arbitration_priority_list/40.0.2/metadata.json
+/codex-cdp-profile/EdgeArbitration/2026.2.26.1/manifest.json
+/codex-cdp-profile/EdgeLanguageDetectionModel/2026.1.30.1/manifest.json
+/codex-cdp-profile/EdgeLanguageDetectionModel/2026.1.30.1/model.ftz
+/codex-cdp-profile/extensions_crx_cache/8ed0979f5f6f479865fd6c1180e4e2ee6474a872dd0c277ffb2a41af086909ea
+/codex-cdp-profile/extensions_crx_cache/metadata.json
+/codex-cdp-profile/FirstPartySetsPreloaded/2025.7.24.0/_metadata/verified_contents.json
+/codex-cdp-profile/FirstPartySetsPreloaded/2025.7.24.0/LICENSE
+/codex-cdp-profile/FirstPartySetsPreloaded/2025.7.24.0/manifest.json
+/codex-cdp-profile/FirstPartySetsPreloaded/2025.7.24.0/sets.json
+/codex-cdp-profile/GraphiteDawnCache/data_0
+/codex-cdp-profile/GraphiteDawnCache/data_1
+/codex-cdp-profile/GraphiteDawnCache/data_2
+/codex-cdp-profile/GraphiteDawnCache/data_3
+/codex-cdp-profile/GraphiteDawnCache/index
+/codex-cdp-profile/GrShaderCache/data_0
+/codex-cdp-profile/GrShaderCache/data_1
+/codex-cdp-profile/GrShaderCache/data_2
+/codex-cdp-profile/GrShaderCache/data_3
+/codex-cdp-profile/GrShaderCache/index
+/codex-cdp-profile/hyphen-data/120.0.6050.0/_metadata/verified_contents.json
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-af.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-as.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-be.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-bg.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-bn.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-cs.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-cu.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-cy.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-da.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-de-1901.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-de-1996.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-de-ch-1901.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-el.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-en-gb.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-en-us.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-es.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-et.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-eu.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-fr.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-ga.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-gl.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-gu.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-hi.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-hr.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-hu.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-hy.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-it.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-ka.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-kn.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-la.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-lt.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-lv.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-ml.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-mn-cyrl.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-mr.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-mul-ethi.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-nb.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-nl.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-nn.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-or.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-pa.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-pt.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-ru.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-sk.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-sl.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-sq.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-sv.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-ta.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-te.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-tk.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-uk.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/hyph-und-ethi.hyb
+/codex-cdp-profile/hyphen-data/120.0.6050.0/manifest.json
+/codex-cdp-profile/Nurturing/campaign_history
+/codex-cdp-profile/Nurturing/campaign_history-journal
+/codex-cdp-profile/OriginTrials/0.0.1.7/manifest.json
+/codex-cdp-profile/PKIMetadata/46.0.0.0/crs.pb
+/codex-cdp-profile/PKIMetadata/46.0.0.0/ct_config.pb
+/codex-cdp-profile/PKIMetadata/46.0.0.0/kp_pinslist.pb
+/codex-cdp-profile/PKIMetadata/46.0.0.0/manifest.json
+/codex-cdp-profile/ProvenanceData/2025.10.7.5/manifest.json
+/codex-cdp-profile/ProvenanceData/2025.10.7.5/vti-b-p32-visual.quant.ort
+/codex-cdp-profile/ProvenanceDataAllowList/2026.4.16.1/manifest.json
+/codex-cdp-profile/ProvenanceDataAllowList/2026.4.16.1/techscam-detection-allowlist.json
+/codex-cdp-profile/ProvenanceDataTensors/2026.2.23.1/manifest.json
+/codex-cdp-profile/ProvenanceDataTensors/2026.2.23.1/provenance-data-vectors.json
+/codex-cdp-profile/Safe Browsing/ChromeExtMalware.store
+/codex-cdp-profile/Safe Browsing/ChromeExtMalware.store.32_13423579661884927
+/codex-cdp-profile/SafetyTips/3057/_metadata/verified_contents.json
+/codex-cdp-profile/SafetyTips/3057/manifest.json
+/codex-cdp-profile/SafetyTips/3057/safety_tips.pb
+/codex-cdp-profile/SafetyTips/3057/typosquatting_list.pb
+/codex-cdp-profile/ShaderCache/data_0
+/codex-cdp-profile/ShaderCache/data_1
+/codex-cdp-profile/ShaderCache/data_2
+/codex-cdp-profile/ShaderCache/data_3
+/codex-cdp-profile/ShaderCache/index
+/codex-cdp-profile/SmartScreen/RemoteData/customSettings
+/codex-cdp-profile/SmartScreen/RemoteData/customSettings_F95BA787499AB4FA9EFFF472CE383A14
+/codex-cdp-profile/SmartScreen/RemoteData/edgeSettings
+/codex-cdp-profile/SmartScreen/RemoteData/edgeSettings_2.0-0
+/codex-cdp-profile/Speech Recognition/1.15.0.1/manifest.json
+/codex-cdp-profile/Speech Recognition/1.15.0.1/Microsoft.CognitiveServices.Speech.core.dll
+/codex-cdp-profile/Subresource Filter/Indexed Rules/37/10.34.0.84/LICENSE
+/codex-cdp-profile/Subresource Filter/Indexed Rules/37/10.34.0.84/Ruleset Data
+/codex-cdp-profile/Subresource Filter/Unindexed Rules/10.34.0.84/adblock_snippet.js
+/codex-cdp-profile/Subresource Filter/Unindexed Rules/10.34.0.84/Filtering Rules
+/codex-cdp-profile/Subresource Filter/Unindexed Rules/10.34.0.84/Filtering Rules-AA
+/codex-cdp-profile/Subresource Filter/Unindexed Rules/10.34.0.84/Filtering Rules-CA
+/codex-cdp-profile/Subresource Filter/Unindexed Rules/10.34.0.84/LICENSE
+/codex-cdp-profile/Subresource Filter/Unindexed Rules/10.34.0.84/manifest.json
+/codex-cdp-profile/Subresource Filter/Unindexed Rules/10.34.0.84/Part-DE
+/codex-cdp-profile/Subresource Filter/Unindexed Rules/10.34.0.84/Part-ES
+/codex-cdp-profile/Subresource Filter/Unindexed Rules/10.34.0.84/Part-FR
+/codex-cdp-profile/Subresource Filter/Unindexed Rules/10.34.0.84/Part-IT
+/codex-cdp-profile/Subresource Filter/Unindexed Rules/10.34.0.84/Part-NL
+/codex-cdp-profile/Subresource Filter/Unindexed Rules/10.34.0.84/Part-RU
+/codex-cdp-profile/Subresource Filter/Unindexed Rules/10.34.0.84/Part-ZH
+/codex-cdp-profile/TrustTokenKeyCommitments/2026.3.23.1/_metadata/verified_contents.json
+/codex-cdp-profile/TrustTokenKeyCommitments/2026.3.23.1/keys.json
+/codex-cdp-profile/TrustTokenKeyCommitments/2026.3.23.1/LICENSE
+/codex-cdp-profile/TrustTokenKeyCommitments/2026.3.23.1/manifest.json
+/codex-cdp-profile/Typosquatting/2026.5.18.1/manifest.json
+/codex-cdp-profile/Typosquatting/2026.5.18.1/typosquatting_list.pb
+/codex-cdp-profile/Web Notifications Deny List/2.0.0.145/deny_domains.list
+/codex-cdp-profile/Web Notifications Deny List/2.0.0.145/deny_etld1_domains.list
+/codex-cdp-profile/Web Notifications Deny List/2.0.0.145/deny_full_domains.list
+/codex-cdp-profile/Web Notifications Deny List/2.0.0.145/manifest.json
+/codex-cdp-profile/Well Known Domains/1.2.0.0/manifest.json
+/codex-cdp-profile/Well Known Domains/1.2.0.0/well_known_domains.dll
+/codex-cdp-profile/WorkspacesNavigationComponent/1.0.0.5/manifest.json
+/codex-cdp-profile/WorkspacesNavigationComponent/1.0.0.5/nav_config.json
+/codex-cdp-profile/ZxcvbnData/3.2.0.0/english_wikipedia.txt
+/codex-cdp-profile/ZxcvbnData/3.2.0.0/female_names.txt
+/codex-cdp-profile/ZxcvbnData/3.2.0.0/male_names.txt
+/codex-cdp-profile/ZxcvbnData/3.2.0.0/manifest.json
+/codex-cdp-profile/ZxcvbnData/3.2.0.0/model.markov
+/codex-cdp-profile/ZxcvbnData/3.2.0.0/passwords.txt
+/codex-cdp-profile/ZxcvbnData/3.2.0.0/ranked_dicts
+/codex-cdp-profile/ZxcvbnData/3.2.0.0/surnames.txt
+/codex-cdp-profile/ZxcvbnData/3.2.0.0/test.txt
+/codex-cdp-profile/ZxcvbnData/3.2.0.0/us_tv_and_film.txt
+/codex-cdp-profile/Breadcrumbs
+/codex-cdp-profile/BrowserMetrics-spare.pma
+/codex-cdp-profile/CrashpadMetrics-active.pma
+/codex-cdp-profile/en-US-10-1.bdic
+/codex-cdp-profile/first_party_sets.db-journal
+/codex-cdp-profile/FirstLaunchAfterInstallation
+/codex-cdp-profile/Last Browser
+/codex-cdp-profile/Last Version
+/codex-cdp-profile/Local State
+/codex-cdp-profile/lockfile
+/codex-cdp-profile/Variations
+/codex-layout-profile/component_crx_cache/metadata.json
+/codex-layout-profile/Crashpad/metadata
+/codex-layout-profile/Crashpad/settings.dat
+/codex-layout-profile/Crashpad/throttle_store.dat
+/codex-layout-profile/Default/Cache/Cache_Data/data_0
+/codex-layout-profile/Default/Cache/Cache_Data/data_1
+/codex-layout-profile/Default/Cache/Cache_Data/data_2
+/codex-layout-profile/Default/Cache/Cache_Data/data_3
+/codex-layout-profile/Default/Cache/Cache_Data/f_000001
+/codex-layout-profile/Default/Cache/Cache_Data/f_000002
+/codex-layout-profile/Default/Cache/Cache_Data/f_000003
+/codex-layout-profile/Default/Cache/Cache_Data/f_000004
+/codex-layout-profile/Default/Cache/Cache_Data/f_000005
+/codex-layout-profile/Default/Cache/Cache_Data/index
+/codex-layout-profile/Default/Cache/No_Vary_Search/journal.baj
+/codex-layout-profile/Default/Cache/No_Vary_Search/snapshot.baf
+/codex-layout-profile/Default/ClientCertificates/LOCK
+/codex-layout-profile/Default/ClientCertificates/LOG
+/codex-layout-profile/Default/Code Cache/js/index-dir/the-real-index
+/codex-layout-profile/Default/Code Cache/js/2a8a6f695a3ff316_0
+/codex-layout-profile/Default/Code Cache/js/2cca9bc741a6516d_0
+/codex-layout-profile/Default/Code Cache/js/5cce1706364839f1_0
+/codex-layout-profile/Default/Code Cache/js/5fbb54f36261c413_0
+/codex-layout-profile/Default/Code Cache/js/7de0dc67a2b3a69c_0
+/codex-layout-profile/Default/Code Cache/js/8bb1867be67136eb_0
+/codex-layout-profile/Default/Code Cache/js/945cb8fb56d09a8e_0
+/codex-layout-profile/Default/Code Cache/js/7347d5b81ee7e30e_0
+/codex-layout-profile/Default/Code Cache/js/8020acacb3d13763_0
+/codex-layout-profile/Default/Code Cache/js/b21fb45197b9c728_0
+/codex-layout-profile/Default/Code Cache/js/ba678a2fbd8c358c_0
+/codex-layout-profile/Default/Code Cache/js/baded5730168391f_0
+/codex-layout-profile/Default/Code Cache/js/e9a142a21b9ad9ef_0
+/codex-layout-profile/Default/Code Cache/js/e94999eac39dfd99_0
+/codex-layout-profile/Default/Code Cache/js/ebce9e52a869b921_0
+/codex-layout-profile/Default/Code Cache/js/index
+/codex-layout-profile/Default/Code Cache/wasm/index-dir/the-real-index
+/codex-layout-profile/Default/Code Cache/wasm/index
+/codex-layout-profile/Default/Collections/collectionsSQLite
+/codex-layout-profile/Default/Collections/collectionsSQLite-journal
+/codex-layout-profile/Default/commerce_subscription_db/LOCK
+/codex-layout-profile/Default/commerce_subscription_db/LOG
+/codex-layout-profile/Default/DawnGraphiteCache/data_0
+/codex-layout-profile/Default/DawnGraphiteCache/data_1
+/codex-layout-profile/Default/DawnGraphiteCache/data_2
+/codex-layout-profile/Default/DawnGraphiteCache/data_3
+/codex-layout-profile/Default/DawnGraphiteCache/index
+/codex-layout-profile/Default/DawnWebGPUCache/data_0
+/codex-layout-profile/Default/DawnWebGPUCache/data_1
+/codex-layout-profile/Default/DawnWebGPUCache/data_2
+/codex-layout-profile/Default/DawnWebGPUCache/data_3
+/codex-layout-profile/Default/DawnWebGPUCache/index
+/codex-layout-profile/Default/discount_infos_db/LOCK
+/codex-layout-profile/Default/discount_infos_db/LOG
+/codex-layout-profile/Default/discounts_db/LOCK
+/codex-layout-profile/Default/discounts_db/LOG
+/codex-layout-profile/Default/EdgeEDrop/EdgeEDropSQLite.db-journal
+/codex-layout-profile/Default/EdgeHubAppUsage/EdgeHubAppUsageSQLite.db-journal
+/codex-layout-profile/Default/EdgePushStorageWithConnectTokenAndKey/LOCK
+/codex-layout-profile/Default/EdgePushStorageWithConnectTokenAndKey/LOG
+/codex-layout-profile/Default/EdgePushStorageWithConnectTokenAndKey/LOG.old
+/codex-layout-profile/Default/EntityExtraction/domains_config.json
+/codex-layout-profile/Default/Extension Rules/000003.log
+/codex-layout-profile/Default/Extension Rules/CURRENT
+/codex-layout-profile/Default/Extension Rules/LOCK
+/codex-layout-profile/Default/Extension Rules/LOG
+/codex-layout-profile/Default/Extension Rules/MANIFEST-000001
+/codex-layout-profile/Default/Extension Scripts/000003.log
+/codex-layout-profile/Default/Extension Scripts/CURRENT
+/codex-layout-profile/Default/Extension Scripts/LOCK
+/codex-layout-profile/Default/Extension Scripts/LOG
+/codex-layout-profile/Default/Extension Scripts/MANIFEST-000001
+/codex-layout-profile/Default/Extension State/000003.log
+/codex-layout-profile/Default/Extension State/CURRENT
+/codex-layout-profile/Default/Extension State/LOCK
+/codex-layout-profile/Default/Extension State/LOG
+/codex-layout-profile/Default/Extension State/MANIFEST-000001
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/_locales/en/messages.json
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/_locales/zh_CN/messages.json
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/_metadata/verified_contents.json
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/assets/icon.svg
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/assets/icon-16.png
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/assets/icon-48.png
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/assets/icon-128.png
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/assets/icon-512.png
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/kdocs/assets/__uno-cab22814.js
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/kdocs/assets/__uno-ee003531.css
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/kdocs/assets/icon-f201c060.svg
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/kdocs/assets/index.vue_vue_type_style_index_0_lang-1c58e848.js
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/kdocs/assets/index.vue_vue_type_style_index_0_lang-52d723f8.js
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/kdocs/assets/index-8a5dbfa0.css
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/kdocs/assets/index-13d15f9e.css
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/kdocs/assets/index-28ec3cbd.js
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/kdocs/assets/index-511ba7f4.css
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/kdocs/assets/index-c2d291ee.css
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/kdocs/assets/index-d1314f1d.css
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/kdocs/assets/index-ec261fab.css
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/kdocs/assets/loading-a965f1ea.js
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/kdocs/assets/login-f02175d4.js
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/kdocs/assets/notice-aa85b3a8.js
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/kdocs/assets/options-3452384f.js
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/kdocs/assets/path-4b74141c.js
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/kdocs/assets/path-e6e5c517.js
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/kdocs/assets/toast-b8593d70.js
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/kdocs/assets/url-1b6e2379.js
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/kdocs/assets/url-190cf4ea.css
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/kdocs/assets/url-d1de9e2d.js
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/kdocs/assets/useConvertInfo-7db30bfb.js
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/kdocs/assets/usePath-adfe87b0.css
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/kdocs/assets/usePath-da3794e6.js
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/kdocs/assets/useSettingConfig-f3713183.js
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/kdocs/background/index.mjs
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/kdocs/contentScripts/index.global.js
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/kdocs/contentScripts/style.css
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/kdocs/loading/index.html
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/kdocs/login/index.html
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/kdocs/notice/index.html
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/kdocs/options/index.html
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/kdocs/path/index.html
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/kdocs/toast/index.html
+/codex-layout-profile/Default/Extensions/obdgpngffdbfdonamidnhjlpdfmjkgol/2.0.5_0/manifest.json
+/codex-layout-profile/Default/GPUCache/data_0
+/codex-layout-profile/Default/GPUCache/data_1
+/codex-layout-profile/Default/GPUCache/data_2
+/codex-layout-profile/Default/GPUCache/data_3
+/codex-layout-profile/Default/GPUCache/index
+/codex-layout-profile/Default/Local Extension Settings/jdiccldimpdaibmpdkjnbmckianbfold/000003.log
+/codex-layout-profile/Default/Local Extension Settings/jdiccldimpdaibmpdkjnbmckianbfold/CURRENT
+/codex-layout-profile/Default/Local Extension Settings/jdiccldimpdaibmpdkjnbmckianbfold/LOCK
+/codex-layout-profile/Default/Local Extension Settings/jdiccldimpdaibmpdkjnbmckianbfold/LOG
+/codex-layout-profile/Default/Local Extension Settings/jdiccldimpdaibmpdkjnbmckianbfold/MANIFEST-000001
+/codex-layout-profile/Default/Local Storage/leveldb/000003.log
+/codex-layout-profile/Default/Local Storage/leveldb/CURRENT
+/codex-layout-profile/Default/Local Storage/leveldb/LOCK
+/codex-layout-profile/Default/Local Storage/leveldb/LOG
+/codex-layout-profile/Default/Local Storage/leveldb/MANIFEST-000001
+/codex-layout-profile/Default/Network/Cookies
+/codex-layout-profile/Default/Network/Cookies-journal
+/codex-layout-profile/Default/Network/Device Bound Sessions
+/codex-layout-profile/Default/Network/Device Bound Sessions-journal
+/codex-layout-profile/Default/Network/Network Persistent State
+/codex-layout-profile/Default/Network/NetworkDataMigrated
+/codex-layout-profile/Default/Network/Reporting and NEL
+/codex-layout-profile/Default/Network/Reporting and NEL-journal
+/codex-layout-profile/Default/Network/SCT Auditing Pending Reports
+/codex-layout-profile/Default/Network/Sdch Dictionaries
+/codex-layout-profile/Default/Network/Trust Tokens
+/codex-layout-profile/Default/Network/Trust Tokens-journal
+/codex-layout-profile/Default/Nurturing/campaign_history
+/codex-layout-profile/Default/Nurturing/campaign_history-journal
+/codex-layout-profile/Default/parcel_tracking_db/LOCK
+/codex-layout-profile/Default/parcel_tracking_db/LOG
+/codex-layout-profile/Default/PersistentOriginTrials/LOCK
+/codex-layout-profile/Default/PersistentOriginTrials/LOG
+/codex-layout-profile/Default/Safe Browsing Network/NetworkDataMigrated
+/codex-layout-profile/Default/Safe Browsing Network/Safe Browsing Cookies
+/codex-layout-profile/Default/Safe Browsing Network/Safe Browsing Cookies-journal
+/codex-layout-profile/Default/Session Storage/000003.log
+/codex-layout-profile/Default/Session Storage/CURRENT
+/codex-layout-profile/Default/Session Storage/LOCK
+/codex-layout-profile/Default/Session Storage/LOG
+/codex-layout-profile/Default/Session Storage/MANIFEST-000001
+/codex-layout-profile/Default/Sessions/Session_13423567113178298
+/codex-layout-profile/Default/Shared Dictionary/cache/index-dir/the-real-index
+/codex-layout-profile/Default/Shared Dictionary/cache/index
+/codex-layout-profile/Default/Shared Dictionary/db
+/codex-layout-profile/Default/Shared Dictionary/db-journal
+/codex-layout-profile/Default/shared_proto_db/metadata/000003.log
+/codex-layout-profile/Default/shared_proto_db/metadata/CURRENT
+/codex-layout-profile/Default/shared_proto_db/metadata/LOCK
+/codex-layout-profile/Default/shared_proto_db/metadata/LOG
+/codex-layout-profile/Default/shared_proto_db/metadata/MANIFEST-000001
+/codex-layout-profile/Default/shared_proto_db/000003.log
+/codex-layout-profile/Default/shared_proto_db/CURRENT
+/codex-layout-profile/Default/shared_proto_db/LOCK
+/codex-layout-profile/Default/shared_proto_db/LOG
+/codex-layout-profile/Default/shared_proto_db/MANIFEST-000001
+/codex-layout-profile/Default/Site Characteristics Database/000003.log
+/codex-layout-profile/Default/Site Characteristics Database/CURRENT
+/codex-layout-profile/Default/Site Characteristics Database/LOCK
+/codex-layout-profile/Default/Site Characteristics Database/LOG
+/codex-layout-profile/Default/Site Characteristics Database/MANIFEST-000001
+/codex-layout-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index-dir/the-real-index
+/codex-layout-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/6f3a0dc5e6916f1e_0
+/codex-layout-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/js/index
+/codex-layout-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index-dir/the-real-index
+/codex-layout-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Code Cache/wasm/index
+/codex-layout-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_0
+/codex-layout-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_1
+/codex-layout-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_2
+/codex-layout-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/data_3
+/codex-layout-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnGraphiteCache/index
+/codex-layout-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_0
+/codex-layout-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_1
+/codex-layout-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_2
+/codex-layout-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/data_3
+/codex-layout-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/DawnWebGPUCache/index
+/codex-layout-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_0
+/codex-layout-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_1
+/codex-layout-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_2
+/codex-layout-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/data_3
+/codex-layout-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/GPUCache/index
+/codex-layout-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Local Storage/leveldb/000003.log
+/codex-layout-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Local Storage/leveldb/CURRENT
+/codex-layout-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Local Storage/leveldb/LOCK
+/codex-layout-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Local Storage/leveldb/LOG
+/codex-layout-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Local Storage/leveldb/MANIFEST-000001
+/codex-layout-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/Device Bound Sessions
+/codex-layout-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/Device Bound Sessions-journal
+/codex-layout-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/Network Persistent State
+/codex-layout-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/NetworkDataMigrated
+/codex-layout-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/SCT Auditing Pending Reports
+/codex-layout-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/Sdch Dictionaries
+/codex-layout-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/Trust Tokens
+/codex-layout-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Network/Trust Tokens-journal
+/codex-layout-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Shared Dictionary/cache/index-dir/the-real-index
+/codex-layout-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Shared Dictionary/cache/index
+/codex-layout-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Shared Dictionary/db
+/codex-layout-profile/Default/Storage/ext/ihmafllikibpmigkcoadcmckbfhibefp/def/Shared Dictionary/db-journal
+/codex-layout-profile/Default/Sync Data/LevelDB/000003.log
+/codex-layout-profile/Default/Sync Data/LevelDB/CURRENT
+/codex-layout-profile/Default/Sync Data/LevelDB/LOCK
+/codex-layout-profile/Default/Sync Data/LevelDB/LOG
+/codex-layout-profile/Default/Sync Data/LevelDB/MANIFEST-000001
+/codex-layout-profile/Default/Sync Data/Logs/sync_diagnostic.log
+/codex-layout-profile/Default/WebStorage/QuotaManager
+/codex-layout-profile/Default/WebStorage/QuotaManager-journal
+/codex-layout-profile/Default/Workspaces/Logs/Workspaces Internals Logs
+/codex-layout-profile/Default/Affiliation Database
+/codex-layout-profile/Default/Affiliation Database-journal
+/codex-layout-profile/Default/arbitration_service_config.json
+/codex-layout-profile/Default/BookmarkMergedSurfaceOrdering
+/codex-layout-profile/Default/DIPS
+/codex-layout-profile/Default/DIPS-wal
+/codex-layout-profile/Default/ExtensionActivityComp
+/codex-layout-profile/Default/ExtensionActivityEdge
+/codex-layout-profile/Default/ExtensionActivityEdge-journal
+/codex-layout-profile/Default/Favicons
+/codex-layout-profile/Default/Favicons-journal
+/codex-layout-profile/Default/favorites_diagnostic.log
+/codex-layout-profile/Default/heavy_ad_intervention_opt_out.db-journal
+/codex-layout-profile/Default/History
+/codex-layout-profile/Default/History-journal
+/codex-layout-profile/Default/HubApps
+/codex-layout-profile/Default/HubApps Icons
+/codex-layout-profile/Default/HubApps Icons-journal
+/codex-layout-profile/Default/load_statistics.db-shm
+/codex-layout-profile/Default/load_statistics.db-wal
+/codex-layout-profile/Default/LOCK
+/codex-layout-profile/Default/LOG
+/codex-layout-profile/Default/Login Data
+/codex-layout-profile/Default/Login Data For Account
+/codex-layout-profile/Default/Login Data For Account-journal
+/codex-layout-profile/Default/Login Data-journal
+/codex-layout-profile/Default/Network Action Predictor
+/codex-layout-profile/Default/Network Action Predictor-journal
+/codex-layout-profile/Default/Preferences
+/codex-layout-profile/Default/README
+/codex-layout-profile/Default/Secure Preferences
+/codex-layout-profile/Default/ServerCertificate
+/codex-layout-profile/Default/ServerCertificate-journal
+/codex-layout-profile/Default/Shortcuts
+/codex-layout-profile/Default/Shortcuts-journal
+/codex-layout-profile/Default/SiteList.xml
+/codex-layout-profile/Default/Top Sites
+/codex-layout-profile/Default/Top Sites-journal
+/codex-layout-profile/Default/trusted_vault.pb
+/codex-layout-profile/Default/Vpn Tokens
+/codex-layout-profile/Default/Vpn Tokens-journal
+/codex-layout-profile/Default/Web Data
+/codex-layout-profile/Default/Web Data-journal
+/codex-layout-profile/extensions_crx_cache/metadata.json
+/codex-layout-profile/GraphiteDawnCache/data_0
+/codex-layout-profile/GraphiteDawnCache/data_1
+/codex-layout-profile/GraphiteDawnCache/data_2
+/codex-layout-profile/GraphiteDawnCache/data_3
+/codex-layout-profile/GraphiteDawnCache/index
+/codex-layout-profile/GrShaderCache/data_0
+/codex-layout-profile/GrShaderCache/data_1
+/codex-layout-profile/GrShaderCache/data_2
+/codex-layout-profile/GrShaderCache/data_3
+/codex-layout-profile/GrShaderCache/index
+/codex-layout-profile/Nurturing/campaign_history
+/codex-layout-profile/Nurturing/campaign_history-journal
+/codex-layout-profile/ShaderCache/data_0
+/codex-layout-profile/ShaderCache/data_1
+/codex-layout-profile/ShaderCache/data_2
+/codex-layout-profile/ShaderCache/data_3
+/codex-layout-profile/ShaderCache/index
+/codex-layout-profile/SmartScreen/RemoteData/customSettings
+/codex-layout-profile/SmartScreen/RemoteData/customSettings_F95BA787499AB4FA9EFFF472CE383A14
+/codex-layout-profile/SmartScreen/RemoteData/edgeSettings
+/codex-layout-profile/SmartScreen/RemoteData/edgeSettings_2.0-0
+/codex-layout-profile/CrashpadMetrics-active.pma
+/codex-layout-profile/en-US-10-1.bdic
+/codex-layout-profile/FirstLaunchAfterInstallation
+/codex-layout-profile/Last Browser
+/codex-layout-profile/Last Version
+/codex-layout-profile/Local State
+/codex-layout-profile/Variations
+/codex-layout-profile/VariationsRuntimeSeedV2
+/codex-layout-profile/VariationsSafeSeedV2
+/codex-layout-profile/VariationsSeedV2
+/docs/superpowers/plans/2026-05-14-local-dev-workbench.md
+/docs/superpowers/specs/2026-05-14-local-dev-workbench-prd.md
+/tests/test_delete_dialog_ui.py
+/tests/test_dev_actions.py
+/tests/test_dev_chat.py
+/tests/test_dev_planner.py
+/tests/test_dev_workbench_models.py
+/tests/test_dev_workbench_pages.py
+/tests/test_editor_form_ui.py
+/tests/test_workspace_fs.py

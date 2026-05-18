@@ -3,9 +3,11 @@ import streamlit as st
 from utils import rnd_id, fix_columns_width
 from streamlit import session_state as ss
 from datetime import datetime
+from html import escape
 from llms import llm_providers_and_models, create_llm
 import db_utils
 from i18n import t
+from edit_form_chrome import draw_editor_header, draw_form_section
 
 class MyCrew:
     def __init__(self, id=None, name=None, agents=None, tasks=None, process=None, cache=None, max_rpm=None, verbose=None, manager_llm=None, manager_agent=None, created_at=None, memory=None, planning=None, planning_llm=None, knowledge_source_ids=None):
@@ -265,34 +267,57 @@ class MyCrew:
         max_rpm_key = f"max_rpm_{self.id}"
         
         if self.edit:
-            with st.container(border=True):
-                st.text_input(t("crew.name"), value=self.name, key=name_key, on_change=self.update_name)
+            with st.container(border=True, key=f"crew-editor-shell-{self.id}"):
                 process_display = {
                     Process.sequential: t("crew.process_sequential"),
                     Process.hierarchical: t("crew.process_hierarchical")
                 }
-                selected_process = st.selectbox(
-                    t("crew.process"),
-                    options=[Process.sequential, Process.hierarchical],
-                    index=[Process.sequential, Process.hierarchical].index(self.process),
-                    format_func=lambda x: process_display[x],
-                    key=process_key,
-                    on_change=self.update_process
+                draw_editor_header(
+                    t("editor.crew_title"),
+                    t("editor.crew_subtitle"),
+                    process_display.get(self.process, str(self.process)),
                 )
+                draw_form_section(t("editor.section_identity"), t("editor.crew_identity_desc"))
+                col_name, col_process = st.columns([1, 1])
+                with col_name:
+                    st.text_input(t("crew.name"), value=self.name, key=name_key, on_change=self.update_name)
+                with col_process:
+                    st.selectbox(
+                        t("crew.process"),
+                        options=[Process.sequential, Process.hierarchical],
+                        index=[Process.sequential, Process.hierarchical].index(self.process),
+                        format_func=lambda x: process_display[x],
+                        key=process_key,
+                        on_change=self.update_process
+                    )
+
+                draw_form_section(t("editor.section_assignment"), t("editor.crew_assignment_desc"))
                 st.multiselect(t("crew.agents"), options=[agent.role for agent in ss.agents], default=[agent.role for agent in self.agents], key=agents_key, on_change=self.update_agents)
-                # Filter tasks by selected agents
                 available_tasks = [task for task in ss.tasks if task.agent and task.agent.id in [agent.id for agent in self.agents]]
                 available_task_ids = [task.id for task in available_tasks]
                 default_task_ids = [task.id for task in self.tasks if task.id in available_task_ids]
                 st.multiselect(t("crew.tasks"), options=available_task_ids, default=default_task_ids, format_func=lambda x: next(task.description for task in ss.tasks if task.id == x), key=tasks_key, on_change=self.update_tasks)
-                st.selectbox(t("crew.manager_llm"), options=["None"] + llm_providers_and_models(), index=0 if self.manager_llm is None else llm_providers_and_models().index(self.manager_llm) + 1, key=manager_llm_key, on_change=self.update_manager_llm, disabled=(self.process != Process.hierarchical))
-                st.selectbox(t("crew.manager_agent"), options=["None"] + [agent.role for agent in ss.agents], index=0 if self.manager_agent is None else [agent.role for agent in ss.agents].index(self.manager_agent.role) + 1, key=manager_agent_key, on_change=self.update_manager_agent, disabled=(self.process != Process.hierarchical))
-                st.checkbox(t("crew.verbose"), value=self.verbose, key=verbose_key, on_change=self.update_verbose)
-                st.checkbox(t("crew.memory"), value=self.memory, key=memory_key, on_change=self.update_memory)
-                st.checkbox(t("crew.cache"), value=self.cache, key=cache_key, on_change=self.update_cache)
-                st.checkbox(t("crew.planning"), value=self.planning, key=planning_key, on_change=self.update_planning)
-                st.selectbox(t("crew.planning_llm"), options=["None"] + llm_providers_and_models(), index=0 if self.planning_llm is None else llm_providers_and_models().index(self.planning_llm) + 1, key=planning_llm_key, on_change=self.update_planning_llm, disabled=not self.planning)
-                st.number_input(t("crew.max_requests"), value=self.max_rpm, key=max_rpm_key, on_change=self.update_max_rpm)  
+
+                draw_form_section(t("editor.section_model_behavior"), t("editor.crew_runtime_desc"))
+                col_manager_llm, col_manager_agent = st.columns(2)
+                with col_manager_llm:
+                    st.selectbox(t("crew.manager_llm"), options=["None"] + llm_providers_and_models(), index=0 if self.manager_llm is None else llm_providers_and_models().index(self.manager_llm) + 1, key=manager_llm_key, on_change=self.update_manager_llm, disabled=(self.process != Process.hierarchical))
+                with col_manager_agent:
+                    st.selectbox(t("crew.manager_agent"), options=["None"] + [agent.role for agent in ss.agents], index=0 if self.manager_agent is None else [agent.role for agent in ss.agents].index(self.manager_agent.role) + 1, key=manager_agent_key, on_change=self.update_manager_agent, disabled=(self.process != Process.hierarchical))
+                col_verbose, col_memory, col_cache, col_planning = st.columns(4)
+                with col_verbose:
+                    st.checkbox(t("crew.verbose"), value=self.verbose, key=verbose_key, on_change=self.update_verbose)
+                with col_memory:
+                    st.checkbox(t("crew.memory"), value=self.memory, key=memory_key, on_change=self.update_memory)
+                with col_cache:
+                    st.checkbox(t("crew.cache"), value=self.cache, key=cache_key, on_change=self.update_cache)
+                with col_planning:
+                    st.checkbox(t("crew.planning"), value=self.planning, key=planning_key, on_change=self.update_planning)
+                col_planning_llm, col_rpm = st.columns(2)
+                with col_planning_llm:
+                    st.selectbox(t("crew.planning_llm"), options=["None"] + llm_providers_and_models(), index=0 if self.planning_llm is None else llm_providers_and_models().index(self.planning_llm) + 1, key=planning_llm_key, on_change=self.update_planning_llm, disabled=not self.planning)
+                with col_rpm:
+                    st.number_input(t("crew.max_requests"), value=self.max_rpm, key=max_rpm_key, on_change=self.update_max_rpm)
                 # for some reason knowledge sources for crews are not working, use the knowledge sources in the agents instead
                 # if 'knowledge_sources' in ss and len(ss.knowledge_sources) > 0:
                 #     knowledge_source_options = [ks.id for ks in ss.knowledge_sources]
@@ -312,11 +337,13 @@ class MyCrew:
                 #         on_change=self.update_knowledge_sources
                 #     )
 
+                st.markdown('<div class="studio-editor-actions">', unsafe_allow_html=True)
                 col_save, col_cancel = st.columns(2)
                 with col_save:
-                    st.button(t("button.save"), on_click=self.set_editable, args=(False,), key=rnd_id())
+                    st.button(t("button.save"), on_click=self.set_editable, args=(False,), key=rnd_id(), type="primary")
                 with col_cancel:
                     st.button(t("button.cancel"), on_click=self.cancel_edit, key=rnd_id())
+                st.markdown('</div>', unsafe_allow_html=True)
         else:
             fix_columns_width()
             expander_title = t("crew.title", name=self.name) if self.is_valid() else f"❗ {t('crew.title', name=self.name)}"
@@ -432,32 +459,83 @@ class MyCrew:
             st.error(t("crew.invalid_warning"))
             return
 
-        @st.dialog(f"Delete crew: {self.name}")
+        @st.dialog(t("crew.delete_dialog_title", name=self.name))
         def _dlg():
-            st.markdown(f"### {t('crew.confirm_delete_title')}")
-            st.markdown(t("crew.confirm_delete_message"))
-            st.markdown(t("crew.conflict_note"))
+            st.markdown(
+                f"""
+                <div class="studio-delete-hero">
+                  <div class="studio-delete-warning">!</div>
+                  <div>
+                    <div class="studio-delete-title">{escape(t('crew.confirm_delete_title'))}</div>
+                    <div class="studio-delete-copy">{escape(t('crew.confirm_delete_message'))}</div>
+                  </div>
+                </div>
+                <div class="studio-delete-note">{escape(t('crew.conflict_note'))}</div>
+                """,
+                unsafe_allow_html=True,
+            )
 
-            st.markdown(f"#### {t('crew.agents_section')}")
-            for info in deps['agents']:
-                agent = info['obj']
-                conflict = len(info['conflicts']) > 0
-                checkbox_key = f"del_agent_{agent.id}"
-                label = f"Agent: {agent.role}"
-                default_val = False if conflict else True
-                st.checkbox(label, value=default_val if checkbox_key not in ss else ss[checkbox_key], key=checkbox_key, help=("Conflict: " + " | ".join(info['conflicts'])) if conflict else None)
+            st.markdown(
+                f"""
+                <div class="studio-delete-scope">
+                  <div class="studio-delete-scope-label">{escape(t('crew.delete_scope_title'))}</div>
+                  <div class="studio-delete-scope-name">{escape(self.name)}</div>
+                </div>
+                """,
+                unsafe_allow_html=True,
+            )
 
-            st.markdown(f"#### {t('crew.tasks_section')}")
-            for info in deps['tasks']:
-                task = info['obj']
-                conflict = len(info['conflicts']) > 0
-                checkbox_key = f"del_task_{task.id}"
-                label = f"Task: {task.description[:60]}"
-                default_val = False if conflict else True
-                st.checkbox(label, value=default_val if checkbox_key not in ss else ss[checkbox_key], key=checkbox_key, help=("Conflict: " + " | ".join(info['conflicts'])) if conflict else None)
+            def draw_dependency_group(group_key, title, empty_text, label_prefix):
+                infos = deps[group_key]
+                container_key = "delete-dialog-agents" if group_key == "agents" else "delete-dialog-tasks"
+                with st.container(border=True, key=container_key):
+                    st.markdown(
+                        f"""
+                        <div class="studio-delete-group-head">
+                          <span>{escape(title)}</span>
+                          <span>{len(infos)}</span>
+                        </div>
+                        """,
+                        unsafe_allow_html=True,
+                    )
+                    if not infos:
+                        st.markdown(
+                            f'<div class="studio-delete-empty">{escape(empty_text)}</div>',
+                            unsafe_allow_html=True,
+                        )
+                        return
 
-            st.divider()
-            col_a, col_b, col_c = st.columns(3)
+                    for info in infos:
+                        obj = info['obj']
+                        conflict = len(info['conflicts']) > 0
+                        checkbox_key = f"del_{'agent' if group_key == 'agents' else 'task'}_{obj.id}"
+                        item_name = obj.role if group_key == "agents" else obj.description[:80]
+                        status = t("crew.delete_conflict") if conflict else t("crew.delete_safe")
+                        label = f"{label_prefix}: {item_name} - {status}"
+                        default_val = False if conflict else True
+                        help_text = " | ".join(info['conflicts']) if conflict else None
+                        st.checkbox(
+                            label,
+                            value=default_val if checkbox_key not in ss else ss[checkbox_key],
+                            key=checkbox_key,
+                            help=help_text,
+                        )
+
+            draw_dependency_group(
+                "agents",
+                t("crew.agents_section"),
+                t("crew.delete_empty_agents"),
+                "Agent",
+            )
+            draw_dependency_group(
+                "tasks",
+                t("crew.tasks_section"),
+                t("crew.delete_empty_tasks"),
+                t("task.title"),
+            )
+
+            st.markdown('<div class="studio-delete-actions">', unsafe_allow_html=True)
+            col_a, col_b, col_c = st.columns([1, 1.35, 1.65])
             with col_a:
                 if st.button(t("button.cancel")):
                     self.clear_delete_modal()
@@ -496,5 +574,6 @@ class MyCrew:
                     self.delete()
                     self.clear_delete_modal()
                     st.rerun()
+            st.markdown('</div>', unsafe_allow_html=True)
 
         _dlg()

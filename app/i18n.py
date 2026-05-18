@@ -101,7 +101,7 @@ def t(key: str, **kwargs):
 def setup_language_selector():
     """Setup language selector in the sidebar."""
     with st.sidebar:
-        st.divider()
+        st.markdown('<div class="studio-sidebar-separator"></div>', unsafe_allow_html=True)
         languages = get_available_languages()
         lang_names = {
             "en": "English",
@@ -109,15 +109,16 @@ def setup_language_selector():
         }
 
         current_lang = get_current_language()
-        selected_idx = languages.index(current_lang)
-        selected_lang = st.selectbox(
-            t("language.select"),
-            languages,
-            index=selected_idx,
-            format_func=lambda x: lang_names.get(x, x),
-            label_visibility="collapsed",
-            key="lang_selector",
-        )
-
-        if selected_lang != current_lang:
-            set_language(selected_lang)
+        current_label = lang_names.get(current_lang, current_lang)
+        with st.container(key="lang-selector"):
+            with st.popover(current_label, use_container_width=True):
+                for lang_code in languages:
+                    lang_label = lang_names.get(lang_code, lang_code)
+                    option_label = f"✓ {lang_label}" if lang_code == current_lang else lang_label
+                    if st.button(
+                        option_label,
+                        key=f"lang_selector_{lang_code}",
+                        use_container_width=True,
+                        disabled=lang_code == current_lang,
+                    ):
+                        set_language(lang_code)
