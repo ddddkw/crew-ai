@@ -529,6 +529,7 @@ class PageDevSessions:
                     f'</div>',
                     unsafe_allow_html=True,
                 )
+                st.markdown('<div class="dev-session-home-spacer" aria-hidden="true"></div>', unsafe_allow_html=True)
                 self._draw_chat_composer(workspace, None)
 
     def _draw_session_editor(self, session):

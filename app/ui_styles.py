@@ -224,11 +224,11 @@ def apply_global_styles():
         [data-testid="stMain"] .block-container:has(.st-key-dev-session-workbench),
         body:has(.st-key-dev-session-workbench) [data-testid="stMainBlockContainer"],
         [data-testid="stMainBlockContainer"]:has(.st-key-dev-session-workbench) {
-          --dev-session-shell-height: calc(100vh - 4.8rem);
+          --dev-session-shell-height: calc(100dvh - 0.35rem);
           min-height: var(--dev-session-shell-height) !important;
           height: var(--dev-session-shell-height) !important;
           overflow: hidden;
-          padding-top: 0.45rem !important;
+          padding-top: 0.65rem !important;
           padding-left: 0.45rem !important;
           padding-right: 0.45rem !important;
           padding-bottom: 0.65rem !important;
@@ -831,16 +831,17 @@ def apply_global_styles():
           --dev-session-outline: rgba(148, 163, 184, 0.14);
           --dev-session-control: rgba(17, 28, 46, 0.86);
           --dev-session-control-hover: rgba(22, 36, 58, 0.94);
-          --dev-session-shell-height: calc(100vh - 4.8rem);
-          --dev-session-content-height: calc(var(--dev-session-shell-height) - 0.7rem);
-          min-height: var(--dev-session-shell-height);
-          height: var(--dev-session-shell-height);
+          --dev-session-shell-height: calc(100dvh - 0.35rem);
+          --dev-session-content-height: calc(var(--dev-session-shell-height) - 1.45rem);
+          min-height: var(--dev-session-shell-height) !important;
+          height: var(--dev-session-shell-height) !important;
           overflow: hidden;
           border: 0;
           border-radius: 14px;
           background: transparent;
           box-shadow: none;
-          padding: 0.35rem;
+          padding: 1rem 0.35rem 0.35rem;
+          box-sizing: border-box;
         }
 
         .st-key-dev-session-workbench > [data-testid="stLayoutWrapper"] {
@@ -1148,6 +1149,12 @@ def apply_global_styles():
           gap: 0.75rem !important;
         }
 
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) > [data-testid="stLayoutWrapper"] > [data-testid="stVerticalBlock"] {
+          flex-direction: column !important;
+          align-items: stretch !important;
+          min-height: 0 !important;
+        }
+
         .dev-session-main {
           min-height: auto;
           height: fit-content;
@@ -1201,6 +1208,32 @@ def apply_global_styles():
           font-weight: 640;
         }
 
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) [class*="st-key-dev-session-thread-"] {
+          flex: 1 1 auto !important;
+          min-height: 0 !important;
+          overflow: hidden;
+        }
+
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) .st-key-dev-session-chat-canvas,
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) .dev-session-chat-canvas {
+          height: 100% !important;
+          min-height: 0 !important;
+          max-height: none !important;
+        }
+
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) [class*="st-key-dev-session-chat-canvas"] > [data-testid="stVerticalBlock"] {
+          height: 100% !important;
+          min-height: 0 !important;
+          max-height: none !important;
+        }
+
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) .st-key-dev-session-bottom-composer,
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) .dev-session-bottom-composer {
+          flex: 0 0 auto !important;
+          margin-top: 0 !important;
+          margin-bottom: 0 !important;
+        }
+
         .dev-session-layout {
           margin: 0;
         }
@@ -1239,7 +1272,7 @@ def apply_global_styles():
           display: flex !important;
           flex: 1 1 auto !important;
           flex-direction: column;
-          justify-content: center;
+          justify-content: stretch;
           box-shadow:
             inset 0 1px 0 rgba(255, 255, 255, 0.04),
             0 22px 60px rgba(0, 0, 0, 0.18);
@@ -1251,13 +1284,17 @@ def apply_global_styles():
           height: 100% !important;
           display: flex !important;
           flex: 1 1 auto !important;
-          justify-content: center;
-          gap: 1rem !important;
+          justify-content: flex-start;
+          gap: 1.15rem !important;
+        }
+
+        .st-key-dev-session-home-shell > [data-testid="stLayoutWrapper"] > [data-testid="stVerticalBlock"] {
+          flex-direction: column !important;
         }
 
         .dev-session-home-card {
           max-width: 48rem;
-          margin: 0 auto 0.85rem;
+          margin: 0.35rem auto 0;
           text-align: center;
         }
 
@@ -1301,6 +1338,12 @@ def apply_global_styles():
           margin: 0 auto;
         }
 
+        .dev-session-home-spacer {
+          width: 100%;
+          flex: 1 1 100%;
+          min-height: clamp(12rem, 34vh, 28rem);
+        }
+
         .st-key-dev-session-home-composer-card,
         .st-key-dev-session-bottom-composer,
         .dev-session-home-composer-card,
@@ -1308,6 +1351,14 @@ def apply_global_styles():
           max-width: 64rem;
           width: 100%;
           margin: 0 auto;
+        }
+
+        .st-key-dev-session-home-composer-card,
+        .dev-session-home-composer-card {
+          margin-top: auto !important;
+          margin-bottom: 0 !important;
+          flex: 0 0 auto !important;
+          align-self: stretch;
         }
 
         [class*="st-key-dev-session-composer-"] {
@@ -1694,6 +1745,12 @@ def apply_global_styles():
 
           .st-key-dev-session-home-shell {
             padding: 0.95rem;
+          }
+
+          .dev-session-home-spacer {
+            height: 1.5rem;
+            min-height: 1.5rem;
+            flex: 0 0 auto;
           }
         }
 
