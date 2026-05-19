@@ -443,7 +443,7 @@ class PageDevSessions:
                 unsafe_allow_html=True,
             )
         with delete_col:
-            if st.button(t("dev_session.delete_session"), key=f"delete-dev-session-{session.id}", use_container_width=True):
+            if st.button(t("dev_session.delete_session"), key=f"delete-dev-session-{session.id}"):
                 self._delete_session(session)
 
     def _draw_chat_composer(self, workspace, session):
@@ -474,7 +474,7 @@ class PageDevSessions:
                     message = st.text_area(
                         t("dev_session.requirement") if is_new_thread else t("dev_session.message_placeholder"),
                         placeholder=placeholder,
-                        height=116 if is_new_thread else 96,
+                        height=82 if is_new_thread else 78,
                         label_visibility="collapsed",
                         key=message_key,
                     )
@@ -529,7 +529,8 @@ class PageDevSessions:
                     f'</div>',
                     unsafe_allow_html=True,
                 )
-                st.markdown('<div class="dev-session-home-spacer" aria-hidden="true"></div>', unsafe_allow_html=True)
+                with st.container(border=False, key="dev-session-home-spacer-wrap"):
+                    st.markdown('<div class="dev-session-home-spacer" aria-hidden="true"></div>', unsafe_allow_html=True)
                 self._draw_chat_composer(workspace, None)
 
     def _draw_session_editor(self, session):

@@ -20,6 +20,7 @@ def apply_global_styles():
           --studio-danger: #ef4444;
           --studio-success: #22c55e;
           --studio-radius: 8px;
+          --studio-app-header-height: 4.75rem;
         }
 
         .stApp {
@@ -224,7 +225,7 @@ def apply_global_styles():
         [data-testid="stMain"] .block-container:has(.st-key-dev-session-workbench),
         body:has(.st-key-dev-session-workbench) [data-testid="stMainBlockContainer"],
         [data-testid="stMainBlockContainer"]:has(.st-key-dev-session-workbench) {
-          --dev-session-shell-height: calc(100dvh - 0.35rem);
+          --dev-session-shell-height: calc(100dvh - var(--studio-app-header-height) - 0.75rem);
           min-height: var(--dev-session-shell-height) !important;
           height: var(--dev-session-shell-height) !important;
           overflow: hidden;
@@ -822,7 +823,7 @@ def apply_global_styles():
 
         .dev-session-workbench {
           display: none;
-          grid-template-columns: minmax(14rem, 0.25fr) minmax(0, 1fr);
+          grid-template-columns: minmax(16rem, clamp(17rem, 21vw, 21rem)) minmax(0, 1fr);
         }
 
         .st-key-dev-session-workbench {
@@ -831,7 +832,7 @@ def apply_global_styles():
           --dev-session-outline: rgba(148, 163, 184, 0.14);
           --dev-session-control: rgba(17, 28, 46, 0.86);
           --dev-session-control-hover: rgba(22, 36, 58, 0.94);
-          --dev-session-shell-height: calc(100dvh - 0.35rem);
+          --dev-session-shell-height: calc(100dvh - var(--studio-app-header-height) - 0.75rem);
           --dev-session-content-height: calc(var(--dev-session-shell-height) - 1.45rem);
           min-height: var(--dev-session-shell-height) !important;
           height: var(--dev-session-shell-height) !important;
@@ -854,6 +855,8 @@ def apply_global_styles():
         .st-key-dev-session-workbench > [data-testid="stLayoutWrapper"] > [data-testid="stHorizontalBlock"] {
           min-height: var(--dev-session-content-height) !important;
           height: var(--dev-session-content-height) !important;
+          display: grid !important;
+          grid-template-columns: minmax(16rem, clamp(17rem, 21vw, 21rem)) minmax(0, 1fr);
           align-items: stretch !important;
           gap: 0.55rem !important;
         }
@@ -864,6 +867,8 @@ def apply_global_styles():
         }
 
         .st-key-dev-session-workbench > [data-testid="stLayoutWrapper"] > [data-testid="stHorizontalBlock"] > [data-testid="stColumn"] {
+          width: 100% !important;
+          min-width: 0 !important;
           min-height: var(--dev-session-content-height) !important;
           height: var(--dev-session-content-height) !important;
           align-self: stretch !important;
@@ -1064,8 +1069,15 @@ def apply_global_styles():
         }
 
         [class*="st-key-dev-session-session-row-"] [data-testid="stHorizontalBlock"] {
+          display: grid !important;
+          grid-template-columns: minmax(0, 1fr) 2.55rem;
           align-items: center;
           gap: 0.35rem;
+        }
+
+        [class*="st-key-dev-session-session-row-"] [data-testid="stColumn"] {
+          width: 100% !important;
+          min-width: 0 !important;
         }
 
         [class*="st-key-dev-session-session-"] button {
@@ -1079,6 +1091,8 @@ def apply_global_styles():
         .dev-session-session-delete,
         [class*="st-key-dev-session-session-delete-"] button,
         [class*="st-key-delete-dev-session-sidebar-"] button {
+          width: 2.38rem !important;
+          min-width: 2.38rem !important;
           min-height: 2.38rem;
           justify-content: center !important;
           padding: 0 !important;
@@ -1121,6 +1135,7 @@ def apply_global_styles():
 
         .st-key-dev-session-conversation,
         .dev-session-conversation {
+          position: relative;
           min-height: var(--dev-session-content-height) !important;
           height: var(--dev-session-content-height) !important;
           flex: 1 1 auto !important;
@@ -1150,9 +1165,24 @@ def apply_global_styles():
         }
 
         .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) > [data-testid="stLayoutWrapper"] > [data-testid="stVerticalBlock"] {
-          flex-direction: column !important;
+          display: grid !important;
+          grid-template-rows: auto minmax(0, 1fr) auto;
           align-items: stretch !important;
+          gap: 0.75rem !important;
           min-height: 0 !important;
+        }
+
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) > [data-testid="stLayoutWrapper"] > [data-testid="stVerticalBlock"] > [data-testid="stHorizontalBlock"] {
+          display: grid !important;
+          grid-template-columns: minmax(0, 1fr) auto;
+          align-items: start !important;
+          flex: 0 0 auto !important;
+          gap: 0.75rem !important;
+        }
+
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) > [data-testid="stLayoutWrapper"] > [data-testid="stVerticalBlock"] > [data-testid="stHorizontalBlock"] > [data-testid="stColumn"] {
+          width: 100% !important;
+          min-width: 0 !important;
         }
 
         .dev-session-main {
@@ -1188,9 +1218,11 @@ def apply_global_styles():
           display: inline-flex;
           align-items: center;
           flex-wrap: wrap;
+          justify-content: flex-end;
           gap: 0.48rem;
           color: var(--studio-muted);
           font-size: 0.82rem;
+          min-width: 0;
         }
 
         .dev-session-model-provider,
@@ -1211,7 +1243,17 @@ def apply_global_styles():
         .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) [class*="st-key-dev-session-thread-"] {
           flex: 1 1 auto !important;
           min-height: 0 !important;
+          height: 100% !important;
           overflow: hidden;
+          padding-bottom: 0;
+        }
+
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) [class*="st-key-dev-session-thread-"] > [data-testid="stLayoutWrapper"],
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) [class*="st-key-dev-session-thread-"] > [data-testid="stLayoutWrapper"] > [data-testid="stVerticalBlock"] {
+          min-height: 0 !important;
+          height: 100% !important;
+          display: flex !important;
+          flex: 1 1 auto !important;
         }
 
         .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) .st-key-dev-session-chat-canvas,
@@ -1229,9 +1271,26 @@ def apply_global_styles():
 
         .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) .st-key-dev-session-bottom-composer,
         .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) .dev-session-bottom-composer {
+          width: min(64rem, 100%) !important;
+          max-width: 100%;
           flex: 0 0 auto !important;
-          margin-top: 0 !important;
-          margin-bottom: 0 !important;
+          align-self: center;
+          justify-self: center;
+          margin: 0.45rem auto 0 !important;
+        }
+
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) .st-key-dev-session-bottom-composer > [data-testid="stLayoutWrapper"],
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) .st-key-dev-session-bottom-composer > [data-testid="stLayoutWrapper"] > [data-testid="stVerticalBlock"] {
+          width: 100% !important;
+          min-height: 0 !important;
+          height: auto !important;
+        }
+
+        [class*="st-key-delete-dev-session-"]:not([class*="sidebar"]) button {
+          width: auto !important;
+          min-width: 7.5rem;
+          max-width: 100%;
+          justify-content: center !important;
         }
 
         .dev-session-layout {
@@ -1260,41 +1319,62 @@ def apply_global_styles():
         }
 
         .st-key-dev-session-home-shell {
-          width: min(100%, 76rem);
+          width: min(100%, 62rem);
           margin: 0 auto;
-          border: 1px solid var(--dev-session-outline);
+          border: 0;
           border-radius: 16px;
-          background:
-            linear-gradient(180deg, var(--dev-session-surface-strong), rgba(10, 16, 27, 0.48));
-          padding: clamp(1rem, 2vw, 1.55rem);
+          background: transparent;
+          padding: clamp(1.4rem, 4vh, 2.4rem) clamp(0.75rem, 2vw, 1.25rem) 0;
           min-height: 100% !important;
           height: 100% !important;
-          display: flex !important;
+          display: grid !important;
           flex: 1 1 auto !important;
-          flex-direction: column;
-          justify-content: stretch;
-          box-shadow:
-            inset 0 1px 0 rgba(255, 255, 255, 0.04),
-            0 22px 60px rgba(0, 0, 0, 0.18);
+          grid-template-rows: auto minmax(0, 1fr) auto;
+          grid-template-columns: minmax(0, 1fr);
+          align-content: stretch;
+          justify-items: stretch;
+          gap: clamp(0.75rem, 1.6vh, 1.15rem);
+          box-shadow: none;
         }
 
-        .st-key-dev-session-home-shell > [data-testid="stLayoutWrapper"],
-        .st-key-dev-session-home-shell > [data-testid="stLayoutWrapper"] > [data-testid="stVerticalBlock"] {
-          min-height: 100% !important;
-          height: 100% !important;
-          display: flex !important;
-          flex: 1 1 auto !important;
-          justify-content: flex-start;
-          gap: 1.15rem !important;
+        .st-key-dev-session-home > [data-testid="stLayoutWrapper"] > [data-testid="stVerticalBlock"].st-key-dev-session-home-shell {
+          display: grid !important;
+          grid-template-rows: auto minmax(0, 1fr) auto;
+          grid-template-columns: minmax(0, 1fr);
+          align-content: stretch;
+          align-items: stretch;
+          justify-items: stretch;
+          gap: clamp(0.75rem, 1.6vh, 1.15rem) !important;
         }
 
-        .st-key-dev-session-home-shell > [data-testid="stLayoutWrapper"] > [data-testid="stVerticalBlock"] {
-          flex-direction: column !important;
+        .st-key-dev-session-home-shell > [data-testid="stElementContainer"]:has(.dev-session-home-card),
+        .st-key-dev-session-home-shell > [data-testid="stLayoutWrapper"]:has(.st-key-dev-session-home-spacer-wrap),
+        .st-key-dev-session-home-shell > [data-testid="stLayoutWrapper"]:has(.st-key-dev-session-home-composer-card) {
+          min-height: 0 !important;
+          height: auto !important;
+          width: 100% !important;
+          justify-self: stretch;
+        }
+
+        .st-key-dev-session-home-shell > [data-testid="stElementContainer"]:has(.dev-session-home-card) {
+          grid-row: 1;
+        }
+
+        .st-key-dev-session-home-shell > [data-testid="stLayoutWrapper"]:has(.st-key-dev-session-home-spacer-wrap) {
+          grid-row: 2;
+          display: block !important;
+          overflow: hidden;
+        }
+
+        .st-key-dev-session-home-shell > [data-testid="stLayoutWrapper"]:has(.st-key-dev-session-home-composer-card) {
+          grid-row: 3;
+          display: block !important;
+          align-self: end !important;
         }
 
         .dev-session-home-card {
           max-width: 48rem;
-          margin: 0.35rem auto 0;
+          margin: clamp(1.4rem, 6vh, 4.4rem) auto 0;
           text-align: center;
         }
 
@@ -1340,8 +1420,25 @@ def apply_global_styles():
 
         .dev-session-home-spacer {
           width: 100%;
-          flex: 1 1 100%;
-          min-height: clamp(12rem, 34vh, 28rem);
+          height: auto;
+          min-height: clamp(4rem, 12vh, 8rem);
+          flex: 1 1 auto;
+        }
+
+        .st-key-dev-session-home-spacer-wrap {
+          grid-row: 2;
+          min-height: 0 !important;
+          height: 100% !important;
+          width: 100% !important;
+          display: block !important;
+          overflow: hidden;
+        }
+
+        .st-key-dev-session-home-spacer-wrap > [data-testid="stLayoutWrapper"],
+        .st-key-dev-session-home-spacer-wrap > [data-testid="stLayoutWrapper"] > [data-testid="stVerticalBlock"] {
+          min-height: 0 !important;
+          height: 100% !important;
+          width: 100% !important;
         }
 
         .st-key-dev-session-home-composer-card,
@@ -1355,10 +1452,23 @@ def apply_global_styles():
 
         .st-key-dev-session-home-composer-card,
         .dev-session-home-composer-card {
+          grid-row: 3;
+          width: min(58rem, calc(100% - 1.5rem));
+          height: auto !important;
+          min-height: 0 !important;
           margin-top: auto !important;
           margin-bottom: 0 !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
           flex: 0 0 auto !important;
-          align-self: stretch;
+          align-self: end !important;
+        }
+
+        .st-key-dev-session-home-composer-card > [data-testid="stLayoutWrapper"],
+        .st-key-dev-session-home-composer-card > [data-testid="stLayoutWrapper"] > [data-testid="stVerticalBlock"] {
+          width: 100% !important;
+          min-height: 0 !important;
+          height: auto !important;
         }
 
         [class*="st-key-dev-session-composer-"] {
@@ -1676,6 +1786,166 @@ def apply_global_styles():
           }
         }
 
+        /* Compact density layer: keep the UI usable while reducing oversized controls. */
+        html,
+        body,
+        .stApp {
+          font-size: 14px;
+        }
+
+        .main .block-container {
+          padding: 1.35rem 1.45rem 2rem;
+          margin-top: 0.55rem;
+          margin-bottom: 0.8rem;
+        }
+
+        .studio-page-header {
+          gap: 0.75rem;
+          padding: 0.9rem 1rem;
+          margin-bottom: 0.85rem;
+        }
+
+        .studio-page-title {
+          font-size: 1.38rem;
+        }
+
+        .studio-page-subtitle {
+          font-size: 0.82rem;
+        }
+
+        .stButton > button {
+          min-height: 2.05rem !important;
+          padding: 0.38rem 0.62rem !important;
+          font-size: 0.88rem !important;
+          line-height: 1.2 !important;
+        }
+
+        .stTextInput input,
+        .stTextArea textarea,
+        .stNumberInput input,
+        div[data-baseweb="select"] > div {
+          min-height: 2.05rem !important;
+          font-size: 0.88rem !important;
+        }
+
+        section[data-testid="stSidebar"] .stButton > button {
+          min-height: 2.05rem !important;
+          padding-left: 0.58rem !important;
+          font-size: 0.88rem !important;
+        }
+
+        section[data-testid="stSidebar"] .st-key-nav-card-workspace,
+        section[data-testid="stSidebar"] .st-key-nav-card-development,
+        section[data-testid="stSidebar"] .st-key-nav-card-system {
+          margin-bottom: 0.55rem;
+          padding: 0.45rem 0.38rem 0.38rem;
+        }
+
+        .studio-nav-card-title,
+        .dev-session-section-label,
+        .dev-session-lane-eyebrow {
+          font-size: 0.66rem;
+        }
+
+        .st-key-dev-session-workbench {
+          padding: 0.72rem 0.28rem 0.28rem;
+        }
+
+        .st-key-dev-session-lane,
+        .dev-session-lane {
+          padding: 0.5rem;
+        }
+
+        .dev-session-lane-summary {
+          padding: 0.58rem 0.64rem;
+          gap: 0.26rem;
+        }
+
+        .dev-session-lane-title {
+          font-size: 0.88rem;
+        }
+
+        .dev-session-lane-path,
+        .dev-session-topbar-subtitle {
+          font-size: 0.72rem;
+        }
+
+        .st-key-dev-session-lane-controls {
+          padding: 0.45rem;
+        }
+
+        .st-key-dev-session-lane .stButton > button,
+        .st-key-dev-session-lane div[data-baseweb="select"] > div,
+        .st-key-dev-session-lane input,
+        [class*="st-key-dev-session-session-"] button,
+        .dev-session-session-delete,
+        [class*="st-key-dev-session-session-delete-"] button,
+        [class*="st-key-delete-dev-session-sidebar-"] button {
+          min-height: 2.05rem !important;
+          font-size: 0.86rem !important;
+        }
+
+        .dev-session-session-delete,
+        [class*="st-key-dev-session-session-delete-"] button,
+        [class*="st-key-delete-dev-session-sidebar-"] button {
+          width: 2.05rem !important;
+          min-width: 2.05rem !important;
+        }
+
+        .dev-session-topbar {
+          padding: 0.15rem 0 0.62rem;
+        }
+
+        .dev-session-topbar-title {
+          font-size: 0.98rem;
+        }
+
+        .dev-session-model-provider,
+        .dev-session-model-name,
+        .dev-session-topbar-actions span {
+          min-height: 1.55rem;
+          padding: 0 0.48rem;
+          font-size: 0.7rem;
+        }
+
+        [class*="st-key-delete-dev-session-"]:not([class*="sidebar"]) button {
+          min-width: 6.8rem;
+        }
+
+        [class*="st-key-dev-session-new-chat-composer-"],
+        [class*="st-key-dev-session-followup-composer-"] {
+          border-radius: 10px;
+          padding: 0.62rem 0.68rem 0.58rem;
+        }
+
+        [class*="st-key-dev-session-new-chat-composer-"] textarea,
+        [class*="st-key-dev-session-followup-composer-"] textarea {
+          min-height: 4rem !important;
+          font-size: 0.88rem !important;
+          line-height: 1.42;
+        }
+
+        [class*="st-key-dev-session-composer-"] div[data-baseweb="select"] > div,
+        [class*="st-key-dev-session-new-chat-composer-"] div[data-baseweb="select"] > div {
+          min-height: 2rem !important;
+        }
+
+        [class*="st-key-dev-session-send-arrow-"] button,
+        [class*="st-key-dev-session-create-arrow-"] button {
+          width: 2.18rem !important;
+          min-width: 2.18rem !important;
+          height: 2.18rem !important;
+          min-height: 2.18rem !important;
+        }
+
+        .dev-session-hero-title {
+          font-size: clamp(1.35rem, 2vw, 1.75rem);
+        }
+
+        .dev-session-home-subtitle {
+          font-size: 0.84rem;
+        }
+
         [class*="st-key-workspace-directory-picker-"] {
           background: rgba(15, 23, 42, 0.32);
           border: 1px solid rgba(96, 165, 250, 0.16);
@@ -1711,6 +1981,11 @@ def apply_global_styles():
             flex-direction: column;
           }
 
+          .st-key-dev-session-workbench > [data-testid="stLayoutWrapper"] > [data-testid="stHorizontalBlock"] {
+            display: flex !important;
+            flex-direction: column !important;
+          }
+
           .st-key-dev-session-lane,
           .dev-session-lane,
           .st-key-dev-session-conversation,
@@ -1725,6 +2000,21 @@ def apply_global_styles():
           [class*="st-key-dev-session-session-row-"] [data-testid="stHorizontalBlock"],
           [class*="st-key-dev-session-composer-toolbar-"] [data-testid="stHorizontalBlock"] {
             flex-direction: row;
+          }
+
+          .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) > [data-testid="stLayoutWrapper"] > [data-testid="stVerticalBlock"] {
+            display: flex !important;
+            flex-direction: column !important;
+          }
+
+          .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) > [data-testid="stLayoutWrapper"] > [data-testid="stVerticalBlock"] > [data-testid="stHorizontalBlock"] {
+            display: flex !important;
+            flex-direction: column !important;
+          }
+
+          .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) .st-key-dev-session-bottom-composer,
+          .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) .dev-session-bottom-composer {
+            width: 100% !important;
           }
 
           .st-key-dev-session-home,
@@ -1751,6 +2041,12 @@ def apply_global_styles():
             height: 1.5rem;
             min-height: 1.5rem;
             flex: 0 0 auto;
+          }
+
+          .st-key-dev-session-home-composer-card,
+          .dev-session-home-composer-card {
+            width: 100%;
+            margin: 0 auto !important;
           }
         }
 
@@ -1887,6 +2183,208 @@ def apply_global_styles():
           .crew-run-metrics {
             grid-template-columns: repeat(2, minmax(0, 1fr));
           }
+        }
+
+        /* Final compact override. Keep this at the end so Streamlit/page rules cannot inflate controls again. */
+        :root {
+          --studio-density-font: 13px;
+          --studio-density-control: 1.9rem;
+        }
+
+        html,
+        body,
+        .stApp,
+        .stApp p,
+        .stApp span,
+        .stApp label,
+        .stApp button,
+        .stApp input,
+        .stApp textarea,
+        .stApp [data-baseweb="select"] {
+          font-size: var(--studio-density-font) !important;
+        }
+
+        .stApp h1 { font-size: 1.55rem !important; }
+        .stApp h2 { font-size: 1.28rem !important; }
+        .stApp h3 { font-size: 1.08rem !important; }
+
+        .main .block-container:not(:has(.st-key-dev-session-workbench)) {
+          padding: 1rem 1.1rem 1.4rem !important;
+        }
+
+        .stButton > button,
+        section[data-testid="stSidebar"] .stButton > button,
+        .stTextInput input,
+        .stNumberInput input,
+        div[data-baseweb="select"] > div {
+          min-height: var(--studio-density-control) !important;
+          padding: 0.28rem 0.55rem !important;
+          line-height: 1.15 !important;
+        }
+
+        .stTextArea textarea {
+          font-size: var(--studio-density-font) !important;
+          line-height: 1.36 !important;
+        }
+
+        section[data-testid="stSidebar"] [data-testid="stSidebarUserContent"] {
+          padding-left: 0.55rem !important;
+          padding-right: 0.55rem !important;
+        }
+
+        section[data-testid="stSidebar"] .st-key-nav-card-workspace,
+        section[data-testid="stSidebar"] .st-key-nav-card-development,
+        section[data-testid="stSidebar"] .st-key-nav-card-system,
+        .studio-card,
+        .studio-page-header,
+        .st-key-dev-session-lane,
+        .dev-session-lane,
+        .st-key-dev-session-conversation,
+        .dev-session-conversation {
+          border-radius: 8px !important;
+        }
+
+        section[data-testid="stSidebar"] .st-key-nav-card-workspace,
+        section[data-testid="stSidebar"] .st-key-nav-card-development,
+        section[data-testid="stSidebar"] .st-key-nav-card-system {
+          padding: 0.34rem 0.3rem !important;
+          margin-bottom: 0.45rem !important;
+        }
+
+        .studio-page-header,
+        .studio-card,
+        .crew-run-cockpit,
+        .crew-run-panel,
+        .crew-run-metric {
+          padding: 0.72rem 0.85rem !important;
+        }
+
+        .studio-page-title,
+        .dev-session-hero-title,
+        .dev-session-topbar-title {
+          font-size: 1.18rem !important;
+          line-height: 1.18 !important;
+        }
+
+        .studio-page-subtitle,
+        .dev-session-home-subtitle,
+        .dev-session-topbar-subtitle,
+        .dev-session-lane-path {
+          font-size: 0.78rem !important;
+        }
+
+        .st-key-dev-session-workbench {
+          --dev-session-shell-height: calc(100dvh - var(--studio-app-header-height) - 0.75rem);
+          --dev-session-content-height: calc(var(--dev-session-shell-height) - 1rem);
+          padding: 0.45rem 0.2rem 0.2rem !important;
+        }
+
+        .st-key-dev-session-lane,
+        .dev-session-lane,
+        .st-key-dev-session-conversation,
+        .dev-session-conversation {
+          padding: 0.45rem !important;
+        }
+
+        .dev-session-lane-summary,
+        .st-key-dev-session-lane-controls {
+          padding: 0.42rem 0.48rem !important;
+        }
+
+        .dev-session-lane-title {
+          font-size: 0.86rem !important;
+        }
+
+        [class*="st-key-dev-session-session-row-"] [data-testid="stHorizontalBlock"] {
+          grid-template-columns: minmax(0, 1fr) 2rem !important;
+          gap: 0.28rem !important;
+        }
+
+        .dev-session-session-delete,
+        [class*="st-key-dev-session-session-delete-"] button,
+        [class*="st-key-delete-dev-session-sidebar-"] button {
+          width: 1.9rem !important;
+          min-width: 1.9rem !important;
+          height: 1.9rem !important;
+          min-height: 1.9rem !important;
+        }
+
+        [class*="st-key-dev-session-new-chat-composer-"],
+        [class*="st-key-dev-session-followup-composer-"] {
+          padding: 0.62rem 0.68rem 0.56rem !important;
+          border-radius: 1.25rem !important;
+          border-color: rgba(148, 163, 184, 0.26) !important;
+          background: rgba(15, 23, 42, 0.72) !important;
+        }
+
+        .st-key-dev-session-home-composer-card [data-testid="stTextArea"],
+        .st-key-dev-session-bottom-composer [data-testid="stTextArea"],
+        [class*="st-key-dev-session-new-chat-composer-"] [data-testid="stTextArea"],
+        [class*="st-key-dev-session-followup-composer-"] [data-testid="stTextArea"] {
+          min-height: 0 !important;
+          margin: 0 !important;
+          background: transparent !important;
+        }
+
+        .st-key-dev-session-home-composer-card [data-baseweb="textarea"],
+        .st-key-dev-session-bottom-composer [data-baseweb="textarea"],
+        [class*="st-key-dev-session-new-chat-composer-"] [data-baseweb="textarea"],
+        [class*="st-key-dev-session-followup-composer-"] [data-baseweb="textarea"] {
+          min-height: 3.15rem !important;
+          height: 3.15rem !important;
+          border: 0 !important;
+          border-radius: 0 !important;
+          background: transparent !important;
+          box-shadow: none !important;
+        }
+
+        .st-key-dev-session-home-composer-card [data-baseweb="textarea"] *,
+        .st-key-dev-session-bottom-composer [data-baseweb="textarea"] *,
+        [class*="st-key-dev-session-new-chat-composer-"] [data-baseweb="textarea"] *,
+        [class*="st-key-dev-session-followup-composer-"] [data-baseweb="textarea"] * {
+          background-color: transparent !important;
+          background: transparent !important;
+        }
+
+        [class*="st-key-dev-session-new-chat-composer-"] textarea,
+        [class*="st-key-dev-session-followup-composer-"] textarea {
+          height: 3.15rem !important;
+          min-height: 3.15rem !important;
+          padding: 0.12rem 0.18rem !important;
+          border: 0 !important;
+          background: transparent !important;
+          box-shadow: none !important;
+          resize: none !important;
+        }
+
+        [class*="st-key-dev-session-new-chat-composer-"] [data-testid="stTextArea"],
+        [class*="st-key-dev-session-followup-composer-"] [data-testid="stTextArea"] {
+          min-height: 0 !important;
+        }
+
+        .st-key-dev-session-home-composer-card [class*="st-key-dev-session-composer-toolbar-"],
+        .st-key-dev-session-bottom-composer [class*="st-key-dev-session-composer-toolbar-"] {
+          margin-top: 0.18rem !important;
+        }
+
+        [class*="st-key-dev-session-send-arrow-"] button,
+        [class*="st-key-dev-session-create-arrow-"] button {
+          width: 2rem !important;
+          min-width: 2rem !important;
+          height: 2rem !important;
+          min-height: 2rem !important;
+        }
+
+        .st-key-dev-session-conversation:has(.st-key-dev-session-home) {
+          position: relative !important;
+          overflow: hidden !important;
+          padding-bottom: 0.45rem !important;
+        }
+
+        .st-key-dev-session-conversation:has(.st-key-dev-session-home) .st-key-dev-session-home-shell {
+          min-height: 100% !important;
+          height: 100% !important;
+          padding-bottom: 0 !important;
         }
         </style>
         """,
