@@ -225,16 +225,14 @@ def apply_global_styles():
         [data-testid="stMain"] .block-container:has(.st-key-dev-session-workbench),
         body:has(.st-key-dev-session-workbench) [data-testid="stMainBlockContainer"],
         [data-testid="stMainBlockContainer"]:has(.st-key-dev-session-workbench) {
-          --dev-session-shell-height: calc(100dvh - var(--studio-app-header-height) - 0.75rem);
-          min-height: var(--dev-session-shell-height) !important;
-          height: var(--dev-session-shell-height) !important;
+          --dev-session-shell-height: calc(100dvh - var(--studio-app-header-height) - 0.7rem);
+          min-height: 100dvh !important;
+          height: 100dvh !important;
           overflow: hidden;
-          padding-top: 0.65rem !important;
-          padding-left: 0.45rem !important;
-          padding-right: 0.45rem !important;
-          padding-bottom: 0.65rem !important;
+          padding: calc(var(--studio-app-header-height) + 0.35rem) 0.35rem 0.35rem !important;
           margin-top: 0 !important;
           margin-bottom: 0 !important;
+          box-sizing: border-box !important;
         }
 
         body:has(.st-key-dev-session-workbench) .st-key-dev-session-workbench {
@@ -832,7 +830,7 @@ def apply_global_styles():
           --dev-session-outline: rgba(148, 163, 184, 0.14);
           --dev-session-control: rgba(17, 28, 46, 0.86);
           --dev-session-control-hover: rgba(22, 36, 58, 0.94);
-          --dev-session-shell-height: calc(100dvh - var(--studio-app-header-height) - 0.75rem);
+          --dev-session-shell-height: calc(100dvh - var(--studio-app-header-height) - 0.7rem);
           --dev-session-content-height: calc(var(--dev-session-shell-height) - 1.45rem);
           min-height: var(--dev-session-shell-height) !important;
           height: var(--dev-session-shell-height) !important;
@@ -2274,9 +2272,9 @@ def apply_global_styles():
         }
 
         .st-key-dev-session-workbench {
-          --dev-session-shell-height: calc(100dvh - var(--studio-app-header-height) - 0.75rem);
-          --dev-session-content-height: calc(var(--dev-session-shell-height) - 1rem);
-          padding: 0.45rem 0.2rem 0.2rem !important;
+          --dev-session-shell-height: calc(100dvh - var(--studio-app-header-height) - 0.7rem);
+          --dev-session-content-height: calc(var(--dev-session-shell-height) - 1.45rem);
+          padding: 1.15rem 0.2rem 0.25rem !important;
         }
 
         .st-key-dev-session-lane,
@@ -2384,7 +2382,8 @@ def apply_global_styles():
         .st-key-dev-session-conversation:has(.st-key-dev-session-home) .st-key-dev-session-home-shell {
           min-height: 100% !important;
           height: 100% !important;
-          padding-bottom: 0 !important;
+          padding-bottom: 0.95rem !important;
+          box-sizing: border-box !important;
         }
         </style>
         """,
