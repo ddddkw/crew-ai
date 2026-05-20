@@ -2629,6 +2629,130 @@ def apply_global_styles():
           opacity: 1 !important;
         }
 
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) {
+          display: flex !important;
+          flex-direction: column !important;
+          overflow: hidden !important;
+          padding-bottom: 0.48rem !important;
+        }
+
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) > [data-testid="stLayoutWrapper"],
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) > [data-testid="stLayoutWrapper"] > [data-testid="stVerticalBlock"] {
+          min-height: 0 !important;
+          height: 100% !important;
+          flex: 1 1 auto !important;
+        }
+
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) > [data-testid="stLayoutWrapper"] > [data-testid="stVerticalBlock"] {
+          display: grid !important;
+          grid-template-rows: auto minmax(0, 1fr) auto !important;
+          align-items: stretch !important;
+          gap: 0.58rem !important;
+          overflow: hidden !important;
+        }
+
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) > [data-testid="stLayoutWrapper"] > [data-testid="stVerticalBlock"] > [data-testid="stLayoutWrapper"]:has([class*="st-key-dev-session-thread-"]) {
+          min-height: 0 !important;
+          height: 100% !important;
+          overflow: hidden !important;
+        }
+
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) .st-key-dev-session-chat-canvas,
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) .dev-session-chat-canvas,
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) [class*="st-key-dev-session-chat-canvas"] > [data-testid="stVerticalBlock"] {
+          min-height: 0 !important;
+          height: 100% !important;
+          max-height: none !important;
+          overflow-y: auto !important;
+        }
+
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) .st-key-dev-session-chat-canvas,
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) .dev-session-chat-canvas {
+          width: min(58rem, calc(100% - 1.5rem)) !important;
+          max-width: min(58rem, calc(100% - 1.5rem)) !important;
+          margin: 0 auto !important;
+          padding: 0.35rem 0.15rem 0.25rem !important;
+          box-sizing: border-box !important;
+        }
+
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) .dev-session-chat-thread {
+          min-height: auto !important;
+          justify-content: flex-start;
+        }
+
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) > [data-testid="stLayoutWrapper"] > [data-testid="stVerticalBlock"] > [data-testid="stLayoutWrapper"]:has(.st-key-dev-session-bottom-composer),
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) > [data-testid="stLayoutWrapper"] > [data-testid="stVerticalBlock"] > [data-testid="stLayoutWrapper"]:has([class*="st-key-dev-session-followup-composer-"]),
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) .st-key-dev-session-bottom-composer,
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) .dev-session-bottom-composer {
+          min-height: 0 !important;
+          height: auto !important;
+          flex: 0 0 auto !important;
+        }
+
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) > [data-testid="stLayoutWrapper"] > [data-testid="stVerticalBlock"] > [data-testid="stLayoutWrapper"]:has([class*="st-key-dev-session-followup-composer-"]) {
+          width: min(58rem, calc(100% - 1.5rem)) !important;
+          max-width: min(58rem, calc(100% - 1.5rem)) !important;
+          margin: 0.18rem auto 0 !important;
+          align-self: end !important;
+          justify-self: center !important;
+          min-width: 0 !important;
+        }
+
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) .st-key-dev-session-bottom-composer,
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) .dev-session-bottom-composer {
+          width: min(58rem, calc(100% - 1.5rem)) !important;
+          max-width: min(58rem, calc(100% - 1.5rem)) !important;
+          margin: 0.18rem auto 0 !important;
+          align-self: center !important;
+          justify-self: center !important;
+        }
+
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) .st-key-dev-session-bottom-composer > [data-testid="stLayoutWrapper"],
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) .st-key-dev-session-bottom-composer > [data-testid="stLayoutWrapper"] > [data-testid="stVerticalBlock"],
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) [class*="st-key-dev-session-followup-composer-"],
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) [class*="st-key-dev-session-followup-composer-"] > [data-testid="stLayoutWrapper"],
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) [class*="st-key-dev-session-followup-composer-"] > [data-testid="stLayoutWrapper"] > [data-testid="stVerticalBlock"],
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) [data-testid="stElementContainer"]:has([class*="st-key-dev-session-followup-composer-"]) {
+          width: 100% !important;
+          max-width: 100% !important;
+          min-width: 0 !important;
+          box-sizing: border-box !important;
+        }
+
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) [class*="st-key-dev-session-followup-composer-"] {
+          position: relative;
+          padding: 0.62rem 3.25rem 0.72rem 0.68rem !important;
+          border-radius: 1rem !important;
+        }
+
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) [class*="st-key-dev-session-followup-composer-"] > [data-testid="stLayoutWrapper"] > [data-testid="stVerticalBlock"] {
+          gap: 0 !important;
+          position: relative !important;
+        }
+
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) [class*="st-key-dev-session-followup-composer-"] [data-testid="stTextArea"],
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) [class*="st-key-dev-session-followup-composer-"] [data-baseweb="textarea"],
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) [class*="st-key-dev-session-followup-composer-"] textarea {
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) [class*="st-key-dev-session-followup-composer-"] textarea {
+          padding-right: 0.35rem !important;
+        }
+
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) [class*="st-key-dev-session-followup-composer-"] > [data-testid="stLayoutWrapper"] > [data-testid="stVerticalBlock"] > [data-testid="stElementContainer"]:has([class*="st-key-dev-session-send-arrow-"]),
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) [class*="st-key-dev-session-followup-composer-"] > [data-testid="stLayoutWrapper"] > [data-testid="stVerticalBlock"] > [data-testid="stLayoutWrapper"]:has([class*="st-key-dev-session-send-arrow-"]),
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) [class*="st-key-dev-session-followup-composer-"] [class*="st-key-dev-session-send-arrow-"] {
+          position: absolute !important;
+          right: 0.68rem;
+          bottom: 0.58rem;
+          width: 2.25rem !important;
+          min-width: 2.25rem !important;
+          margin: 0 !important;
+          z-index: 2;
+        }
+
         .st-key-dev-session-conversation:has(.st-key-dev-session-home) {
           position: relative !important;
           overflow: hidden !important;

@@ -495,93 +495,76 @@ class PageDevSessions:
 
     def _draw_chat_composer(self, workspace, session):
         is_new_thread = session is None
-        available_models = llm_providers_and_models()
         message_key = (
             f"new-dev-session-requirement-{workspace.id}"
             if is_new_thread
             else f"dev-session-message-input-{session.id}"
         )
 
-        if is_new_thread:
-            composer_wrapper = st.container(border=False, key="dev-session-home-composer-card")
-        else:
-            composer_wrapper = st.container(border=False, key="dev-session-bottom-composer")
-        with composer_wrapper:
-            with st.container(border=False, key=f"dev-session-composer-{workspace.id}"):
-                if is_new_thread:
-                    composer_container = st.container(border=False, key=f"dev-session-new-chat-composer-{workspace.id}")
-                else:
-                    composer_container = st.container(border=False, key=f"dev-session-followup-composer-{session.id}")
-                with composer_container:
-                    placeholder = (
-                        t("dev_session.requirement_placeholder")
-                        if is_new_thread
-                        else t("dev_session.message_placeholder")
-                    )
+        if not is_new_thread:
+            with st.container(border=False, key="dev-session-bottom-composer"):
+                with st.container(border=False, key=f"dev-session-followup-composer-{session.id}"):
                     message = st.text_area(
-                        t("dev_session.requirement") if is_new_thread else t("dev_session.message_placeholder"),
-                        placeholder=placeholder,
-                        height=82 if is_new_thread else 78,
+                        t("dev_session.message_placeholder"),
+                        placeholder=t("dev_session.message_placeholder"),
+                        height=78,
+                        label_visibility="collapsed",
+                        key=message_key,
+                    )
+                    button_key = f"dev-session-send-arrow-{session.id}"
+                    if st.button("↑", key=button_key, help=t("dev_session.send_message")):
+                        st.markdown('<div class="dev-session-send-button"></div>', unsafe_allow_html=True)
+                        self._send_chat_message(workspace, session, ss.get(message_key, message))
+            return
+
+        available_models = llm_providers_and_models()
+        with st.container(border=False, key="dev-session-home-composer-card"):
+            with st.container(border=False, key=f"dev-session-composer-{workspace.id}"):
+                with st.container(border=False, key=f"dev-session-new-chat-composer-{workspace.id}"):
+                    message = st.text_area(
+                        t("dev_session.requirement"),
+                        placeholder=t("dev_session.requirement_placeholder"),
+                        height=82,
                         label_visibility="collapsed",
                         key=message_key,
                     )
 
-                    toolbar_key = workspace.id if is_new_thread else session.id
-                    with st.container(border=False, key=f"dev-session-composer-toolbar-{toolbar_key}"):
+                    with st.container(border=False, key=f"dev-session-composer-toolbar-{workspace.id}"):
                         _, model_col, action_col = st.columns([0.64, 0.28, 0.08], gap="small")
                         with model_col:
-                            if is_new_thread:
-                                if available_models:
-                                    model_key = f"new-dev-session-model-{workspace.id}"
-                                    selected_model = ss.get(model_key)
-                                    if selected_model not in available_models:
-                                        selected_model = available_models[0]
-                                        ss[model_key] = selected_model
-                                    with st.container(
-                                        border=False,
-                                        key=f"new-dev-session-model-dropdown-{workspace.id}",
+                            if available_models:
+                                model_key = f"new-dev-session-model-{workspace.id}"
+                                selected_model = ss.get(model_key)
+                                if selected_model not in available_models:
+                                    selected_model = available_models[0]
+                                    ss[model_key] = selected_model
+                                with st.container(
+                                    border=False,
+                                    key=f"new-dev-session-model-dropdown-{workspace.id}",
+                                ):
+                                    with st.popover(
+                                        selected_model,
+                                        help=t("dev_session.llm_provider_model"),
+                                        use_container_width=True,
                                     ):
-                                        with st.popover(
-                                            selected_model,
-                                            help=t("dev_session.llm_provider_model"),
-                                            use_container_width=True,
-                                        ):
-                                            for model_index, model_label in enumerate(available_models):
-                                                is_selected = model_label == selected_model
-                                                option_label = f"✓ {model_label}" if is_selected else model_label
-                                                if st.button(
-                                                    option_label,
-                                                    key=f"new-dev-session-model-option-{workspace.id}-{model_index}",
-                                                    use_container_width=True,
-                                                    disabled=is_selected,
-                                                ):
-                                                    ss[model_key] = model_label
-                                                    st.rerun()
-                                else:
-                                    selected_model = None
-                                    st.warning(t("dev_session.no_models"))
+                                        for model_index, model_label in enumerate(available_models):
+                                            is_selected = model_label == selected_model
+                                            option_label = f"✓ {model_label}" if is_selected else model_label
+                                            if st.button(
+                                                option_label,
+                                                key=f"new-dev-session-model-option-{workspace.id}-{model_index}",
+                                                use_container_width=True,
+                                                disabled=is_selected,
+                                            ):
+                                                ss[model_key] = model_label
+                                                st.rerun()
                             else:
-                                selected_model = session.llm_provider_model
-                                st.markdown(
-                                    f'<div class="dev-session-toolbar-right">'
-                                    f'{self._model_badges_html(selected_model)}'
-                                    f'</div>',
-                                    unsafe_allow_html=True,
-                                )
+                                selected_model = None
+                                st.warning(t("dev_session.no_models"))
                         with action_col:
-                            button_key = (
-                                f"dev-session-create-arrow-{workspace.id}"
-                                if is_new_thread
-                                else f"dev-session-send-arrow-{session.id}"
-                            )
-                            button_label = "↑"
-                            button_help = t("dev_session.send_message")
-                            if st.button(button_label, key=button_key, help=button_help):
+                            if st.button("↑", key=f"dev-session-create-arrow-{workspace.id}", help=t("dev_session.send_message")):
                                 st.markdown('<div class="dev-session-send-button"></div>', unsafe_allow_html=True)
-                                if is_new_thread:
-                                    self._create_thread_from_message(workspace, ss.get(message_key, message), selected_model)
-                                else:
-                                    self._send_chat_message(workspace, session, ss.get(message_key, message))
+                                self._create_thread_from_message(workspace, ss.get(message_key, message), selected_model)
 
     def _draw_empty_home(self, workspace):
         with st.container(border=False, key="dev-session-home"):
