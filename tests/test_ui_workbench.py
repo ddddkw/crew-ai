@@ -1,8 +1,21 @@
 from pathlib import Path
+import sys
+from types import SimpleNamespace
 import unittest
 
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+class FakeSessionState(dict):
+    def __getattr__(self, key):
+        try:
+            return self[key]
+        except KeyError as exc:
+            raise AttributeError(key) from exc
+
+    def __setattr__(self, key, value):
+        self[key] = value
 
 
 class WorkbenchUiTests(unittest.TestCase):
@@ -90,16 +103,72 @@ class WorkbenchUiTests(unittest.TestCase):
         self.assertNotIn("st.divider()", source)
         self.assertNotIn("st.radio(", source)
 
+    def test_dev_session_selectors_are_click_only_dropdowns(self):
+        source = (ROOT / "app" / "pg_dev_sessions.py").read_text(encoding="utf-8")
+
+        self.assertIn("def _draw_click_only_dropdown(", source)
+        self.assertIn("def _workspace_dropdown_label(", source)
+        self.assertIn('key="dev-session-workspace-dropdown"', source)
+        self.assertIn('key=f"new-dev-session-model-dropdown-{workspace.id}"', source)
+        self.assertIn("st.columns([0.64, 0.28, 0.08], gap=\"small\")", source)
+        self.assertNotIn("st.columns([0.50, 0.42, 0.08], gap=\"small\")", source)
+        self.assertIn("with st.popover(selected_label, help=help_text, use_container_width=True):", source)
+        self.assertIn('help_text=t("dev_session.select_workspace")', source)
+        self.assertIn("selected_option = selected_label if selected_option is None else selected_option", source)
+        self.assertIn("selected_label = self._workspace_dropdown_label(selected_workspace)", source)
+        self.assertIn("selected_option=selected_option", source)
+        self.assertIn("with st.popover(", source)
+        self.assertIn("selected_model,", source)
+        self.assertIn('help=t("dev_session.llm_provider_model")', source)
+        self.assertNotIn("st.selectbox(", source)
+
+    def test_dev_session_defaults_to_latest_thread_unless_starting_new_chat(self):
+        app_path = str(ROOT / "app")
+        if app_path not in sys.path:
+            sys.path.insert(0, app_path)
+        import pg_dev_sessions
+
+        original_state = pg_dev_sessions.ss
+        fake_state = FakeSessionState()
+        sessions = [
+            SimpleNamespace(id="D_latest", workspace_id="W_1"),
+            SimpleNamespace(id="D_old", workspace_id="W_1"),
+        ]
+        fake_state.dev_sessions = sessions
+        page = pg_dev_sessions.PageDevSessions.__new__(pg_dev_sessions.PageDevSessions)
+
+        try:
+            pg_dev_sessions.ss = fake_state
+            selected = page._selected_session(SimpleNamespace(id="W_1"))
+            self.assertIs(selected, sessions[0])
+            self.assertEqual(fake_state.selected_dev_session_id, "D_latest")
+
+            del fake_state["selected_dev_session_id"]
+            fake_state.dev_session_new_chat = True
+            self.assertIsNone(page._selected_session(SimpleNamespace(id="W_1")))
+            self.assertNotIn("selected_dev_session_id", fake_state)
+        finally:
+            pg_dev_sessions.ss = original_state
+
     def test_sidebar_top_spacing_is_compact(self):
         source = (ROOT / "app" / "ui_styles.py").read_text(encoding="utf-8")
 
         self.assertIn('[data-testid="stSidebarHeader"]', source)
         self.assertIn('[data-testid="stLogoSpacer"]', source)
+        self.assertIn('section[data-testid="stSidebar"] [data-testid="stSidebarContent"]', source)
         self.assertIn('section[data-testid="stSidebar"] [data-testid="stSidebarUserContent"]', source)
         self.assertIn("height: 2rem !important;", source)
         self.assertIn("height: 0 !important;", source)
         self.assertIn("padding-top: 0.2rem !important;", source)
         self.assertIn("padding-top: 0 !important;", source)
+        self.assertIn("padding-left: 0.25rem !important;", source)
+        self.assertIn("padding-right: 0.25rem !important;", source)
+        self.assertIn("padding-left: 0.26rem !important;", source)
+        self.assertIn("padding-right: 0.28rem !important;", source)
+        self.assertIn("width: calc(100% + 1rem) !important;", source)
+        self.assertIn("max-width: none !important;", source)
+        self.assertIn("margin-left: -0.55rem !important;", source)
+        self.assertIn("margin-right: -0.45rem !important;", source)
         self.assertIn(".studio-nav-card-title", source)
         self.assertIn(".st-key-lang-selector", source)
         self.assertIn('[class*="st-key-lang_selector_"] button', source)
@@ -107,12 +176,13 @@ class WorkbenchUiTests(unittest.TestCase):
         self.assertIn(".studio-sidebar-separator", source)
         self.assertIn("margin: 0.15rem 0 0.45rem;", source)
 
-    def test_sidebar_navigation_groups_use_soft_cards(self):
+    def test_sidebar_navigation_groups_use_lightweight_rail_sections(self):
         app_source = (ROOT / "app" / "app.py").read_text(encoding="utf-8")
         style_source = (ROOT / "app" / "ui_styles.py").read_text(encoding="utf-8")
 
         self.assertIn('NAV_ICON_TEXT_SPACER = "\\u00a0\\u00a0"', app_source)
-        self.assertIn('with st.container(border=True, key=f"nav-card-{nav_key}"):', app_source)
+        self.assertIn('with st.container(border=False, key=f"nav-card-{nav_key}"):', app_source)
+        self.assertNotIn('with st.container(border=True, key=f"nav-card-{nav_key}"):', app_source)
         self.assertIn("studio-nav-card-title", app_source)
         self.assertIn('("nav.workspace", ["page.crews", "page.agents", "page.tasks", "page.tools", "page.knowledge", "page.kickoff", "page.results"])', app_source)
         self.assertNotIn('("nav.run", ["page.kickoff", "page.results"])', app_source)
@@ -120,8 +190,21 @@ class WorkbenchUiTests(unittest.TestCase):
         self.assertIn(".st-key-nav-card-development", style_source)
         self.assertIn(".st-key-nav-card-system", style_source)
         self.assertNotIn(".st-key-nav-card-run", style_source)
-        self.assertIn("background: linear-gradient(180deg, rgba(23, 32, 51, 0.58), rgba(12, 19, 32, 0.64));", style_source)
-        self.assertIn("border: 1px solid rgba(148, 163, 184, 0.14);", style_source)
+        self.assertIn("background: transparent !important;", style_source)
+        self.assertIn("border: 0 !important;", style_source)
+        self.assertIn("box-shadow: none !important;", style_source)
+        self.assertIn(".st-key-nav-card-workspace::before", style_source)
+        self.assertIn("padding-left: 0.42rem;", style_source)
+        self.assertIn("padding: 0.05rem 0 0.18rem 0.24rem !important;", style_source)
+        self.assertIn("left: 0.02rem;", style_source)
+        self.assertIn("width: 1px;", style_source)
+        self.assertIn("width: calc(100% - 0.58rem) !important;", style_source)
+        self.assertIn("margin-left: 0.58rem !important;", style_source)
+        self.assertIn("padding-left: 0.44rem !important;", style_source)
+        self.assertIn("padding-right: 0.38rem !important;", style_source)
+        self.assertIn("background: linear-gradient(90deg, rgba(37, 99, 235, 0.22), rgba(37, 99, 235, 0.06)) !important;", style_source)
+        self.assertIn("box-shadow: inset 2px 0 0 rgba(96, 165, 250, 0.92) !important;", style_source)
+        self.assertNotIn("background: linear-gradient(180deg, rgba(23, 32, 51, 0.58), rgba(12, 19, 32, 0.64));", style_source)
 
     def test_streamlit_header_uses_workbench_palette(self):
         source = (ROOT / "app" / "ui_styles.py").read_text(encoding="utf-8")
@@ -144,6 +227,8 @@ class WorkbenchUiTests(unittest.TestCase):
 
         self.assertIn("--studio-bg: #101827;", source)
         self.assertIn("--studio-panel: #172033;", source)
+        self.assertIn("--studio-app-header-height: 2.35rem;", source)
+        self.assertNotIn("--studio-app-header-height: 4.75rem;", source)
         self.assertIn("linear-gradient(135deg, #101827 0%, #182235 52%, #101827 100%)", source)
 
     def test_crews_page_uses_workspace_header_and_card(self):
@@ -215,18 +300,22 @@ class WorkbenchUiTests(unittest.TestCase):
         self.assertIn('[data-testid="stMainBlockContainer"]:has(.st-key-dev-session-workbench)', source)
         self.assertIn("min-height: 100dvh !important;", source)
         self.assertIn("height: 100dvh !important;", source)
-        self.assertIn("padding: calc(var(--studio-app-header-height) + 0.35rem) 0.35rem 0.35rem !important;", source)
+        self.assertIn("padding: calc(var(--studio-app-header-height) + 0.32rem) 0.35rem 0.35rem !important;", source)
+        self.assertNotIn("padding: 0.55rem 0.35rem 0.35rem !important;", source)
+        self.assertNotIn("padding: calc(var(--studio-app-header-height) + 0.35rem) 0.35rem 0.35rem !important;", source)
         self.assertIn("margin-top: 0 !important;", source)
         self.assertIn("margin-bottom: 0 !important;", source)
         self.assertIn("box-sizing: border-box !important;", source)
         self.assertIn("body:has(.st-key-dev-session-workbench) .st-key-dev-session-workbench", source)
-        self.assertIn("--dev-session-shell-height: calc(100dvh - var(--studio-app-header-height) - 0.7rem);", source)
+        self.assertIn("--dev-session-shell-height: calc(100dvh - var(--studio-app-header-height) - 0.75rem);", source)
         self.assertIn("min-height: var(--dev-session-shell-height) !important;", source)
         self.assertIn("height: var(--dev-session-shell-height) !important;", source)
+        self.assertNotIn("--dev-session-shell-height: calc(100dvh - var(--studio-app-header-height) + 2.45rem);", source)
+        self.assertNotIn("--dev-session-shell-height: calc(100dvh - var(--studio-app-header-height) - 0.8rem);", source)
         self.assertIn(".st-key-dev-session-workbench > [data-testid=\"stLayoutWrapper\"]", source)
         self.assertIn(".st-key-dev-session-workbench > [data-testid=\"stLayoutWrapper\"] > [data-testid=\"stHorizontalBlock\"]", source)
         self.assertIn(".st-key-dev-session-workbench > [data-testid=\"stLayoutWrapper\"] > [data-testid=\"stHorizontalBlock\"] > [data-testid=\"stColumn\"]", source)
-        self.assertIn("--dev-session-content-height: calc(var(--dev-session-shell-height) - 1.45rem);", source)
+        self.assertIn("--dev-session-content-height: calc(var(--dev-session-shell-height) - 0.52rem);", source)
         self.assertIn("justify-content: flex-start;", source)
         self.assertIn("margin: clamp(1.4rem, 6vh, 4.4rem) auto 0;", source)
         self.assertIn("height: var(--dev-session-content-height) !important;", source)
@@ -234,7 +323,7 @@ class WorkbenchUiTests(unittest.TestCase):
         self.assertIn("height: 100% !important;", source)
         self.assertIn("align-self: stretch !important;", source)
         self.assertIn("overflow: hidden;", source)
-        self.assertIn("padding: 1rem 0.35rem 0.35rem;", source)
+        self.assertIn("padding: 0.22rem 0.25rem 0.3rem;", source)
         self.assertIn("box-sizing: border-box;", source)
         self.assertIn("gap: 0.55rem !important;", source)
         self.assertNotIn("min-height: calc(100vh - 8rem);", source)
@@ -320,6 +409,38 @@ class WorkbenchUiTests(unittest.TestCase):
         self.assertIn(".st-key-dev-session-chat-canvas", source)
         self.assertIn('[class*="st-key-dev-session-composer-"]', source)
         self.assertIn('<div class="dev-session-home-spacer" aria-hidden="true"></div>', (ROOT / "app" / "pg_dev_sessions.py").read_text(encoding="utf-8"))
+        self.assertIn(".st-key-dev-session-workspace-dropdown [data-testid=\"stPopoverButton\"]", source)
+        self.assertIn('[class*="st-key-new-dev-session-model-dropdown-"] [data-testid="stPopoverButton"]', source)
+        self.assertIn('[class*="st-key-new-dev-session-model-dropdown-"] {', source)
+        self.assertIn("max-width: 17.5rem;", source)
+        self.assertIn("margin-left: auto;", source)
+        self.assertIn('[class*="st-key-dev-session-workspace-dropdown-option-"] button', source)
+        self.assertIn('[class*="st-key-new-dev-session-model-option-"] button', source)
+        self.assertIn("min-height: 2.05rem !important;", source)
+        self.assertIn("text-overflow: ellipsis;", source)
+        self.assertIn('[data-testid="stPopoverBody"]:has([class*="st-key-dev-session-workspace-dropdown-option-"])', source)
+        self.assertIn('[data-testid="stPopoverBody"]:has([class*="st-key-new-dev-session-model-option-"])', source)
+        self.assertIn("padding: 0.46rem !important;", source)
+        self.assertIn("width: min(24rem, calc(100vw - 1rem)) !important;", source)
+        self.assertIn("width: min(19rem, calc(100vw - 1rem)) !important;", source)
+        self.assertIn("backdrop-filter: blur(16px);", source)
+        self.assertIn("--dev-session-lane-height: calc(var(--dev-session-shell-height) - 0.52rem);", source)
+        self.assertIn("--dev-session-shell-height: calc(100dvh - var(--studio-app-header-height) - 0.75rem);", source)
+        self.assertIn("--dev-session-content-height: var(--dev-session-lane-height);", source)
+        self.assertIn(".st-key-dev-session-workbench > [data-testid=\"stLayoutWrapper\"] > [data-testid=\"stHorizontalBlock\"] > [data-testid=\"stColumn\"] > [data-testid=\"stVerticalBlock\"]", source)
+        self.assertIn(".st-key-dev-session-lane,", source)
+        self.assertIn("height: var(--dev-session-lane-height) !important;", source)
+        self.assertIn("padding: 0.22rem 0.2rem 0.3rem !important;", source)
+        self.assertIn("max-height: var(--dev-session-content-height) !important;", source)
+        self.assertIn("max-height: var(--dev-session-lane-height) !important;", source)
+        self.assertIn('.st-key-dev-session-lane > [data-testid="stLayoutWrapper"] > [data-testid="stVerticalBlock"]', source)
+        self.assertIn("gap: 0.64rem !important;", source)
+        self.assertNotIn(".dev-session-lane-top-spacer", source)
+        self.assertNotIn('<div class="dev-session-lane-top-spacer" aria-hidden="true"></div>', (ROOT / "app" / "pg_dev_sessions.py").read_text(encoding="utf-8"))
+        self.assertIn("gap: 0.44rem !important;", source)
+        self.assertIn("margin-top: 0.12rem;", source)
+        self.assertIn("margin-top: 0.42rem !important;", source)
+        self.assertIn("margin-bottom: 0.38rem;", source)
         self.assertIn("flex-direction: column !important;", source)
         self.assertIn("min-height: clamp(4rem, 12vh, 8rem);", source)
         self.assertIn("margin-top: auto !important;", source)
@@ -338,7 +459,8 @@ class WorkbenchUiTests(unittest.TestCase):
         self.assertIn("height: auto !important;", source)
         self.assertIn("justify-self: stretch;", source)
         self.assertNotIn("position: absolute !important;", source)
-        self.assertIn("padding-bottom: 0.95rem !important;", source)
+        self.assertIn("padding-bottom: 0.34rem !important;", source)
+        self.assertIn("padding-bottom: 0.48rem !important;", source)
         self.assertIn('[class*="st-key-dev-session-thread-"]', source)
         self.assertIn(".dev-session-message", source)
         self.assertIn(".dev-session-chat-message", source)

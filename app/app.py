@@ -195,7 +195,7 @@ def draw_navigation():
     st.markdown('<div class="studio-nav-shell">', unsafe_allow_html=True)
     for group_key, page_keys in NAV_GROUPS:
         nav_key = group_key.split(".")[-1]
-        with st.container(border=True, key=f"nav-card-{nav_key}"):
+        with st.container(border=False, key=f"nav-card-{nav_key}"):
             st.markdown(f'<div class="studio-nav-card-title">{t(group_key)}</div>', unsafe_allow_html=True)
             for page_key in page_keys:
                 label = page_key_to_label(page_key)

@@ -64,6 +64,14 @@ class PageDevSessions:
     def _workspace_label(self, workspace):
         return f"{workspace.name}  |  {workspace.path}"
 
+    def _workspace_dropdown_label(self, workspace):
+        name = str(workspace.name or "").strip() or t("dev_session.select_workspace")
+        path = str(workspace.path or "").strip().rstrip("\\/")
+        folder = path.replace("/", "\\").split("\\")[-1] if path else ""
+        if folder and folder != name:
+            return f"{name} · {folder}"
+        return name
+
     def _selected_workspace(self, workspaces):
         workspaces_by_id = {workspace.id: workspace for workspace in workspaces}
         selected_workspace_id = ss.get("selected_dev_workspace_id")
@@ -82,13 +90,21 @@ class PageDevSessions:
         sessions = self._sessions_for_workspace(workspace.id)
         session_ids = [session.id for session in sessions]
         selected_id = ss.get("selected_dev_session_id")
-        if selected_id not in session_ids:
+        if selected_id in session_ids:
+            if "dev_session_new_chat" in ss:
+                del ss["dev_session_new_chat"]
+            return next(session for session in sessions if session.id == selected_id)
+        if ss.get("dev_session_new_chat"):
             return None
-        return next(session for session in sessions if session.id == selected_id)
+        if sessions:
+            ss.selected_dev_session_id = sessions[0].id
+            return sessions[0]
+        return None
 
     def _start_new_chat(self, workspace=None):
         if workspace is not None:
             ss.selected_dev_workspace_id = workspace.id
+        ss.dev_session_new_chat = True
         if "selected_dev_session_id" in ss:
             del ss["selected_dev_session_id"]
         st.rerun()
@@ -96,6 +112,8 @@ class PageDevSessions:
     def _select_thread(self, workspace, session):
         ss.selected_dev_workspace_id = workspace.id
         ss.selected_dev_session_id = session.id
+        if "dev_session_new_chat" in ss:
+            del ss["dev_session_new_chat"]
         st.rerun()
 
     def _open_settings(self):
@@ -114,6 +132,8 @@ class PageDevSessions:
         db_utils.save_dev_session(session)
         ss.dev_sessions = db_utils.load_dev_sessions()
         ss.selected_dev_session_id = session.id
+        if "dev_session_new_chat" in ss:
+            del ss["dev_session_new_chat"]
         return session
 
     def _attach_action_summary(self, session, workspace, reply):
@@ -277,27 +297,54 @@ class PageDevSessions:
             unsafe_allow_html=True,
         )
 
+    def _draw_click_only_dropdown(
+        self,
+        selected_label,
+        options,
+        key,
+        on_select,
+        help_text=None,
+        selected_option=None,
+    ):
+        selected_option = selected_label if selected_option is None else selected_option
+        with st.container(border=False, key=key):
+            with st.popover(selected_label, help=help_text, use_container_width=True):
+                for option_index, option_label in enumerate(options):
+                    is_selected = option_label == selected_option
+                    button_label = f"✓ {option_label}" if is_selected else option_label
+                    if st.button(
+                        button_label,
+                        key=f"{key}-option-{option_index}",
+                        use_container_width=True,
+                        disabled=is_selected,
+                    ):
+                        on_select(option_label)
+                        st.rerun()
+
     def _draw_workspace_selector(self, workspaces, selected_workspace):
         labels = [self._workspace_label(workspace) for workspace in workspaces]
         label_to_workspace = dict(zip(labels, workspaces))
-        selected_label = self._workspace_label(selected_workspace)
-        try:
-            selected_index = labels.index(selected_label)
-        except ValueError:
-            selected_index = 0
-
-        chosen_label = st.selectbox(
-            t("dev_session.select_workspace"),
-            labels,
-            index=selected_index,
-            key="dev-session-workspace-select",
+        selected_option = self._workspace_label(selected_workspace)
+        selected_label = self._workspace_dropdown_label(selected_workspace)
+        st.markdown(
+            f'<div class="dev-session-selector-label">{escape(t("dev_session.select_workspace"))}</div>',
+            unsafe_allow_html=True,
         )
-        chosen_workspace = label_to_workspace[chosen_label]
-        if chosen_workspace.id != selected_workspace.id:
+
+        def select_workspace(chosen_label):
+            chosen_workspace = label_to_workspace[chosen_label]
             ss.selected_dev_workspace_id = chosen_workspace.id
             if "selected_dev_session_id" in ss:
                 del ss["selected_dev_session_id"]
-            st.rerun()
+
+        self._draw_click_only_dropdown(
+            selected_label,
+            labels,
+            key="dev-session-workspace-dropdown",
+            on_select=select_workspace,
+            help_text=t("dev_session.select_workspace"),
+            selected_option=selected_option,
+        )
 
     def _sidebar_thread_button(self, workspace, session):
         active = ss.get("selected_dev_session_id") == session.id
@@ -481,16 +528,35 @@ class PageDevSessions:
 
                     toolbar_key = workspace.id if is_new_thread else session.id
                     with st.container(border=False, key=f"dev-session-composer-toolbar-{toolbar_key}"):
-                        _, model_col, action_col = st.columns([0.50, 0.42, 0.08], gap="small")
+                        _, model_col, action_col = st.columns([0.64, 0.28, 0.08], gap="small")
                         with model_col:
                             if is_new_thread:
                                 if available_models:
-                                    selected_model = st.selectbox(
-                                        t("dev_session.llm_provider_model"),
-                                        available_models,
-                                        key=f"new-dev-session-model-{workspace.id}",
-                                        label_visibility="collapsed",
-                                    )
+                                    model_key = f"new-dev-session-model-{workspace.id}"
+                                    selected_model = ss.get(model_key)
+                                    if selected_model not in available_models:
+                                        selected_model = available_models[0]
+                                        ss[model_key] = selected_model
+                                    with st.container(
+                                        border=False,
+                                        key=f"new-dev-session-model-dropdown-{workspace.id}",
+                                    ):
+                                        with st.popover(
+                                            selected_model,
+                                            help=t("dev_session.llm_provider_model"),
+                                            use_container_width=True,
+                                        ):
+                                            for model_index, model_label in enumerate(available_models):
+                                                is_selected = model_label == selected_model
+                                                option_label = f"✓ {model_label}" if is_selected else model_label
+                                                if st.button(
+                                                    option_label,
+                                                    key=f"new-dev-session-model-option-{workspace.id}-{model_index}",
+                                                    use_container_width=True,
+                                                    disabled=is_selected,
+                                                ):
+                                                    ss[model_key] = model_label
+                                                    st.rerun()
                                 else:
                                     selected_model = None
                                     st.warning(t("dev_session.no_models"))

@@ -20,7 +20,7 @@ def apply_global_styles():
           --studio-danger: #ef4444;
           --studio-success: #22c55e;
           --studio-radius: 8px;
-          --studio-app-header-height: 4.75rem;
+          --studio-app-header-height: 2.35rem;
         }
 
         .stApp {
@@ -70,6 +70,13 @@ def apply_global_styles():
 
         section[data-testid="stSidebar"] > div {
           padding-top: 0 !important;
+          padding-left: 0.25rem !important;
+          padding-right: 0.25rem !important;
+        }
+
+        section[data-testid="stSidebar"] [data-testid="stSidebarContent"] {
+          padding-left: 0.25rem !important;
+          padding-right: 0.25rem !important;
         }
 
         section[data-testid="stSidebar"] [data-testid="stSidebarHeader"] {
@@ -112,6 +119,10 @@ def apply_global_styles():
 
         section[data-testid="stSidebar"] [data-testid="stSidebarUserContent"] {
           padding-top: 0.2rem !important;
+          width: calc(100% + 1rem) !important;
+          max-width: none !important;
+          margin-left: -0.55rem !important;
+          margin-right: -0.45rem !important;
         }
 
         section[data-testid="stSidebar"] [data-testid="stSidebarUserContent"] > div:first-child {
@@ -162,24 +173,72 @@ def apply_global_styles():
 
         .studio-nav-card-title {
           color: var(--studio-subtle);
-          font-size: 0.72rem;
-          font-weight: 700;
-          letter-spacing: 0.08em;
+          font-size: 0.68rem;
+          font-weight: 760;
+          letter-spacing: 0.06em;
           text-transform: uppercase;
-          margin: 0 0 0.35rem;
+          margin: 0 0 0.38rem;
+          padding-left: 0.42rem;
         }
 
         section[data-testid="stSidebar"] .st-key-nav-card-workspace,
         section[data-testid="stSidebar"] .st-key-nav-card-development,
         section[data-testid="stSidebar"] .st-key-nav-card-system {
-          background: linear-gradient(180deg, rgba(23, 32, 51, 0.58), rgba(12, 19, 32, 0.64));
-          border: 1px solid rgba(148, 163, 184, 0.14);
-          border-radius: 10px;
-          box-shadow:
-            inset 0 1px 0 rgba(255, 255, 255, 0.035),
-            0 12px 30px rgba(0, 0, 0, 0.10);
-          margin-bottom: 0.75rem;
-          padding: 0.55rem 0.45rem 0.45rem;
+          position: relative;
+          background: transparent !important;
+          border: 0 !important;
+          border-radius: 0 !important;
+          box-shadow: none !important;
+          margin-bottom: 1rem;
+          padding: 0.08rem 0 0.2rem 0.24rem;
+        }
+
+        section[data-testid="stSidebar"] .st-key-nav-card-workspace::before,
+        section[data-testid="stSidebar"] .st-key-nav-card-development::before,
+        section[data-testid="stSidebar"] .st-key-nav-card-system::before {
+          content: "";
+          position: absolute;
+          left: 0.02rem;
+          top: 1.55rem;
+          bottom: 0.35rem;
+          width: 1px;
+          border-radius: 999px;
+          background: linear-gradient(180deg, rgba(96, 165, 250, 0.32), rgba(148, 163, 184, 0.06));
+        }
+
+        section[data-testid="stSidebar"] .st-key-nav-card-workspace .stButton > button,
+        section[data-testid="stSidebar"] .st-key-nav-card-development .stButton > button,
+        section[data-testid="stSidebar"] .st-key-nav-card-system .stButton > button {
+          position: relative;
+          justify-content: flex-start;
+          width: calc(100% - 0.58rem) !important;
+          min-height: 2.15rem;
+          border: 0 !important;
+          border-radius: 8px;
+          background: transparent !important;
+          color: var(--studio-muted);
+          box-shadow: none !important;
+          margin-left: 0.58rem !important;
+          padding-left: 0.72rem;
+        }
+
+        section[data-testid="stSidebar"] .st-key-nav-card-workspace .stButton > button:hover,
+        section[data-testid="stSidebar"] .st-key-nav-card-development .stButton > button:hover,
+        section[data-testid="stSidebar"] .st-key-nav-card-system .stButton > button:hover {
+          background: rgba(148, 163, 184, 0.08) !important;
+          color: #e2e8f0;
+        }
+
+        section[data-testid="stSidebar"] .st-key-nav-card-workspace .stButton > button[kind="primary"],
+        section[data-testid="stSidebar"] .st-key-nav-card-development .stButton > button[kind="primary"],
+        section[data-testid="stSidebar"] .st-key-nav-card-system .stButton > button[kind="primary"],
+        section[data-testid="stSidebar"] .st-key-nav-card-workspace .stButton > button:disabled,
+        section[data-testid="stSidebar"] .st-key-nav-card-development .stButton > button:disabled,
+        section[data-testid="stSidebar"] .st-key-nav-card-system .stButton > button:disabled {
+          background: linear-gradient(90deg, rgba(37, 99, 235, 0.22), rgba(37, 99, 235, 0.06)) !important;
+          color: #f8fafc !important;
+          box-shadow: inset 2px 0 0 rgba(96, 165, 250, 0.92) !important;
+          opacity: 1 !important;
         }
 
         section[data-testid="stSidebar"] .stButton > button {
@@ -225,11 +284,11 @@ def apply_global_styles():
         [data-testid="stMain"] .block-container:has(.st-key-dev-session-workbench),
         body:has(.st-key-dev-session-workbench) [data-testid="stMainBlockContainer"],
         [data-testid="stMainBlockContainer"]:has(.st-key-dev-session-workbench) {
-          --dev-session-shell-height: calc(100dvh - var(--studio-app-header-height) - 0.7rem);
+          --dev-session-shell-height: calc(100dvh - var(--studio-app-header-height) - 0.75rem);
           min-height: 100dvh !important;
           height: 100dvh !important;
           overflow: hidden;
-          padding: calc(var(--studio-app-header-height) + 0.35rem) 0.35rem 0.35rem !important;
+          padding: calc(var(--studio-app-header-height) + 0.32rem) 0.35rem 0.35rem !important;
           margin-top: 0 !important;
           margin-bottom: 0 !important;
           box-sizing: border-box !important;
@@ -830,8 +889,8 @@ def apply_global_styles():
           --dev-session-outline: rgba(148, 163, 184, 0.14);
           --dev-session-control: rgba(17, 28, 46, 0.86);
           --dev-session-control-hover: rgba(22, 36, 58, 0.94);
-          --dev-session-shell-height: calc(100dvh - var(--studio-app-header-height) - 0.7rem);
-          --dev-session-content-height: calc(var(--dev-session-shell-height) - 1.45rem);
+          --dev-session-shell-height: calc(100dvh - var(--studio-app-header-height) - 0.75rem);
+          --dev-session-content-height: calc(var(--dev-session-shell-height) - 0.52rem);
           min-height: var(--dev-session-shell-height) !important;
           height: var(--dev-session-shell-height) !important;
           overflow: hidden;
@@ -839,7 +898,7 @@ def apply_global_styles():
           border-radius: 14px;
           background: transparent;
           box-shadow: none;
-          padding: 1rem 0.35rem 0.35rem;
+          padding: 0.22rem 0.25rem 0.3rem;
           box-sizing: border-box;
         }
 
@@ -886,6 +945,7 @@ def apply_global_styles():
         .dev-session-lane {
           min-height: var(--dev-session-content-height) !important;
           height: var(--dev-session-content-height) !important;
+          max-height: var(--dev-session-content-height) !important;
           flex: 1 1 auto !important;
           overflow-x: hidden;
           overflow-y: auto;
@@ -1043,6 +1103,14 @@ def apply_global_styles():
           letter-spacing: 0.06em;
           text-transform: uppercase;
           margin: 0.75rem 0 0.28rem;
+        }
+
+        .dev-session-selector-label {
+          color: #f8fafc;
+          font-size: 0.88rem;
+          font-weight: 760;
+          line-height: 1.18;
+          margin-bottom: 0.28rem;
         }
 
         .dev-session-inline-notice {
@@ -1835,8 +1903,8 @@ def apply_global_styles():
         section[data-testid="stSidebar"] .st-key-nav-card-workspace,
         section[data-testid="stSidebar"] .st-key-nav-card-development,
         section[data-testid="stSidebar"] .st-key-nav-card-system {
-          margin-bottom: 0.55rem;
-          padding: 0.45rem 0.38rem 0.38rem;
+          margin-bottom: 0.85rem;
+          padding: 0.05rem 0 0.18rem 0.24rem;
         }
 
         .studio-nav-card-title,
@@ -2226,13 +2294,19 @@ def apply_global_styles():
         }
 
         section[data-testid="stSidebar"] [data-testid="stSidebarUserContent"] {
-          padding-left: 0.55rem !important;
-          padding-right: 0.55rem !important;
+          padding-left: 0.26rem !important;
+          padding-right: 0.28rem !important;
+          width: calc(100% + 1rem) !important;
+          max-width: none !important;
+          margin-left: -0.55rem !important;
+          margin-right: -0.45rem !important;
         }
 
-        section[data-testid="stSidebar"] .st-key-nav-card-workspace,
-        section[data-testid="stSidebar"] .st-key-nav-card-development,
-        section[data-testid="stSidebar"] .st-key-nav-card-system,
+        section[data-testid="stSidebar"] [data-testid="stSidebarContent"] {
+          padding-left: 0.25rem !important;
+          padding-right: 0.25rem !important;
+        }
+
         .studio-card,
         .studio-page-header,
         .st-key-dev-session-lane,
@@ -2245,8 +2319,21 @@ def apply_global_styles():
         section[data-testid="stSidebar"] .st-key-nav-card-workspace,
         section[data-testid="stSidebar"] .st-key-nav-card-development,
         section[data-testid="stSidebar"] .st-key-nav-card-system {
-          padding: 0.34rem 0.3rem !important;
-          margin-bottom: 0.45rem !important;
+          background: transparent !important;
+          border: 0 !important;
+          border-radius: 0 !important;
+          box-shadow: none !important;
+          padding: 0.05rem 0 0.18rem 0.24rem !important;
+          margin-bottom: 0.78rem !important;
+        }
+
+        section[data-testid="stSidebar"] .st-key-nav-card-workspace .stButton > button,
+        section[data-testid="stSidebar"] .st-key-nav-card-development .stButton > button,
+        section[data-testid="stSidebar"] .st-key-nav-card-system .stButton > button {
+          width: calc(100% - 0.58rem) !important;
+          margin-left: 0.58rem !important;
+          padding-left: 0.44rem !important;
+          padding-right: 0.38rem !important;
         }
 
         .studio-page-header,
@@ -2272,9 +2359,22 @@ def apply_global_styles():
         }
 
         .st-key-dev-session-workbench {
-          --dev-session-shell-height: calc(100dvh - var(--studio-app-header-height) - 0.7rem);
-          --dev-session-content-height: calc(var(--dev-session-shell-height) - 1.45rem);
-          padding: 1.15rem 0.2rem 0.25rem !important;
+          --dev-session-shell-height: calc(100dvh - var(--studio-app-header-height) - 0.75rem);
+          --dev-session-lane-height: calc(var(--dev-session-shell-height) - 0.52rem);
+          --dev-session-content-height: var(--dev-session-lane-height);
+          padding: 0.22rem 0.2rem 0.3rem !important;
+        }
+
+        .st-key-dev-session-workbench > [data-testid="stLayoutWrapper"],
+        .st-key-dev-session-workbench > [data-testid="stLayoutWrapper"] > [data-testid="stHorizontalBlock"],
+        .st-key-dev-session-workbench > [data-testid="stLayoutWrapper"] > [data-testid="stHorizontalBlock"] > [data-testid="stColumn"],
+        .st-key-dev-session-workbench > [data-testid="stLayoutWrapper"] > [data-testid="stHorizontalBlock"] > [data-testid="stColumn"] > [data-testid="stVerticalBlock"],
+        .st-key-dev-session-workbench > [data-testid="stLayoutWrapper"] > [data-testid="stHorizontalBlock"] > [data-testid="stColumn"] > [data-testid="stVerticalBlock"] > [data-testid="stLayoutWrapper"],
+        .st-key-dev-session-lane,
+        .dev-session-lane {
+          min-height: var(--dev-session-lane-height) !important;
+          height: var(--dev-session-lane-height) !important;
+          max-height: var(--dev-session-lane-height) !important;
         }
 
         .st-key-dev-session-lane,
@@ -2284,13 +2384,48 @@ def apply_global_styles():
           padding: 0.45rem !important;
         }
 
+        .st-key-dev-session-lane > [data-testid="stLayoutWrapper"] > [data-testid="stVerticalBlock"] {
+          gap: 0.64rem !important;
+        }
+
         .dev-session-lane-summary,
         .st-key-dev-session-lane-controls {
           padding: 0.42rem 0.48rem !important;
         }
 
+        .dev-session-lane-summary {
+          gap: 0.44rem !important;
+          padding: 0.62rem 0.68rem !important;
+        }
+
+        .dev-session-lane-eyebrow {
+          line-height: 1.18 !important;
+        }
+
         .dev-session-lane-title {
           font-size: 0.86rem !important;
+          line-height: 1.28 !important;
+        }
+
+        .dev-session-lane-path {
+          line-height: 1.42 !important;
+        }
+
+        .dev-session-lane-stats {
+          margin-top: 0.12rem;
+        }
+
+        .st-key-dev-session-lane-controls {
+          margin-top: 0.42rem !important;
+          padding: 0.52rem 0.56rem !important;
+        }
+
+        .st-key-dev-session-lane-controls > [data-testid="stVerticalBlock"] {
+          gap: 0.64rem !important;
+        }
+
+        .dev-session-selector-label {
+          margin-bottom: 0.38rem;
         }
 
         [class*="st-key-dev-session-session-row-"] [data-testid="stHorizontalBlock"] {
@@ -2373,16 +2508,137 @@ def apply_global_styles():
           min-height: 2rem !important;
         }
 
+        .st-key-dev-session-workspace-dropdown,
+        [class*="st-key-new-dev-session-model-dropdown-"] {
+          width: 100%;
+        }
+
+        [class*="st-key-new-dev-session-model-dropdown-"] {
+          width: min(100%, 17.5rem);
+          max-width: 17.5rem;
+          margin-left: auto;
+        }
+
+        .st-key-dev-session-workspace-dropdown [data-testid="stPopoverButton"],
+        [class*="st-key-new-dev-session-model-dropdown-"] [data-testid="stPopoverButton"] {
+          width: 100% !important;
+          min-height: 2.05rem !important;
+          height: 2.05rem !important;
+          padding: 0 0.62rem !important;
+          border-radius: 9px !important;
+          border: 1px solid rgba(148, 163, 184, 0.22) !important;
+          background: linear-gradient(180deg, rgba(22, 31, 48, 0.92), rgba(12, 19, 32, 0.92)) !important;
+          color: #f8fafc !important;
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 8px 18px rgba(0, 0, 0, 0.16) !important;
+          gap: 0.45rem !important;
+          justify-content: space-between !important;
+        }
+
+        .st-key-dev-session-workspace-dropdown [data-testid="stPopoverButton"]:hover,
+        [class*="st-key-new-dev-session-model-dropdown-"] [data-testid="stPopoverButton"]:hover {
+          border-color: rgba(147, 197, 253, 0.4) !important;
+          background: linear-gradient(180deg, rgba(30, 41, 59, 0.98), rgba(15, 23, 42, 0.96)) !important;
+        }
+
+        .st-key-dev-session-workspace-dropdown [data-testid="stPopoverButton"] [data-testid="stMarkdownContainer"],
+        [class*="st-key-new-dev-session-model-dropdown-"] [data-testid="stPopoverButton"] [data-testid="stMarkdownContainer"],
+        .st-key-dev-session-workspace-dropdown [data-testid="stPopoverButton"] p,
+        [class*="st-key-new-dev-session-model-dropdown-"] [data-testid="stPopoverButton"] p {
+          min-width: 0;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap !important;
+          font-size: 0.83rem !important;
+          font-weight: 720 !important;
+          line-height: 1.1 !important;
+        }
+
+        [data-testid="stPopoverBody"]:has([class*="st-key-dev-session-workspace-dropdown-option-"]),
+        [data-testid="stPopoverBody"]:has([class*="st-key-new-dev-session-model-option-"]) {
+          padding: 0.46rem !important;
+          border-radius: 11px !important;
+          border: 1px solid rgba(148, 163, 184, 0.20) !important;
+          background: linear-gradient(180deg, rgba(13, 18, 29, 0.98), rgba(8, 13, 22, 0.98)) !important;
+          box-shadow: 0 18px 40px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+          backdrop-filter: blur(16px);
+          overflow: hidden !important;
+        }
+
+        [data-testid="stPopoverBody"]:has([class*="st-key-dev-session-workspace-dropdown-option-"]) {
+          width: min(24rem, calc(100vw - 1rem)) !important;
+          min-width: min(18rem, calc(100vw - 1rem)) !important;
+          max-width: min(24rem, calc(100vw - 1rem)) !important;
+        }
+
+        [data-testid="stPopoverBody"]:has([class*="st-key-new-dev-session-model-option-"]) {
+          width: min(19rem, calc(100vw - 1rem)) !important;
+          min-width: min(16rem, calc(100vw - 1rem)) !important;
+          max-width: min(19rem, calc(100vw - 1rem)) !important;
+        }
+
+        [data-testid="stPopoverBody"]:has([class*="st-key-dev-session-workspace-dropdown-option-"]) > div,
+        [data-testid="stPopoverBody"]:has([class*="st-key-new-dev-session-model-option-"]) > div {
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+
+        [data-testid="stPopoverBody"]:has([class*="st-key-dev-session-workspace-dropdown-option-"]) [data-testid="stVerticalBlock"],
+        [data-testid="stPopoverBody"]:has([class*="st-key-new-dev-session-model-option-"]) [data-testid="stVerticalBlock"] {
+          gap: 0.34rem !important;
+        }
+
+        [data-testid="stPopoverBody"]:has([class*="st-key-dev-session-workspace-dropdown-option-"]) [data-testid="stElementContainer"],
+        [data-testid="stPopoverBody"]:has([class*="st-key-new-dev-session-model-option-"]) [data-testid="stElementContainer"] {
+          width: 100% !important;
+          margin: 0 !important;
+        }
+
+        [class*="st-key-dev-session-workspace-dropdown-option-"] button,
+        [class*="st-key-new-dev-session-model-option-"] button {
+          min-height: 2rem !important;
+          padding: 0.34rem 0.56rem !important;
+          border-radius: 8px !important;
+          border-color: rgba(148, 163, 184, 0.16) !important;
+          background: rgba(15, 23, 42, 0.72) !important;
+          color: #dbeafe !important;
+          justify-content: flex-start !important;
+          font-size: 0.82rem !important;
+          line-height: 1.2 !important;
+          white-space: nowrap !important;
+          overflow: hidden !important;
+          text-overflow: ellipsis !important;
+        }
+
+        [class*="st-key-dev-session-workspace-dropdown-option-"] button p,
+        [class*="st-key-new-dev-session-model-option-"] button p {
+          overflow: hidden !important;
+          text-overflow: ellipsis !important;
+          white-space: nowrap !important;
+        }
+
+        [class*="st-key-dev-session-workspace-dropdown-option-"] button:hover,
+        [class*="st-key-new-dev-session-model-option-"] button:hover {
+          border-color: rgba(96, 165, 250, 0.36) !important;
+          background: rgba(30, 41, 59, 0.92) !important;
+        }
+
+        [class*="st-key-dev-session-workspace-dropdown-option-"] button:disabled,
+        [class*="st-key-new-dev-session-model-option-"] button:disabled {
+          color: rgba(226, 232, 240, 0.58) !important;
+          background: rgba(15, 23, 42, 0.52) !important;
+          opacity: 1 !important;
+        }
+
         .st-key-dev-session-conversation:has(.st-key-dev-session-home) {
           position: relative !important;
           overflow: hidden !important;
-          padding-bottom: 0.45rem !important;
+          padding-bottom: 0.34rem !important;
         }
 
         .st-key-dev-session-conversation:has(.st-key-dev-session-home) .st-key-dev-session-home-shell {
           min-height: 100% !important;
           height: 100% !important;
-          padding-bottom: 0.95rem !important;
+          padding-bottom: 0.48rem !important;
           box-sizing: border-box !important;
         }
         </style>
