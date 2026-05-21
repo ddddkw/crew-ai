@@ -62,15 +62,13 @@ class PageDevSessions:
         return f"{hours // 24}d"
 
     def _workspace_label(self, workspace):
-        return f"{workspace.name}  |  {workspace.path}"
+        return str(workspace.name or "").strip() or t("dev_session.select_workspace")
+
+    def _workspace_option_value(self, workspace):
+        return str(getattr(workspace, "id", None) or self._workspace_label(workspace))
 
     def _workspace_dropdown_label(self, workspace):
-        name = str(workspace.name or "").strip() or t("dev_session.select_workspace")
-        path = str(workspace.path or "").strip().rstrip("\\/")
-        folder = path.replace("/", "\\").split("\\")[-1] if path else ""
-        if folder and folder != name:
-            return f"{name} · {folder}"
-        return name
+        return self._workspace_label(workspace)
 
     def _selected_workspace(self, workspaces):
         workspaces_by_id = {workspace.id: workspace for workspace in workspaces}
@@ -210,7 +208,7 @@ class PageDevSessions:
             ss.dev_sessions = db_utils.load_dev_sessions()
             if ss.get("dev_session_pending_id") == session.id:
                 del ss["dev_session_pending_id"]
-            st.error(t("dev_session.message_failed", error=str(exc)))
+            stream_slot.error(t("dev_session.message_failed", error=str(exc)))
             return
 
         self._draw_working_status(working_slot, started_at)
@@ -223,12 +221,14 @@ class PageDevSessions:
         ]
         db_utils.save_dev_session(session)
         ss.dev_sessions = db_utils.load_dev_sessions()
+        self._request_chat_scroll_to_bottom(session)
         if ss.get("dev_session_pending_id") == session.id:
             del ss["dev_session_pending_id"]
         st.rerun()
 
     def _queue_new_session(self, workspace, message, selected_model):
         session = self._create_session(workspace, message, selected_model)
+        self._request_chat_scroll_to_bottom(session)
         self._queue_pending_session(session)
 
     def _create_thread_from_message(self, workspace, message, selected_model):
@@ -241,6 +241,67 @@ class PageDevSessions:
             return
 
         self._queue_new_session(workspace, message, selected_model)
+
+    def _followup_message_key(self, session):
+        return f"dev-session-message-input-{session.id}"
+
+    def _message_input_clear_key(self, message_key):
+        return f"{message_key}__clear_after_send"
+
+    def _request_message_input_clear(self, message_key):
+        ss[self._message_input_clear_key(message_key)] = True
+
+    def _apply_pending_message_input_clear(self, message_key):
+        clear_key = self._message_input_clear_key(message_key)
+        if not ss.get(clear_key):
+            return
+        ss[message_key] = ""
+        del ss[clear_key]
+
+    def _request_chat_scroll_to_bottom(self, session):
+        ss.dev_session_scroll_to_bottom_session_id = session.id
+        ss.dev_session_scroll_to_bottom_nonce = int(ss.get("dev_session_scroll_to_bottom_nonce", 0)) + 1
+
+    def _chat_scroll_to_bottom_script(self, nonce):
+        return f"""
+        <div id="dev-session-scroll-request-{int(nonce)}"></div>
+        <script>
+        (() => {{
+          const selectors = [
+            '.st-key-dev-session-chat-canvas',
+            '.dev-session-chat-canvas',
+            '[class*="st-key-dev-session-chat-canvas"] > [data-testid="stVerticalBlock"]'
+          ];
+          const scroll = () => {{
+            try {{
+              const doc = window.parent.document;
+              const targets = selectors.flatMap((selector) => Array.from(doc.querySelectorAll(selector)));
+              for (const target of targets) {{
+                target.scrollTop = target.scrollHeight;
+              }}
+            }} catch (error) {{}}
+          }};
+          window.requestAnimationFrame(scroll);
+          [40, 120, 280, 700, 1200].forEach((delay) => window.setTimeout(scroll, delay));
+        }})();
+        </script>
+        """
+
+    def _draw_chat_scroll_to_bottom(self, session):
+        if ss.get("dev_session_scroll_to_bottom_session_id") != session.id:
+            return
+        nonce = ss.get("dev_session_scroll_to_bottom_nonce", 0)
+        st.components.v1.html(self._chat_scroll_to_bottom_script(nonce), height=0, scrolling=False)
+        if "dev_session_scroll_to_bottom_session_id" in ss:
+            del ss["dev_session_scroll_to_bottom_session_id"]
+
+    def _set_session_model(self, session, model_label):
+        model_label = str(model_label or "").strip()
+        if not model_label or model_label == session.llm_provider_model:
+            return
+        session.llm_provider_model = model_label
+        db_utils.save_dev_session(session)
+        ss.dev_sessions = db_utils.load_dev_sessions()
 
     def _delete_session(self, session):
         selected_session_id = ss.get("selected_dev_session_id")
@@ -266,6 +327,8 @@ class PageDevSessions:
         session.add_message("user", message)
         session.status = "thinking"
         db_utils.save_dev_session(session)
+        self._request_message_input_clear(self._followup_message_key(session))
+        self._request_chat_scroll_to_bottom(session)
         self._queue_pending_session(session)
 
     def _model_parts(self, provider_and_model):
@@ -305,13 +368,16 @@ class PageDevSessions:
         on_select,
         help_text=None,
         selected_option=None,
+        display_labels=None,
     ):
         selected_option = selected_label if selected_option is None else selected_option
+        display_labels = display_labels or {}
         with st.container(border=False, key=key):
             with st.popover(selected_label, help=help_text, use_container_width=True):
                 for option_index, option_label in enumerate(options):
                     is_selected = option_label == selected_option
-                    button_label = f"✓ {option_label}" if is_selected else option_label
+                    display_label = display_labels.get(option_label, option_label)
+                    button_label = f"✓ {display_label}" if is_selected else display_label
                     if st.button(
                         button_label,
                         key=f"{key}-option-{option_index}",
@@ -322,28 +388,33 @@ class PageDevSessions:
                         st.rerun()
 
     def _draw_workspace_selector(self, workspaces, selected_workspace):
-        labels = [self._workspace_label(workspace) for workspace in workspaces]
-        label_to_workspace = dict(zip(labels, workspaces))
-        selected_option = self._workspace_label(selected_workspace)
+        options = [self._workspace_option_value(workspace) for workspace in workspaces]
+        option_labels = {
+            self._workspace_option_value(workspace): self._workspace_label(workspace)
+            for workspace in workspaces
+        }
+        option_to_workspace = dict(zip(options, workspaces))
+        selected_option = self._workspace_option_value(selected_workspace)
         selected_label = self._workspace_dropdown_label(selected_workspace)
         st.markdown(
             f'<div class="dev-session-selector-label">{escape(t("dev_session.select_workspace"))}</div>',
             unsafe_allow_html=True,
         )
 
-        def select_workspace(chosen_label):
-            chosen_workspace = label_to_workspace[chosen_label]
+        def select_workspace(chosen_option):
+            chosen_workspace = option_to_workspace[chosen_option]
             ss.selected_dev_workspace_id = chosen_workspace.id
             if "selected_dev_session_id" in ss:
                 del ss["selected_dev_session_id"]
 
         self._draw_click_only_dropdown(
             selected_label,
-            labels,
+            options,
             key="dev-session-workspace-dropdown",
             on_select=select_workspace,
             help_text=t("dev_session.select_workspace"),
             selected_option=selected_option,
+            display_labels=option_labels,
         )
 
     def _sidebar_thread_button(self, workspace, session):
@@ -498,9 +569,11 @@ class PageDevSessions:
         message_key = (
             f"new-dev-session-requirement-{workspace.id}"
             if is_new_thread
-            else f"dev-session-message-input-{session.id}"
+            else self._followup_message_key(session)
         )
+        self._apply_pending_message_input_clear(message_key)
 
+        available_models = llm_providers_and_models()
         if not is_new_thread:
             with st.container(border=False, key="dev-session-bottom-composer"):
                 with st.container(border=False, key=f"dev-session-followup-composer-{session.id}"):
@@ -511,13 +584,38 @@ class PageDevSessions:
                         label_visibility="collapsed",
                         key=message_key,
                     )
+                    if available_models:
+                        selected_model = session.llm_provider_model
+                        if not selected_model:
+                            selected_model = available_models[0]
+                        with st.container(
+                            border=False,
+                            key=f"dev-session-model-dropdown-{session.id}",
+                        ):
+                            with st.popover(
+                                selected_model,
+                                help=t("dev_session.llm_provider_model"),
+                                use_container_width=True,
+                            ):
+                                for model_index, model_label in enumerate(available_models):
+                                    is_selected = model_label == session.llm_provider_model
+                                    option_label = f"✓ {model_label}" if is_selected else model_label
+                                    if st.button(
+                                        option_label,
+                                        key=f"dev-session-model-option-{session.id}-{model_index}",
+                                        use_container_width=True,
+                                        disabled=is_selected,
+                                    ):
+                                        self._set_session_model(session, model_label)
+                                        st.rerun()
+                    else:
+                        st.warning(t("dev_session.no_models"))
                     button_key = f"dev-session-send-arrow-{session.id}"
                     if st.button("↑", key=button_key, help=t("dev_session.send_message")):
                         st.markdown('<div class="dev-session-send-button"></div>', unsafe_allow_html=True)
                         self._send_chat_message(workspace, session, ss.get(message_key, message))
             return
 
-        available_models = llm_providers_and_models()
         with st.container(border=False, key="dev-session-home-composer-card"):
             with st.container(border=False, key=f"dev-session-composer-{workspace.id}"):
                 with st.container(border=False, key=f"dev-session-new-chat-composer-{workspace.id}"):
@@ -592,6 +690,7 @@ class PageDevSessions:
                 self._draw_empty_home(workspace)
                 return
 
+            pending_reply_slots = None
             self._draw_thread_header(workspace, session)
             with st.container(border=False, key=f"dev-session-thread-{session.id}"):
                 with st.container(border=False, key="dev-session-chat-canvas"):
@@ -600,8 +699,11 @@ class PageDevSessions:
                     if session.status == "thinking" and ss.get("dev_session_pending_id") == session.id:
                         working_slot = st.empty()
                         stream_slot = st.empty()
-                        self._complete_pending_reply(workspace, session, working_slot, stream_slot)
+                        pending_reply_slots = (working_slot, stream_slot)
+                    self._draw_chat_scroll_to_bottom(session)
             self._draw_chat_composer(workspace, session)
+            if pending_reply_slots:
+                self._complete_pending_reply(workspace, session, *pending_reply_slots)
 
     def draw(self):
         if "workspaces" not in ss:

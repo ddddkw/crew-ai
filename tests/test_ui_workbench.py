@@ -51,6 +51,68 @@ class WorkbenchUiTests(unittest.TestCase):
             self.assertIn("from page_chrome import draw_page_header", source, page)
             self.assertIn("draw_page_header(", source, page)
 
+    def test_knowledge_source_exports_legacy_model_contract(self):
+        app_path = str(ROOT / "app")
+        if app_path not in sys.path:
+            sys.path.insert(0, app_path)
+        from my_knowledge_source import MyKnowledgeSource
+
+        source = MyKnowledgeSource(name="Docs", source_type="string", content="hello")
+
+        self.assertEqual(source.name, "Docs")
+        self.assertEqual(source.source_type, "string")
+        self.assertEqual(source.content, "hello")
+        self.assertTrue(callable(source.get_crewai_knowledge_source))
+        self.assertTrue(callable(source.draw))
+
+    def test_knowledge_page_exposes_page_class(self):
+        app_path = str(ROOT / "app")
+        if app_path not in sys.path:
+            sys.path.insert(0, app_path)
+        import pg_knowledge
+
+        self.assertTrue(hasattr(pg_knowledge, "PageKnowledge"))
+        self.assertTrue(callable(pg_knowledge.PageKnowledge))
+
+    def test_model_settings_rows_are_collapsed_expandable_details(self):
+        source = (ROOT / "app" / "pg_model_settings.py").read_text(encoding="utf-8")
+
+        self.assertIn("def _row_title(self, row_index, config):", source)
+        self.assertIn("with st.expander(self._row_title(row_index, config), expanded=False):", source)
+        self.assertNotIn("st.markdown(f\"#### {t('model_settings.model_row'", source)
+
+    def test_model_settings_row_title_includes_configured_model_identity(self):
+        app_path = str(ROOT / "app")
+        if app_path not in sys.path:
+            sys.path.insert(0, app_path)
+        import pg_model_settings
+
+        page = pg_model_settings.PageModelSettings.__new__(pg_model_settings.PageModelSettings)
+        title = page._row_title(
+            0,
+            {
+                "provider": "deepseek",
+                "model": "deepseek-v4-flash",
+                "api_base": "https://api.deepseek.com",
+                "api_key": "secret",
+            },
+        )
+
+        self.assertIn("deepseek", title)
+        self.assertIn("deepseek-v4-flash", title)
+
+    def test_model_settings_save_reruns_after_row_count_changes(self):
+        source = (ROOT / "app" / "pg_model_settings.py").read_text(encoding="utf-8")
+        save_block = source[source.index("        if submitted:"):]
+
+        self.assertIn('ss.model_settings_saved = True', save_block)
+        self.assertIn("st.rerun()", save_block)
+        self.assertLess(
+            save_block.index("ss.model_settings_row_count = max(1, len(read_model_configs(ENV_PATH)))"),
+            save_block.index("st.rerun()"),
+        )
+        self.assertNotIn("st.success(t(\"model_settings.saved\"))", save_block)
+
     def test_frontend_design_skill_restyles_default_streamlit_surfaces(self):
         source = (ROOT / "app" / "ui_styles.py").read_text(encoding="utf-8")
 
@@ -122,6 +184,24 @@ class WorkbenchUiTests(unittest.TestCase):
         self.assertIn('help=t("dev_session.llm_provider_model")', source)
         self.assertNotIn("st.selectbox(", source)
 
+    def test_dev_session_workspace_dropdown_labels_hide_paths(self):
+        app_path = str(ROOT / "app")
+        if app_path not in sys.path:
+            sys.path.insert(0, app_path)
+        import pg_dev_sessions
+
+        page = pg_dev_sessions.PageDevSessions.__new__(pg_dev_sessions.PageDevSessions)
+        workspace = SimpleNamespace(
+            id="W_1",
+            name="crewAi",
+            path=r"C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main",
+        )
+
+        self.assertEqual(page._workspace_label(workspace), "crewAi")
+        self.assertEqual(page._workspace_dropdown_label(workspace), "crewAi")
+        self.assertNotIn("CrewAI-Studio-main", page._workspace_dropdown_label(workspace))
+        self.assertNotIn(workspace.path, page._workspace_label(workspace))
+
     def test_dev_session_defaults_to_latest_thread_unless_starting_new_chat(self):
         app_path = str(ROOT / "app")
         if app_path not in sys.path:
@@ -149,6 +229,154 @@ class WorkbenchUiTests(unittest.TestCase):
             self.assertNotIn("selected_dev_session_id", fake_state)
         finally:
             pg_dev_sessions.ss = original_state
+
+    def test_dev_session_existing_thread_model_selection_is_saved(self):
+        app_path = str(ROOT / "app")
+        if app_path not in sys.path:
+            sys.path.insert(0, app_path)
+        import pg_dev_sessions
+
+        original_state = pg_dev_sessions.ss
+        original_save = pg_dev_sessions.db_utils.save_dev_session
+        original_load = pg_dev_sessions.db_utils.load_dev_sessions
+        fake_state = FakeSessionState()
+        session = SimpleNamespace(id="D_1", llm_provider_model="deepseek: old-model")
+        saved_sessions = []
+        page = pg_dev_sessions.PageDevSessions.__new__(pg_dev_sessions.PageDevSessions)
+
+        try:
+            pg_dev_sessions.ss = fake_state
+            pg_dev_sessions.db_utils.save_dev_session = saved_sessions.append
+            pg_dev_sessions.db_utils.load_dev_sessions = lambda: ["reloaded"]
+
+            page._set_session_model(session, "deepseek: new-model")
+
+            self.assertEqual(session.llm_provider_model, "deepseek: new-model")
+            self.assertEqual(saved_sessions, [session])
+            self.assertEqual(fake_state.dev_sessions, ["reloaded"])
+        finally:
+            pg_dev_sessions.ss = original_state
+            pg_dev_sessions.db_utils.save_dev_session = original_save
+            pg_dev_sessions.db_utils.load_dev_sessions = original_load
+
+    def test_dev_session_send_clears_followup_input_on_next_render(self):
+        app_path = str(ROOT / "app")
+        if app_path not in sys.path:
+            sys.path.insert(0, app_path)
+        import pg_dev_sessions
+
+        class FakeDevSession:
+            id = "D_1"
+            status = "chatting"
+
+            def __init__(self):
+                self.messages = []
+
+            def add_message(self, role, content):
+                self.messages.append({"role": role, "content": content})
+
+        original_state = pg_dev_sessions.ss
+        original_save = pg_dev_sessions.db_utils.save_dev_session
+        fake_state = FakeSessionState()
+        message_key = "dev-session-message-input-D_1"
+        clear_key = f"{message_key}__clear_after_send"
+        fake_state[message_key] = "知识库的数据会存放在哪里"
+        session = FakeDevSession()
+        saved_sessions = []
+        queued_sessions = []
+        page = pg_dev_sessions.PageDevSessions.__new__(pg_dev_sessions.PageDevSessions)
+        page._queue_pending_session = queued_sessions.append
+
+        try:
+            pg_dev_sessions.ss = fake_state
+            pg_dev_sessions.db_utils.save_dev_session = saved_sessions.append
+
+            page._send_chat_message(SimpleNamespace(id="W_1"), session, fake_state[message_key])
+
+            self.assertEqual(session.messages, [{"role": "user", "content": "知识库的数据会存放在哪里"}])
+            self.assertEqual(saved_sessions, [session])
+            self.assertEqual(queued_sessions, [session])
+            self.assertTrue(fake_state.get(clear_key))
+            page._apply_pending_message_input_clear(message_key)
+            self.assertEqual(fake_state[message_key], "")
+            self.assertNotIn(clear_key, fake_state)
+        finally:
+            pg_dev_sessions.ss = original_state
+            pg_dev_sessions.db_utils.save_dev_session = original_save
+
+    def test_dev_session_send_requests_thread_scroll_to_bottom(self):
+        app_path = str(ROOT / "app")
+        if app_path not in sys.path:
+            sys.path.insert(0, app_path)
+        import pg_dev_sessions
+
+        class FakeDevSession:
+            id = "D_1"
+            status = "chatting"
+
+            def add_message(self, role, content):
+                self.last_message = {"role": role, "content": content}
+
+        original_state = pg_dev_sessions.ss
+        original_save = pg_dev_sessions.db_utils.save_dev_session
+        fake_state = FakeSessionState()
+        session = FakeDevSession()
+        page = pg_dev_sessions.PageDevSessions.__new__(pg_dev_sessions.PageDevSessions)
+        page._queue_pending_session = lambda _session: None
+
+        try:
+            pg_dev_sessions.ss = fake_state
+            pg_dev_sessions.db_utils.save_dev_session = lambda _session: None
+
+            page._send_chat_message(SimpleNamespace(id="W_1"), session, "不支持html吗")
+
+            self.assertEqual(fake_state.dev_session_scroll_to_bottom_session_id, "D_1")
+            self.assertEqual(fake_state.dev_session_scroll_to_bottom_nonce, 1)
+        finally:
+            pg_dev_sessions.ss = original_state
+            pg_dev_sessions.db_utils.save_dev_session = original_save
+
+    def test_dev_session_scroll_script_targets_chat_canvas_bottom(self):
+        app_path = str(ROOT / "app")
+        if app_path not in sys.path:
+            sys.path.insert(0, app_path)
+        import pg_dev_sessions
+
+        page = pg_dev_sessions.PageDevSessions.__new__(pg_dev_sessions.PageDevSessions)
+        script = page._chat_scroll_to_bottom_script(3)
+
+        self.assertIn("dev-session-scroll-request-3", script)
+        self.assertIn("window.parent.document", script)
+        self.assertIn(".st-key-dev-session-chat-canvas", script)
+        self.assertIn('[class*="st-key-dev-session-chat-canvas"] > [data-testid="stVerticalBlock"]', script)
+        self.assertIn("target.scrollTop = target.scrollHeight", script)
+
+    def test_dev_session_renders_cleared_composer_before_pending_reply_blocks(self):
+        source = (ROOT / "app" / "pg_dev_sessions.py").read_text(encoding="utf-8")
+        start = source.index("    def _draw_main_thread")
+        end = source.index("    def draw", start)
+        main_thread = source[start:end]
+
+        self.assertLess(
+            main_thread.index("self._draw_chat_composer(workspace, session)"),
+            main_thread.index("self._complete_pending_reply("),
+        )
+
+    def test_dev_session_scrolls_thread_before_pending_reply_blocks(self):
+        source = (ROOT / "app" / "pg_dev_sessions.py").read_text(encoding="utf-8")
+        start = source.index("    def _draw_main_thread")
+        end = source.index("    def draw", start)
+        main_thread = source[start:end]
+
+        self.assertIn("self._draw_chat_scroll_to_bottom(session)", main_thread)
+        self.assertLess(
+            main_thread.index("stream_slot = st.empty()"),
+            main_thread.index("self._draw_chat_scroll_to_bottom(session)"),
+        )
+        self.assertLess(
+            main_thread.index("self._draw_chat_scroll_to_bottom(session)"),
+            main_thread.index("self._complete_pending_reply("),
+        )
 
     def test_sidebar_top_spacing_is_compact(self):
         source = (ROOT / "app" / "ui_styles.py").read_text(encoding="utf-8")
@@ -202,6 +430,21 @@ class WorkbenchUiTests(unittest.TestCase):
         self.assertIn("margin-left: 0.58rem !important;", style_source)
         self.assertIn("padding-left: 0.44rem !important;", style_source)
         self.assertIn("padding-right: 0.38rem !important;", style_source)
+        hover_start = style_source.index(
+            'section[data-testid="stSidebar"] .st-key-nav-card-workspace .stButton > button:hover'
+        )
+        selected_start = style_source.index(
+            'section[data-testid="stSidebar"] .st-key-nav-card-workspace .stButton > button[kind="primary"]',
+            hover_start,
+        )
+        hover_block = style_source[hover_start:selected_start]
+        self.assertIn("min-height: 2.48rem !important;", hover_block)
+        self.assertIn("padding-top: 0.28rem !important;", hover_block)
+        self.assertIn("padding-bottom: 0.28rem !important;", hover_block)
+        self.assertIn("min-height: 2.72rem !important;", style_source)
+        self.assertIn("height: 2.72rem !important;", style_source)
+        self.assertIn("padding-top: 0.38rem !important;", style_source)
+        self.assertIn("padding-bottom: 0.38rem !important;", style_source)
         self.assertIn("background: linear-gradient(90deg, rgba(37, 99, 235, 0.22), rgba(37, 99, 235, 0.06)) !important;", style_source)
         self.assertIn("box-shadow: inset 2px 0 0 rgba(96, 165, 250, 0.92) !important;", style_source)
         self.assertNotIn("background: linear-gradient(180deg, rgba(23, 32, 51, 0.58), rgba(12, 19, 32, 0.64));", style_source)
@@ -272,6 +515,13 @@ class WorkbenchUiTests(unittest.TestCase):
         self.assertIn('[class*="st-key-crew-list-"] div[data-testid="stExpander"]', style_source)
         self.assertIn('[class*="st-key-task-list-"] [data-testid="stVerticalBlock"]', style_source)
         self.assertIn('[class*="st-key-crew-list-"] [data-testid="stVerticalBlock"]', style_source)
+        self.assertIn('[class*="st-key-task-list-"] div[data-testid="stExpander"] summary {', style_source)
+        self.assertIn("height: 2.35rem !important;", style_source)
+        self.assertIn("max-height: 2.35rem !important;", style_source)
+        self.assertIn('[class*="st-key-task-list-"] div[data-testid="stExpander"] summary p', style_source)
+        self.assertIn("white-space: nowrap !important;", style_source)
+        self.assertIn("overflow: hidden !important;", style_source)
+        self.assertIn("text-overflow: ellipsis !important;", style_source)
 
     def test_sidebar_collapse_button_is_persistent_lower_and_larger(self):
         source = (ROOT / "app" / "ui_styles.py").read_text(encoding="utf-8")
@@ -421,7 +671,9 @@ class WorkbenchUiTests(unittest.TestCase):
         self.assertIn('[data-testid="stPopoverBody"]:has([class*="st-key-dev-session-workspace-dropdown-option-"])', source)
         self.assertIn('[data-testid="stPopoverBody"]:has([class*="st-key-new-dev-session-model-option-"])', source)
         self.assertIn("padding: 0.46rem !important;", source)
-        self.assertIn("width: min(24rem, calc(100vw - 1rem)) !important;", source)
+        self.assertIn("width: min(13rem, calc(100vw - 1rem)) !important;", source)
+        self.assertIn("min-width: min(11rem, calc(100vw - 1rem)) !important;", source)
+        self.assertNotIn("width: min(24rem, calc(100vw - 1rem)) !important;", source)
         self.assertIn("width: min(19rem, calc(100vw - 1rem)) !important;", source)
         self.assertIn("backdrop-filter: blur(16px);", source)
         self.assertIn("--dev-session-lane-height: calc(var(--dev-session-shell-height) - 0.52rem);", source)
@@ -441,6 +693,8 @@ class WorkbenchUiTests(unittest.TestCase):
         self.assertIn("margin-top: 0.12rem;", source)
         self.assertIn("margin-top: 0.42rem !important;", source)
         self.assertIn("margin-bottom: 0.38rem;", source)
+        self.assertIn('[data-testid="stLayoutWrapper"]:has(.st-key-dev-session-workspace-dropdown)', source)
+        self.assertIn("margin-top: 0.18rem !important;", source)
         self.assertIn("flex-direction: column !important;", source)
         self.assertIn("min-height: clamp(4rem, 12vh, 8rem);", source)
         self.assertIn("margin-top: auto !important;", source)
@@ -484,6 +738,14 @@ class WorkbenchUiTests(unittest.TestCase):
         self.assertNotIn('_, action_col = st.columns([0.92, 0.08], gap="small")', (ROOT / "app" / "pg_dev_sessions.py").read_text(encoding="utf-8"))
         self.assertIn('key=f"dev-session-followup-composer-{session.id}"', (ROOT / "app" / "pg_dev_sessions.py").read_text(encoding="utf-8"))
         self.assertIn('button_key = f"dev-session-send-arrow-{session.id}"', (ROOT / "app" / "pg_dev_sessions.py").read_text(encoding="utf-8"))
+        self.assertIn('key=f"dev-session-model-dropdown-{session.id}"', (ROOT / "app" / "pg_dev_sessions.py").read_text(encoding="utf-8"))
+        self.assertIn('key=f"dev-session-model-option-{session.id}-{model_index}"', (ROOT / "app" / "pg_dev_sessions.py").read_text(encoding="utf-8"))
+        self.assertIn('self._set_session_model(session, model_label)', (ROOT / "app" / "pg_dev_sessions.py").read_text(encoding="utf-8"))
+        self.assertIn('[class*="st-key-dev-session-model-dropdown-"]', source)
+        self.assertIn('[class*="st-key-dev-session-model-option-"] button', source)
+        self.assertIn('[class*="st-key-dev-session-followup-composer-"] [class*="st-key-dev-session-model-dropdown-"]', source)
+        self.assertIn("width: min(13.75rem, calc(100% - 4.45rem)) !important;", source)
+        self.assertNotIn('key=f"dev-session-composer-toolbar-{session.id}"', (ROOT / "app" / "pg_dev_sessions.py").read_text(encoding="utf-8"))
         self.assertIn("grid-template-columns: minmax(16rem, clamp(17rem, 21vw, 21rem)) minmax(0, 1fr);", source)
         self.assertNotIn("grid-template-columns: minmax(15rem, 0.32fr) minmax(0, 1fr);", source)
         self.assertIn("@media (max-width: 1100px)", source)
@@ -514,6 +776,31 @@ class WorkbenchUiTests(unittest.TestCase):
         self.assertNotIn(".dev-session-sidebar-thread", source)
         self.assertNotIn(".dev-session-thread-age", source)
         self.assertNotIn(".dev-session-composer-toolbar", source)
+
+    def test_dev_session_thread_layout_uses_direct_streamlit_rows(self):
+        source = (ROOT / "app" / "ui_styles.py").read_text(encoding="utf-8")
+
+        self.assertIn(
+            ".st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) {\n"
+            "          display: grid !important;\n"
+            "          grid-template-rows: auto minmax(0, 1fr) auto !important;",
+            source,
+        )
+        self.assertIn(
+            '.st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) > '
+            '[data-testid="stLayoutWrapper"]:has([class*="st-key-dev-session-thread-"])',
+            source,
+        )
+        self.assertIn(
+            '.st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) > '
+            '[data-testid="stLayoutWrapper"]:has(.st-key-dev-session-bottom-composer)',
+            source,
+        )
+        self.assertIn(
+            '.st-key-dev-session-bottom-composer > [data-testid="stLayoutWrapper"]:has('
+            '[class*="st-key-dev-session-followup-composer-"])',
+            source,
+        )
 
 
 if __name__ == "__main__":

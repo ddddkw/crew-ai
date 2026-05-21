@@ -3,6 +3,7 @@ import sys
 import unittest
 import json
 from pathlib import Path
+from types import SimpleNamespace
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -53,6 +54,45 @@ class LlmConfigTests(unittest.TestCase):
                 os.environ.pop("MODEL_CONFIGS", None)
             else:
                 os.environ["MODEL_CONFIGS"] = original_value
+
+    def test_create_llm_applies_default_request_timeout(self):
+        import llms
+
+        class FakeLLM:
+            calls = []
+
+            def __init__(self, **kwargs):
+                self.kwargs = kwargs
+                FakeLLM.calls.append(kwargs)
+
+        original_model_configs = os.environ.get("MODEL_CONFIGS")
+        original_crewai = sys.modules.get("crewai")
+        try:
+            os.environ["MODEL_CONFIGS"] = json.dumps(
+                [
+                    {
+                        "provider": "deepseek",
+                        "model": "deepseek-v4-flash",
+                        "api_base": "https://api.deepseek.example/v1",
+                        "api_key": "secret-key",
+                    }
+                ]
+            )
+            sys.modules["crewai"] = SimpleNamespace(LLM=FakeLLM)
+
+            llm = llms.create_llm("deepseek: deepseek-v4-flash")
+
+            self.assertIsInstance(llm, FakeLLM)
+            self.assertEqual(FakeLLM.calls[0]["timeout"], llms.DEFAULT_LLM_TIMEOUT_SECONDS)
+        finally:
+            if original_model_configs is None:
+                os.environ.pop("MODEL_CONFIGS", None)
+            else:
+                os.environ["MODEL_CONFIGS"] = original_model_configs
+            if original_crewai is None:
+                sys.modules.pop("crewai", None)
+            else:
+                sys.modules["crewai"] = original_crewai
 
 
 if __name__ == "__main__":

@@ -1,12 +1,15 @@
+import os
+from pathlib import Path
+import shutil
+
 import streamlit as st
 from streamlit import session_state as ss
-from my_knowledge_source import MyKnowledgeSource
+
 import db_utils
-import os
-import shutil
-from pathlib import Path
 from i18n import t
+from my_knowledge_source import MyKnowledgeSource
 from page_chrome import draw_page_header
+
 
 class PageKnowledge:
     def __init__(self):
@@ -14,7 +17,7 @@ class PageKnowledge:
 
     def create_knowledge_source(self):
         knowledge_source = MyKnowledgeSource()
-        if 'knowledge_sources' not in ss:
+        if "knowledge_sources" not in ss:
             ss.knowledge_sources = []
         ss.knowledge_sources.append(knowledge_source)
         knowledge_source.is_new = True
@@ -23,13 +26,7 @@ class PageKnowledge:
         return knowledge_source
 
     def clear_knowledge(self):
-        # This will clear knowledge stores in CrewAI
-        # Get CrewAI home directory
-        home_dir = Path.home()
-        crewai_dir = home_dir / ".crewai"
-        
-        # Remove knowledge folder
-        knowledge_dir = crewai_dir / "knowledge"
+        knowledge_dir = Path.home() / ".crewai" / "knowledge"
         if knowledge_dir.exists():
             shutil.rmtree(knowledge_dir)
             st.success("Knowledge stores cleared successfully!")
@@ -37,12 +34,10 @@ class PageKnowledge:
             st.info("No knowledge stores found to clear.")
 
     def draw(self):
-        # Create knowledge directory if it doesn't exist
         os.makedirs("knowledge", exist_ok=True)
 
-        # Display existing knowledge sources
         editing = False
-        if 'knowledge_sources' not in ss:
+        if "knowledge_sources" not in ss:
             ss.knowledge_sources = db_utils.load_knowledge_sources()
 
         draw_page_header(
@@ -64,7 +59,7 @@ class PageKnowledge:
                 if knowledge_source.edit:
                     editing = True
 
-            if len(ss.knowledge_sources) == 0:
+            if not ss.knowledge_sources:
                 st.write(t("knowledge.none_defined"))
 
             st.button(t("button.create_knowledge"), on_click=self.create_knowledge_source, disabled=editing)

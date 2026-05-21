@@ -28,6 +28,15 @@ class PageModelSettings:
             ss.model_settings_row_count = len(configs)
         return ss.model_settings_row_count
 
+    def _row_title(self, row_index, config):
+        title = t("model_settings.model_row", number=row_index + 1)
+        provider = str(config.get("provider") or "").strip()
+        model = str(config.get("model") or "").strip()
+        details = [value for value in (provider, model) if value]
+        if not details:
+            return title
+        return f"{title} · {' · '.join(details)}"
+
     def _field_widget(self, row_index, field, value):
         field_key = f"model_settings_{row_index}_{field['key']}"
         label = t(field["label_key"])
@@ -48,32 +57,32 @@ class PageModelSettings:
         )
 
     def _draw_config_row(self, row_index, config):
-        st.markdown(f"#### {t('model_settings.model_row', number=row_index + 1)}")
         collected = {}
-        col1, col2 = st.columns(2)
-        with col1:
-            collected["provider"] = self._field_widget(
-                row_index,
-                MODEL_CONFIG_FIELDS[0],
-                config.get("provider", ""),
-            )
-            collected["api_base"] = self._field_widget(
-                row_index,
-                MODEL_CONFIG_FIELDS[2],
-                config.get("api_base", ""),
-            )
-        with col2:
-            collected["model"] = self._field_widget(
-                row_index,
-                MODEL_CONFIG_FIELDS[1],
-                config.get("model", ""),
-            )
-            collected["api_key"] = self._field_widget(
-                row_index,
-                MODEL_CONFIG_FIELDS[3],
-                config.get("api_key", ""),
-            )
-        remove = st.checkbox(t("model_settings.remove_model"), key=f"model_settings_remove_{row_index}")
+        with st.expander(self._row_title(row_index, config), expanded=False):
+            col1, col2 = st.columns(2)
+            with col1:
+                collected["provider"] = self._field_widget(
+                    row_index,
+                    MODEL_CONFIG_FIELDS[0],
+                    config.get("provider", ""),
+                )
+                collected["api_base"] = self._field_widget(
+                    row_index,
+                    MODEL_CONFIG_FIELDS[2],
+                    config.get("api_base", ""),
+                )
+            with col2:
+                collected["model"] = self._field_widget(
+                    row_index,
+                    MODEL_CONFIG_FIELDS[1],
+                    config.get("model", ""),
+                )
+                collected["api_key"] = self._field_widget(
+                    row_index,
+                    MODEL_CONFIG_FIELDS[3],
+                    config.get("api_key", ""),
+                )
+            remove = st.checkbox(t("model_settings.remove_model"), key=f"model_settings_remove_{row_index}")
         return collected, remove
 
     def draw(self):
@@ -86,6 +95,9 @@ class PageModelSettings:
             subtitle=t("model_settings.description"),
             count=len(configs),
         )
+
+        if ss.pop("model_settings_saved", False):
+            st.success(t("model_settings.saved"))
 
         with st.container(border=True, key="model-settings-card"):
             if st.button(t("model_settings.add_model")):
@@ -114,4 +126,5 @@ class PageModelSettings:
             load_dotenv(override=True)
             ss.env_vars = {"MODEL_CONFIGS": os.getenv("MODEL_CONFIGS")}
             ss.model_settings_row_count = max(1, len(read_model_configs(ENV_PATH)))
-            st.success(t("model_settings.saved"))
+            ss.model_settings_saved = True
+            st.rerun()

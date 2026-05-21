@@ -6,6 +6,9 @@ from dotenv import load_dotenv
 from env_config import MODEL_ENV_KEYS, read_model_configs
 
 
+DEFAULT_LLM_TIMEOUT_SECONDS = 60
+
+
 def load_secrets_fron_env():
     load_dotenv(override=True)
     if "env_vars" not in st.session_state:
@@ -29,7 +32,7 @@ def llm_providers_and_models():
     return [get_model_label(config) for config in read_model_configs()]
 
 
-def create_llm(provider_and_model, temperature=0.15):
+def create_llm(provider_and_model, temperature=0.15, timeout=DEFAULT_LLM_TIMEOUT_SECONDS):
     if ": " not in provider_and_model:
         raise ValueError("Input string must be in format 'Provider: Model'")
 
@@ -49,6 +52,7 @@ def create_llm(provider_and_model, temperature=0.15):
     return LLM(
         model=model,
         temperature=temperature,
+        timeout=timeout,
         api_key=config["api_key"],
         base_url=config["api_base"],
     )

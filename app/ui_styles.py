@@ -212,7 +212,7 @@ def apply_global_styles():
           position: relative;
           justify-content: flex-start;
           width: calc(100% - 0.58rem) !important;
-          min-height: 2.15rem;
+          min-height: 2.48rem !important;
           border: 0 !important;
           border-radius: 8px;
           background: transparent !important;
@@ -220,11 +220,18 @@ def apply_global_styles():
           box-shadow: none !important;
           margin-left: 0.58rem !important;
           padding-left: 0.72rem;
+          padding-top: 0.28rem !important;
+          padding-bottom: 0.28rem !important;
+          align-items: center !important;
         }
 
         section[data-testid="stSidebar"] .st-key-nav-card-workspace .stButton > button:hover,
         section[data-testid="stSidebar"] .st-key-nav-card-development .stButton > button:hover,
         section[data-testid="stSidebar"] .st-key-nav-card-system .stButton > button:hover {
+          min-height: 2.48rem !important;
+          padding-top: 0.28rem !important;
+          padding-bottom: 0.28rem !important;
+          align-items: center !important;
           background: rgba(148, 163, 184, 0.08) !important;
           color: #e2e8f0;
         }
@@ -235,6 +242,11 @@ def apply_global_styles():
         section[data-testid="stSidebar"] .st-key-nav-card-workspace .stButton > button:disabled,
         section[data-testid="stSidebar"] .st-key-nav-card-development .stButton > button:disabled,
         section[data-testid="stSidebar"] .st-key-nav-card-system .stButton > button:disabled {
+          min-height: 2.72rem !important;
+          height: 2.72rem !important;
+          padding-top: 0.38rem !important;
+          padding-bottom: 0.38rem !important;
+          align-items: center !important;
           background: linear-gradient(90deg, rgba(37, 99, 235, 0.22), rgba(37, 99, 235, 0.06)) !important;
           color: #f8fafc !important;
           box-shadow: inset 2px 0 0 rgba(96, 165, 250, 0.92) !important;
@@ -463,6 +475,23 @@ def apply_global_styles():
         [class*="st-key-crew-list-"] div[data-testid="stExpander"] summary {
           min-height: 2.05rem;
           padding: 0.42rem 0.72rem !important;
+        }
+
+        [class*="st-key-task-list-"] div[data-testid="stExpander"] summary {
+          height: 2.35rem !important;
+          max-height: 2.35rem !important;
+          overflow: hidden !important;
+          align-items: center !important;
+        }
+
+        [class*="st-key-task-list-"] div[data-testid="stExpander"] summary > div,
+        [class*="st-key-task-list-"] div[data-testid="stExpander"] summary [data-testid="stMarkdownContainer"],
+        [class*="st-key-task-list-"] div[data-testid="stExpander"] summary p {
+          min-width: 0 !important;
+          max-width: 100% !important;
+          white-space: nowrap !important;
+          overflow: hidden !important;
+          text-overflow: ellipsis !important;
         }
 
         [class*="st-key-agent-list-"][data-testid="stVerticalBlock"],
@@ -2428,6 +2457,10 @@ def apply_global_styles():
           margin-bottom: 0.38rem;
         }
 
+        .st-key-dev-session-lane-controls [data-testid="stLayoutWrapper"]:has(.st-key-dev-session-workspace-dropdown) {
+          margin-top: 0.18rem !important;
+        }
+
         [class*="st-key-dev-session-session-row-"] [data-testid="stHorizontalBlock"] {
           grid-template-columns: minmax(0, 1fr) 2rem !important;
           gap: 0.28rem !important;
@@ -2509,7 +2542,8 @@ def apply_global_styles():
         }
 
         .st-key-dev-session-workspace-dropdown,
-        [class*="st-key-new-dev-session-model-dropdown-"] {
+        [class*="st-key-new-dev-session-model-dropdown-"],
+        [class*="st-key-dev-session-model-dropdown-"] {
           width: 100%;
         }
 
@@ -2519,8 +2553,15 @@ def apply_global_styles():
           margin-left: auto;
         }
 
+        [class*="st-key-dev-session-model-dropdown-"] {
+          width: min(100%, 17.5rem);
+          max-width: 17.5rem;
+          margin-left: auto;
+        }
+
         .st-key-dev-session-workspace-dropdown [data-testid="stPopoverButton"],
-        [class*="st-key-new-dev-session-model-dropdown-"] [data-testid="stPopoverButton"] {
+        [class*="st-key-new-dev-session-model-dropdown-"] [data-testid="stPopoverButton"],
+        [class*="st-key-dev-session-model-dropdown-"] [data-testid="stPopoverButton"] {
           width: 100% !important;
           min-height: 2.05rem !important;
           height: 2.05rem !important;
@@ -2535,15 +2576,18 @@ def apply_global_styles():
         }
 
         .st-key-dev-session-workspace-dropdown [data-testid="stPopoverButton"]:hover,
-        [class*="st-key-new-dev-session-model-dropdown-"] [data-testid="stPopoverButton"]:hover {
+        [class*="st-key-new-dev-session-model-dropdown-"] [data-testid="stPopoverButton"]:hover,
+        [class*="st-key-dev-session-model-dropdown-"] [data-testid="stPopoverButton"]:hover {
           border-color: rgba(147, 197, 253, 0.4) !important;
           background: linear-gradient(180deg, rgba(30, 41, 59, 0.98), rgba(15, 23, 42, 0.96)) !important;
         }
 
         .st-key-dev-session-workspace-dropdown [data-testid="stPopoverButton"] [data-testid="stMarkdownContainer"],
         [class*="st-key-new-dev-session-model-dropdown-"] [data-testid="stPopoverButton"] [data-testid="stMarkdownContainer"],
+        [class*="st-key-dev-session-model-dropdown-"] [data-testid="stPopoverButton"] [data-testid="stMarkdownContainer"],
         .st-key-dev-session-workspace-dropdown [data-testid="stPopoverButton"] p,
-        [class*="st-key-new-dev-session-model-dropdown-"] [data-testid="stPopoverButton"] p {
+        [class*="st-key-new-dev-session-model-dropdown-"] [data-testid="stPopoverButton"] p,
+        [class*="st-key-dev-session-model-dropdown-"] [data-testid="stPopoverButton"] p {
           min-width: 0;
           overflow: hidden;
           text-overflow: ellipsis;
@@ -2554,7 +2598,8 @@ def apply_global_styles():
         }
 
         [data-testid="stPopoverBody"]:has([class*="st-key-dev-session-workspace-dropdown-option-"]),
-        [data-testid="stPopoverBody"]:has([class*="st-key-new-dev-session-model-option-"]) {
+        [data-testid="stPopoverBody"]:has([class*="st-key-new-dev-session-model-option-"]),
+        [data-testid="stPopoverBody"]:has([class*="st-key-dev-session-model-option-"]) {
           padding: 0.46rem !important;
           border-radius: 11px !important;
           border: 1px solid rgba(148, 163, 184, 0.20) !important;
@@ -2565,9 +2610,9 @@ def apply_global_styles():
         }
 
         [data-testid="stPopoverBody"]:has([class*="st-key-dev-session-workspace-dropdown-option-"]) {
-          width: min(24rem, calc(100vw - 1rem)) !important;
-          min-width: min(18rem, calc(100vw - 1rem)) !important;
-          max-width: min(24rem, calc(100vw - 1rem)) !important;
+          width: min(13rem, calc(100vw - 1rem)) !important;
+          min-width: min(11rem, calc(100vw - 1rem)) !important;
+          max-width: min(13rem, calc(100vw - 1rem)) !important;
         }
 
         [data-testid="stPopoverBody"]:has([class*="st-key-new-dev-session-model-option-"]) {
@@ -2576,25 +2621,35 @@ def apply_global_styles():
           max-width: min(19rem, calc(100vw - 1rem)) !important;
         }
 
+        [data-testid="stPopoverBody"]:has([class*="st-key-dev-session-model-option-"]) {
+          width: min(19rem, calc(100vw - 1rem)) !important;
+          min-width: min(16rem, calc(100vw - 1rem)) !important;
+          max-width: min(19rem, calc(100vw - 1rem)) !important;
+        }
+
         [data-testid="stPopoverBody"]:has([class*="st-key-dev-session-workspace-dropdown-option-"]) > div,
-        [data-testid="stPopoverBody"]:has([class*="st-key-new-dev-session-model-option-"]) > div {
+        [data-testid="stPopoverBody"]:has([class*="st-key-new-dev-session-model-option-"]) > div,
+        [data-testid="stPopoverBody"]:has([class*="st-key-dev-session-model-option-"]) > div {
           width: 100% !important;
           max-width: 100% !important;
         }
 
         [data-testid="stPopoverBody"]:has([class*="st-key-dev-session-workspace-dropdown-option-"]) [data-testid="stVerticalBlock"],
-        [data-testid="stPopoverBody"]:has([class*="st-key-new-dev-session-model-option-"]) [data-testid="stVerticalBlock"] {
+        [data-testid="stPopoverBody"]:has([class*="st-key-new-dev-session-model-option-"]) [data-testid="stVerticalBlock"],
+        [data-testid="stPopoverBody"]:has([class*="st-key-dev-session-model-option-"]) [data-testid="stVerticalBlock"] {
           gap: 0.34rem !important;
         }
 
         [data-testid="stPopoverBody"]:has([class*="st-key-dev-session-workspace-dropdown-option-"]) [data-testid="stElementContainer"],
-        [data-testid="stPopoverBody"]:has([class*="st-key-new-dev-session-model-option-"]) [data-testid="stElementContainer"] {
+        [data-testid="stPopoverBody"]:has([class*="st-key-new-dev-session-model-option-"]) [data-testid="stElementContainer"],
+        [data-testid="stPopoverBody"]:has([class*="st-key-dev-session-model-option-"]) [data-testid="stElementContainer"] {
           width: 100% !important;
           margin: 0 !important;
         }
 
         [class*="st-key-dev-session-workspace-dropdown-option-"] button,
-        [class*="st-key-new-dev-session-model-option-"] button {
+        [class*="st-key-new-dev-session-model-option-"] button,
+        [class*="st-key-dev-session-model-option-"] button {
           min-height: 2rem !important;
           padding: 0.34rem 0.56rem !important;
           border-radius: 8px !important;
@@ -2610,48 +2665,80 @@ def apply_global_styles():
         }
 
         [class*="st-key-dev-session-workspace-dropdown-option-"] button p,
-        [class*="st-key-new-dev-session-model-option-"] button p {
+        [class*="st-key-new-dev-session-model-option-"] button p,
+        [class*="st-key-dev-session-model-option-"] button p {
           overflow: hidden !important;
           text-overflow: ellipsis !important;
           white-space: nowrap !important;
         }
 
         [class*="st-key-dev-session-workspace-dropdown-option-"] button:hover,
-        [class*="st-key-new-dev-session-model-option-"] button:hover {
+        [class*="st-key-new-dev-session-model-option-"] button:hover,
+        [class*="st-key-dev-session-model-option-"] button:hover {
           border-color: rgba(96, 165, 250, 0.36) !important;
           background: rgba(30, 41, 59, 0.92) !important;
         }
 
         [class*="st-key-dev-session-workspace-dropdown-option-"] button:disabled,
-        [class*="st-key-new-dev-session-model-option-"] button:disabled {
+        [class*="st-key-new-dev-session-model-option-"] button:disabled,
+        [class*="st-key-dev-session-model-option-"] button:disabled {
           color: rgba(226, 232, 240, 0.58) !important;
           background: rgba(15, 23, 42, 0.52) !important;
           opacity: 1 !important;
         }
 
         .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) {
-          display: flex !important;
-          flex-direction: column !important;
+          display: grid !important;
+          grid-template-rows: auto minmax(0, 1fr) auto !important;
+          grid-template-columns: minmax(0, 1fr) !important;
+          align-items: stretch !important;
+          gap: 0.58rem !important;
           overflow: hidden !important;
           padding-bottom: 0.48rem !important;
         }
 
-        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) > [data-testid="stLayoutWrapper"],
-        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) > [data-testid="stLayoutWrapper"] > [data-testid="stVerticalBlock"] {
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) > [data-testid="stLayoutWrapper"] {
+          width: 100% !important;
+          max-width: 100% !important;
+          min-width: 0 !important;
           min-height: 0 !important;
-          height: 100% !important;
-          flex: 1 1 auto !important;
+          height: auto !important;
+          flex: none !important;
+          overflow: visible !important;
         }
 
-        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) > [data-testid="stLayoutWrapper"] > [data-testid="stVerticalBlock"] {
-          display: grid !important;
-          grid-template-rows: auto minmax(0, 1fr) auto !important;
-          align-items: stretch !important;
-          gap: 0.58rem !important;
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) > [data-testid="stLayoutWrapper"]:has([data-testid="stHorizontalBlock"]) {
+          grid-row: 1;
+          align-self: start !important;
+        }
+
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) [data-testid="stElementContainer"]:has(.dev-session-topbar),
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) [data-testid="stMarkdown"]:has(.dev-session-topbar),
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) [data-testid="stMarkdownContainer"]:has(.dev-session-topbar) {
+          min-height: 0 !important;
+          height: auto !important;
+          overflow: visible !important;
+        }
+
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) > [data-testid="stLayoutWrapper"]:has([class*="st-key-dev-session-thread-"]) {
+          grid-row: 2;
+          min-height: 0 !important;
+          height: 100% !important;
           overflow: hidden !important;
         }
 
-        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) > [data-testid="stLayoutWrapper"] > [data-testid="stVerticalBlock"] > [data-testid="stLayoutWrapper"]:has([class*="st-key-dev-session-thread-"]) {
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) [class*="st-key-dev-session-thread-"] {
+          display: block !important;
+          min-height: 0 !important;
+          height: 100% !important;
+          overflow: hidden !important;
+        }
+
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) > [data-testid="stLayoutWrapper"]:has([class*="st-key-dev-session-thread-"]) > [class*="st-key-dev-session-thread-"] {
+          display: block !important;
+        }
+
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) [class*="st-key-dev-session-thread-"] > [data-testid="stLayoutWrapper"] {
           min-height: 0 !important;
           height: 100% !important;
           overflow: hidden !important;
@@ -2680,8 +2767,7 @@ def apply_global_styles():
           justify-content: flex-start;
         }
 
-        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) > [data-testid="stLayoutWrapper"] > [data-testid="stVerticalBlock"] > [data-testid="stLayoutWrapper"]:has(.st-key-dev-session-bottom-composer),
-        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) > [data-testid="stLayoutWrapper"] > [data-testid="stVerticalBlock"] > [data-testid="stLayoutWrapper"]:has([class*="st-key-dev-session-followup-composer-"]),
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) > [data-testid="stLayoutWrapper"]:has(.st-key-dev-session-bottom-composer),
         .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) .st-key-dev-session-bottom-composer,
         .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) .dev-session-bottom-composer {
           min-height: 0 !important;
@@ -2689,7 +2775,8 @@ def apply_global_styles():
           flex: 0 0 auto !important;
         }
 
-        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) > [data-testid="stLayoutWrapper"] > [data-testid="stVerticalBlock"] > [data-testid="stLayoutWrapper"]:has([class*="st-key-dev-session-followup-composer-"]) {
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) > [data-testid="stLayoutWrapper"]:has(.st-key-dev-session-bottom-composer) {
+          grid-row: 3;
           width: min(58rem, calc(100% - 1.5rem)) !important;
           max-width: min(58rem, calc(100% - 1.5rem)) !important;
           margin: 0.18rem auto 0 !important;
@@ -2700,14 +2787,26 @@ def apply_global_styles():
 
         .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) .st-key-dev-session-bottom-composer,
         .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) .dev-session-bottom-composer {
+          display: block !important;
           width: min(58rem, calc(100% - 1.5rem)) !important;
           max-width: min(58rem, calc(100% - 1.5rem)) !important;
           margin: 0.18rem auto 0 !important;
           align-self: center !important;
           justify-self: center !important;
+          overflow: visible !important;
+        }
+
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) > [data-testid="stLayoutWrapper"]:has(.st-key-dev-session-bottom-composer) > .st-key-dev-session-bottom-composer {
+          display: block !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          min-width: 0 !important;
+          margin: 0 !important;
+          overflow: visible !important;
         }
 
         .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) .st-key-dev-session-bottom-composer > [data-testid="stLayoutWrapper"],
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) .st-key-dev-session-bottom-composer > [data-testid="stLayoutWrapper"]:has([class*="st-key-dev-session-followup-composer-"]),
         .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) .st-key-dev-session-bottom-composer > [data-testid="stLayoutWrapper"] > [data-testid="stVerticalBlock"],
         .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) [class*="st-key-dev-session-followup-composer-"],
         .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) [class*="st-key-dev-session-followup-composer-"] > [data-testid="stLayoutWrapper"],
@@ -2719,6 +2818,22 @@ def apply_global_styles():
           box-sizing: border-box !important;
         }
 
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) > [data-testid="stLayoutWrapper"]:has(.st-key-dev-session-bottom-composer) > .st-key-dev-session-bottom-composer > [data-testid="stLayoutWrapper"]:has([class*="st-key-dev-session-followup-composer-"]) {
+          width: 100% !important;
+          max-width: 100% !important;
+          min-width: 0 !important;
+        }
+
+        .st-key-dev-session-bottom-composer > [data-testid="stLayoutWrapper"]:has([class*="st-key-dev-session-followup-composer-"]) {
+          width: 100% !important;
+          max-width: 100% !important;
+          min-width: 0 !important;
+          height: auto !important;
+          min-height: 0 !important;
+          margin: 0 !important;
+          overflow: visible !important;
+        }
+
         .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) [class*="st-key-dev-session-followup-composer-"] {
           position: relative;
           padding: 0.62rem 3.25rem 0.72rem 0.68rem !important;
@@ -2728,6 +2843,18 @@ def apply_global_styles():
         .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) [class*="st-key-dev-session-followup-composer-"] > [data-testid="stLayoutWrapper"] > [data-testid="stVerticalBlock"] {
           gap: 0 !important;
           position: relative !important;
+        }
+
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) [class*="st-key-dev-session-followup-composer-"] [class*="st-key-dev-session-model-dropdown-"],
+        .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) [class*="st-key-dev-session-followup-composer-"] > [data-testid="stLayoutWrapper"] > [data-testid="stVerticalBlock"][class*="st-key-dev-session-model-dropdown-"] {
+          position: absolute !important;
+          right: 3.18rem;
+          bottom: 0.58rem;
+          width: min(13.75rem, calc(100% - 4.45rem)) !important;
+          min-width: min(10rem, calc(100% - 4.45rem)) !important;
+          max-width: min(13.75rem, calc(100% - 4.45rem)) !important;
+          margin: 0 !important;
+          z-index: 2;
         }
 
         .st-key-dev-session-conversation:not(:has(.st-key-dev-session-home)) [class*="st-key-dev-session-followup-composer-"] [data-testid="stTextArea"],
