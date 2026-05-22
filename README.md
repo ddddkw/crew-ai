@@ -154,6 +154,14 @@ docker-compose up --build
 
 4. Access the application: http://localhost:8501
 
+## Portable Windows build with Nuitka
+
+CrewAI Studio can also be packaged as a portable Windows folder containing a
+single launcher executable plus its runtime files. See
+[docs/portable-nuitka.md](docs/portable-nuitka.md) for the build command and
+runtime layout. Use `Stop CrewAI Studio.exe` in the generated folder to stop the
+background local server.
+
 ## Configuration
 
 Before running the application, ensure you update the `.env` file with your API keys and other necessary configurations. An example `.env` file is provided for reference.
