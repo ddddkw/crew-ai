@@ -6,6 +6,9 @@ import traceback
 from typing import Any, Mapping
 
 
+_MISSING = object()
+
+
 @dataclass
 class LoopConfig:
     enabled: bool = False
@@ -50,76 +53,131 @@ def run_crew_loop(
     stop_event: Any,
 ) -> str | None:
     total_rounds = normalize_loop_count(config.count)
+    loop_id = config.loop_id or f"L_{datetime.now().strftime('%Y%m%d%H%M%S%f')}"
+    target_placeholder = config.target_placeholder
     previous_output: str | None = None
-    latest_result: str | None = None
-    current_index = 0
+    latest_output: str | None = None
+    latest_result: Any = None
+    current_index = 1
+    current_inputs = dict(base_inputs)
+    current_output = ""
+    current_started_at = _now()
+    round_previous_output: str | None = None
+    last_inputs = current_inputs
+    last_started_at = current_started_at
+    last_previous_output: str | None = None
 
     try:
-        for current_index in range(total_rounds):
+        if config.enabled and not target_placeholder:
+            raise ValueError("loop target placeholder is required")
+
+        for current_index in range(1, total_rounds + 1):
+            round_previous_output = previous_output
+            current_inputs = build_round_inputs(
+                base_inputs,
+                target_placeholder,
+                round_previous_output,
+            )
+            current_output = ""
+
             if stop_event.is_set():
                 message_queue.put(
                     _round_message(
                         "loop_stopped",
-                        config,
+                        loop_id,
+                        config.enabled,
+                        target_placeholder,
                         current_index,
                         total_rounds,
+                        round_previous_output,
+                        "stopped",
+                        current_inputs,
+                        output=latest_output or "",
                         result=latest_result,
                     )
                 )
-                return latest_result
+                return latest_output
 
-            current_inputs = build_round_inputs(
-                base_inputs,
-                config.target_placeholder,
-                previous_output,
-            )
+            current_started_at = _now()
             message_queue.put(
                 _round_message(
                     "loop_round_start",
-                    config,
+                    loop_id,
+                    config.enabled,
+                    target_placeholder,
                     current_index,
                     total_rounds,
-                    inputs=current_inputs,
+                    round_previous_output,
+                    "started",
+                    current_inputs,
+                    started_at=current_started_at,
                 )
             )
 
             result = crew_factory().kickoff(inputs=current_inputs)
             final_output = extract_final_output(result)
+            current_output = final_output
             if not final_output:
-                raise ValueError(f"round {current_index + 1} produced empty final output")
+                raise ValueError(f"round {current_index} produced empty final output")
 
-            latest_result = final_output
+            latest_output = final_output
+            latest_result = result
+            last_inputs = current_inputs
+            last_started_at = current_started_at
+            last_previous_output = round_previous_output
             message_queue.put(
                 _round_message(
                     "loop_round_success",
-                    config,
+                    loop_id,
+                    config.enabled,
+                    target_placeholder,
                     current_index,
                     total_rounds,
-                    result=final_output,
+                    round_previous_output,
+                    "success",
+                    current_inputs,
+                    output=final_output,
+                    result=result,
+                    started_at=current_started_at,
                 )
             )
             previous_output = final_output
 
-        complete_index = max(0, total_rounds - 1)
         message_queue.put(
             _round_message(
                 "loop_complete",
-                config,
-                complete_index,
+                loop_id,
+                config.enabled,
+                target_placeholder,
                 total_rounds,
+                total_rounds,
+                last_previous_output,
+                "success",
+                last_inputs,
+                output=latest_output or "",
                 result=latest_result,
+                started_at=last_started_at,
             )
         )
-        return latest_result
+        return latest_output
     except Exception as exc:
+        error = str(exc)
         message_queue.put(
             _round_message(
                 "loop_failed",
-                config,
+                loop_id,
+                config.enabled,
+                target_placeholder,
                 current_index,
                 total_rounds,
-                result=str(exc),
+                round_previous_output,
+                "failed",
+                current_inputs,
+                output=current_output,
+                error=error,
+                result=error,
                 stack_trace=traceback.format_exc(),
+                started_at=current_started_at,
             )
         )
         return None
@@ -127,38 +185,49 @@ def run_crew_loop(
 
 def _round_message(
     message_type: str,
-    config: LoopConfig,
-    current_index: int,
+    loop_id: str,
+    enabled: bool,
+    target_placeholder: str | None,
+    index: int,
     total_rounds: int,
+    previous_output: str | None,
+    status: str,
+    inputs: Mapping[str, Any],
     *,
-    result: str | None = None,
+    output: str = "",
+    error: str = "",
+    result: Any = _MISSING,
     stack_trace: str | None = None,
-    inputs: Mapping[str, Any] | None = None,
+    started_at: str | None = None,
 ) -> dict[str, Any]:
     message: dict[str, Any] = {
         "type": message_type,
-        "timestamp": _timestamp(),
         "loop": {
-            "id": config.loop_id,
-            "enabled": config.enabled,
-            "count": total_rounds,
-            "target_placeholder": config.target_placeholder,
-            "current_index": current_index,
+            "enabled": enabled,
+            "loop_id": loop_id,
+            "index": index,
+            "total": total_rounds,
+            "target_placeholder": target_placeholder,
+            "previous_output": previous_output,
         },
         "round": {
-            "index": current_index,
-            "number": current_index + 1,
+            "loop_id": loop_id,
+            "index": index,
             "total": total_rounds,
+            "status": status,
+            "input": dict(inputs),
+            "output": output,
+            "error": error,
+            "started_at": started_at or _now(),
+            "finished_at": _now() if status in {"success", "failed", "stopped"} else "",
         },
     }
-    if result is not None:
+    if result is not _MISSING:
         message["result"] = result
     if stack_trace is not None:
         message["stack_trace"] = stack_trace
-    if inputs is not None:
-        message["inputs"] = dict(inputs)
     return message
 
 
-def _timestamp() -> str:
+def _now() -> str:
     return datetime.now(timezone.utc).isoformat()
