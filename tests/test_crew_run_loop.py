@@ -51,6 +51,13 @@ class CrewRunLoopTests(unittest.TestCase):
 
         self.assertEqual(extract_final_output(result), "final answer")
 
+    def test_extract_final_output_strips_nested_dict_values(self):
+        from crew_run_loop import extract_final_output
+
+        self.assertEqual(extract_final_output({"result": {"raw": " nested answer "}}), "nested answer")
+        self.assertEqual(extract_final_output({"raw": " raw answer "}), "raw answer")
+        self.assertEqual(extract_final_output({"final_output": " final answer "}), "final answer")
+
     def test_build_round_inputs_replaces_only_selected_placeholder(self):
         from crew_run_loop import build_round_inputs
 
@@ -119,6 +126,24 @@ class CrewRunLoopTests(unittest.TestCase):
         loop_id = loop_ids.pop()
         self.assertRegex(loop_id, r"^L_\d{20}$")
         self.assertTrue(all(message["round"]["loop_id"] == loop_id for message in drained))
+
+    def test_run_crew_loop_emits_loop_enabled_true_when_config_disabled(self):
+        from crew_run_loop import LoopConfig, run_crew_loop
+
+        messages = queue.Queue()
+        factory = FakeCrewFactory(["round one"])
+
+        run_crew_loop(
+            crew_factory=factory,
+            base_inputs={"requirement": "initial"},
+            config=LoopConfig(enabled=False, count=1, target_placeholder="requirement", loop_id="L_disabled"),
+            message_queue=messages,
+            stop_event=threading.Event(),
+        )
+
+        drained = drain_messages(messages)
+
+        self.assertEqual([message["loop"]["enabled"] for message in drained], [True, True, True])
 
     def test_loop_round_success_has_contract_payload_and_original_result(self):
         from crew_run_loop import LoopConfig, run_crew_loop

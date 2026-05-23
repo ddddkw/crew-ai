@@ -85,7 +85,6 @@ def run_crew_loop(
                     _round_message(
                         "loop_stopped",
                         loop_id,
-                        config.enabled,
                         target_placeholder,
                         current_index,
                         total_rounds,
@@ -103,7 +102,6 @@ def run_crew_loop(
                 _round_message(
                     "loop_round_start",
                     loop_id,
-                    config.enabled,
                     target_placeholder,
                     current_index,
                     total_rounds,
@@ -129,7 +127,6 @@ def run_crew_loop(
                 _round_message(
                     "loop_round_success",
                     loop_id,
-                    config.enabled,
                     target_placeholder,
                     current_index,
                     total_rounds,
@@ -147,7 +144,6 @@ def run_crew_loop(
             _round_message(
                 "loop_complete",
                 loop_id,
-                config.enabled,
                 target_placeholder,
                 total_rounds,
                 total_rounds,
@@ -166,7 +162,6 @@ def run_crew_loop(
             _round_message(
                 "loop_failed",
                 loop_id,
-                config.enabled,
                 target_placeholder,
                 current_index,
                 total_rounds,
@@ -186,7 +181,6 @@ def run_crew_loop(
 def _round_message(
     message_type: str,
     loop_id: str,
-    enabled: bool,
     target_placeholder: str | None,
     index: int,
     total_rounds: int,
@@ -203,7 +197,7 @@ def _round_message(
     message: dict[str, Any] = {
         "type": message_type,
         "loop": {
-            "enabled": enabled,
+            "enabled": True,
             "loop_id": loop_id,
             "index": index,
             "total": total_rounds,
