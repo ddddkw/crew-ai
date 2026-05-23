@@ -44,6 +44,26 @@ def drain_messages(messages):
 
 
 class CrewRunLoopTests(unittest.TestCase):
+    def test_loop_config_defaults(self):
+        from crew_run_loop import LoopConfig
+
+        config = LoopConfig()
+
+        self.assertFalse(config.enabled)
+        self.assertEqual(config.count, 1)
+        self.assertIsNone(config.target_placeholder)
+        self.assertIsNone(config.loop_id)
+
+    def test_normalize_loop_count(self):
+        from crew_run_loop import normalize_loop_count
+
+        self.assertEqual(normalize_loop_count(None), 1)
+        self.assertEqual(normalize_loop_count(0), 1)
+        self.assertEqual(normalize_loop_count(-3), 1)
+        self.assertEqual(normalize_loop_count(4), 4)
+        self.assertEqual(normalize_loop_count("5"), 5)
+        self.assertEqual(normalize_loop_count("invalid"), 1)
+
     def test_extract_final_output_prefers_result_raw(self):
         from crew_run_loop import extract_final_output
 
