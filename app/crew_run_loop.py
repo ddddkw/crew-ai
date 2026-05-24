@@ -51,7 +51,7 @@ def run_crew_loop(
     config: LoopConfig,
     message_queue: Any,
     stop_event: Any,
-) -> str | None:
+) -> None:
     total_rounds = normalize_loop_count(config.count)
     loop_id = config.loop_id or f"L_{datetime.now().strftime('%Y%m%d%H%M%S%f')}"
     target_placeholder = config.target_placeholder
@@ -95,7 +95,7 @@ def run_crew_loop(
                         result=latest_result,
                     )
                 )
-                return latest_output
+                return
 
             current_started_at = _now()
             message_queue.put(
@@ -106,7 +106,7 @@ def run_crew_loop(
                     current_index,
                     total_rounds,
                     round_previous_output,
-                    "started",
+                    "running",
                     current_inputs,
                     started_at=current_started_at,
                 )
@@ -155,7 +155,6 @@ def run_crew_loop(
                 started_at=last_started_at,
             )
         )
-        return latest_output
     except Exception as exc:
         error = str(exc)
         message_queue.put(
@@ -175,7 +174,6 @@ def run_crew_loop(
                 started_at=current_started_at,
             )
         )
-        return None
 
 
 def _round_message(

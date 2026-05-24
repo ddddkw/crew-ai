@@ -328,6 +328,61 @@ class CrewRunLoopTests(unittest.TestCase):
         self.assertEqual(failed["round"]["output"], "")
         self.assertEqual(failed["round"]["error"], "round 2 produced empty final output")
 
+    def test_loop_failed_when_crew_factory_raises(self):
+        from crew_run_loop import LoopConfig, run_crew_loop
+
+        messages = queue.Queue()
+
+        def failing_factory():
+            raise RuntimeError("factory failed")
+
+        run_crew_loop(
+            crew_factory=failing_factory,
+            base_inputs={"requirement": "initial"},
+            config=LoopConfig(enabled=True, count=2, target_placeholder="requirement", loop_id="L_factory"),
+            message_queue=messages,
+            stop_event=threading.Event(),
+        )
+
+        failed = drain_messages(messages)[-1]
+
+        self.assertEqual(failed["type"], "loop_failed")
+        self.assertEqual(failed["result"], "factory failed")
+        self.assertIn("stack_trace", failed)
+        self.assertEqual(failed["loop"]["index"], 1)
+        self.assertEqual(failed["round"]["index"], 1)
+        self.assertEqual(failed["round"]["status"], "failed")
+        self.assertEqual(failed["round"]["input"], {"requirement": "initial"})
+        self.assertEqual(failed["round"]["error"], "factory failed")
+
+    def test_loop_failed_when_kickoff_raises(self):
+        from crew_run_loop import LoopConfig, run_crew_loop
+
+        messages = queue.Queue()
+
+        class FailingCrew:
+            def kickoff(self, inputs):
+                raise RuntimeError("kickoff failed")
+
+        run_crew_loop(
+            crew_factory=FailingCrew,
+            base_inputs={"requirement": "initial"},
+            config=LoopConfig(enabled=True, count=2, target_placeholder="requirement", loop_id="L_kickoff"),
+            message_queue=messages,
+            stop_event=threading.Event(),
+        )
+
+        failed = drain_messages(messages)[-1]
+
+        self.assertEqual(failed["type"], "loop_failed")
+        self.assertEqual(failed["result"], "kickoff failed")
+        self.assertIn("stack_trace", failed)
+        self.assertEqual(failed["loop"]["index"], 1)
+        self.assertEqual(failed["round"]["index"], 1)
+        self.assertEqual(failed["round"]["status"], "failed")
+        self.assertEqual(failed["round"]["input"], {"requirement": "initial"})
+        self.assertEqual(failed["round"]["error"], "kickoff failed")
+
     def test_run_crew_loop_obeys_stop_event_before_next_round(self):
         from crew_run_loop import LoopConfig, run_crew_loop
 
