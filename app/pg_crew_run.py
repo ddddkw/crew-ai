@@ -173,8 +173,17 @@ class PageCrewRun:
                     disabled=ss.running
                 )
 
+    def sync_loop_target_placeholder(self, placeholders):
+        if ss.loop_target_placeholder not in placeholders:
+            ss.loop_target_placeholder = None
+
+        widget_key = "crew_run_loop_target_placeholder_control"
+        if widget_key in ss and ss[widget_key] not in placeholders:
+            del ss[widget_key]
+
     def draw_loop_controls(self, selected_crew):
         placeholders = sorted(self.get_placeholders_from_crew(selected_crew))
+        self.sync_loop_target_placeholder(placeholders)
         st.markdown(f"#### {t('crew_run.loop_panel')}")
         st.caption(t("crew_run.loop_panel_caption"))
 

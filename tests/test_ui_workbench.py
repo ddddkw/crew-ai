@@ -185,6 +185,28 @@ class WorkbenchUiTests(unittest.TestCase):
         self.assertIn('"loop_status_failed": "Failed"', en)
         self.assertIn('"loop_status_stopped": "Stopped"', en)
 
+    def test_crew_run_loop_target_resets_when_placeholders_change(self):
+        app_path = str(ROOT / "app")
+        if app_path not in sys.path:
+            sys.path.insert(0, app_path)
+        import pg_crew_run
+
+        original_state = pg_crew_run.ss
+        fake_state = FakeSessionState(
+            loop_target_placeholder="old_requirement",
+            crew_run_loop_target_placeholder_control="old_requirement",
+        )
+        page = pg_crew_run.PageCrewRun.__new__(pg_crew_run.PageCrewRun)
+
+        try:
+            pg_crew_run.ss = fake_state
+            page.sync_loop_target_placeholder(["new_requirement"])
+        finally:
+            pg_crew_run.ss = original_state
+
+        self.assertIsNone(fake_state.loop_target_placeholder)
+        self.assertNotIn("crew_run_loop_target_placeholder_control", fake_state)
+
     def test_sidebar_uses_custom_navigation_instead_of_radio(self):
         source = (ROOT / "app" / "app.py").read_text(encoding="utf-8")
 
