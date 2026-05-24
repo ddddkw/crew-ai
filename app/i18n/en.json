@@ -202,7 +202,21 @@
     "configuration_panel_caption": "Review the selected crew and provide required run inputs.",
     "execution_panel": "Run control",
     "execution_panel_caption": "Start, stop, and monitor this crew run.",
-    "console_empty": "Console output will appear here after the crew starts."
+    "console_empty": "Console output will appear here after the crew starts.",
+    "loop_panel": "Loop settings",
+    "loop_panel_caption": "Use each round's final output as the next round's input.",
+    "loop_enabled": "Enable loop",
+    "loop_count": "Loop count",
+    "loop_target_placeholder": "Inject previous result into",
+    "loop_no_placeholders": "This crew has no injectable placeholders, so loop mode cannot be enabled.",
+    "loop_select_placeholder": "Select the placeholder that receives the previous round result.",
+    "loop_progress": "Loop progress",
+    "loop_round_status": "Round {index}/{total}: {status}",
+    "loop_status_waiting": "Waiting",
+    "loop_status_running": "Running",
+    "loop_status_success": "Success",
+    "loop_status_failed": "Failed",
+    "loop_status_stopped": "Stopped"
   },
   "results": {
     "title": "Results",

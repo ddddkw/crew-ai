@@ -9,6 +9,7 @@ import time
 import traceback
 import os
 from console_capture import ConsoleCapture
+from crew_run_loop import LoopConfig, run_crew_loop
 from db_utils import load_results, save_result
 from utils import format_result, generate_printable_view, rnd_id, get_tasks_outputs_str
 from i18n import t
@@ -53,6 +54,12 @@ class PageCrewRun:
             'console_output': [],
             'last_update': time.time(),
             'console_expanded': True,
+            'loop_enabled': False,
+            'loop_count': 2,
+            'loop_target_placeholder': None,
+            'loop_run_id': None,
+            'loop_rounds': [],
+            'loop_stop_event': None,
         }
         for key, value in defaults.items():
             if key not in ss:
@@ -166,6 +173,43 @@ class PageCrewRun:
                     disabled=ss.running
                 )
 
+    def draw_loop_controls(self, selected_crew):
+        placeholders = sorted(self.get_placeholders_from_crew(selected_crew))
+        st.markdown(f"#### {t('crew_run.loop_panel')}")
+        st.caption(t("crew_run.loop_panel_caption"))
+
+        ss.loop_enabled = st.checkbox(t("crew_run.loop_enabled"),
+            value=bool(ss.loop_enabled),
+            disabled=ss.running,
+            key="crew_run_loop_enabled_control",
+        )
+
+        if not ss.loop_enabled:
+            return True
+
+        if not placeholders:
+            st.error(t("crew_run.loop_no_placeholders"))
+            return False
+
+        ss.loop_count = st.number_input(t("crew_run.loop_count"),
+            min_value=2,
+            max_value=20,
+            value=max(2, int(ss.loop_count or 2)),
+            step=1,
+            disabled=ss.running,
+            key="crew_run_loop_count_control",
+        )
+
+        current_target = ss.loop_target_placeholder
+        index = placeholders.index(current_target) if current_target in placeholders else 0
+        ss.loop_target_placeholder = st.selectbox(t("crew_run.loop_target_placeholder"),
+            options=placeholders,
+            index=index,
+            disabled=ss.running,
+            key="crew_run_loop_target_placeholder_control",
+        )
+        return bool(ss.loop_target_placeholder)
+
     def draw_crews(self):
         if 'crews' not in ss or not ss.crews:
             st.write(t("crew_run.no_crews"))
@@ -202,12 +246,18 @@ class PageCrewRun:
                 self.draw_panel_header(t("crew_run.execution_panel"), t("crew_run.execution_panel_caption"))
                 if not selected_crew.is_valid(show_warning=True):
                     st.error(t("crew.not_valid"))
-                self.control_buttons(selected_crew)
+                loop_config_valid = self.draw_loop_controls(selected_crew)
+                self.control_buttons(selected_crew, loop_config_valid=loop_config_valid)
 
-    def control_buttons(self, selected_crew):
+    def control_buttons(self, selected_crew, loop_config_valid=True):
         run_col, stop_col = st.columns(2)
         with run_col:
-            run_clicked = st.button(t('crew_run.run_button'), disabled=not selected_crew.is_valid() or ss.running, type="primary", use_container_width=True)
+            run_clicked = st.button(
+                t('crew_run.run_button'),
+                disabled=not selected_crew.is_valid() or ss.running or not loop_config_valid,
+                type="primary",
+                use_container_width=True,
+            )
         with stop_col:
             stop_clicked = st.button(t('crew_run.stop_button'), disabled=not ss.running, use_container_width=True)
 

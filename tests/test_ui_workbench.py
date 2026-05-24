@@ -143,6 +143,24 @@ class WorkbenchUiTests(unittest.TestCase):
         self.assertIn("crew-run-cockpit", source)
         self.assertIn("crew-run-log-panel", source)
 
+    def test_crew_run_page_exposes_loop_controls(self):
+        source = (ROOT / "app" / "pg_crew_run.py").read_text(encoding="utf-8")
+        zh = (ROOT / "app" / "i18n" / "zh.json").read_text(encoding="utf-8")
+        en = (ROOT / "app" / "i18n" / "en.json").read_text(encoding="utf-8")
+
+        self.assertIn("from crew_run_loop import LoopConfig, run_crew_loop", source)
+        self.assertIn("'loop_enabled': False", source)
+        self.assertIn("'loop_count': 2", source)
+        self.assertIn("'loop_target_placeholder': None", source)
+        self.assertIn("def draw_loop_controls(self, selected_crew):", source)
+        self.assertIn('st.checkbox(t("crew_run.loop_enabled")', source)
+        self.assertIn('st.number_input(t("crew_run.loop_count")', source)
+        self.assertIn('st.selectbox(t("crew_run.loop_target_placeholder")', source)
+        self.assertIn('"loop_enabled": "启用 Loop"', zh)
+        self.assertIn('"loop_target_placeholder": "上一轮结果注入到"', zh)
+        self.assertIn('"loop_enabled": "Enable loop"', en)
+        self.assertIn('"loop_target_placeholder": "Inject previous result into"', en)
+
     def test_sidebar_uses_custom_navigation_instead_of_radio(self):
         source = (ROOT / "app" / "app.py").read_text(encoding="utf-8")
 

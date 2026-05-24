@@ -202,7 +202,21 @@
     "configuration_panel_caption": "确认当前团队，并填写本次运行需要的输入。",
     "execution_panel": "运行控制",
     "execution_panel_caption": "启动、停止并观察当前团队运行状态。",
-    "console_empty": "团队开始运行后，控制台输出会显示在这里。"
+    "console_empty": "团队开始运行后，控制台输出会显示在这里。",
+    "loop_panel": "Loop 设置",
+    "loop_panel_caption": "将上一轮最终输出自动作为下一轮输入。",
+    "loop_enabled": "启用 Loop",
+    "loop_count": "循环次数",
+    "loop_target_placeholder": "上一轮结果注入到",
+    "loop_no_placeholders": "当前团队没有可注入的占位符，无法启用 Loop。",
+    "loop_select_placeholder": "请选择上一轮结果要注入的占位符。",
+    "loop_progress": "Loop 进度",
+    "loop_round_status": "第 {index}/{total} 轮：{status}",
+    "loop_status_waiting": "等待中",
+    "loop_status_running": "运行中",
+    "loop_status_success": "成功",
+    "loop_status_failed": "失败",
+    "loop_status_stopped": "已停止"
   },
   "results": {
     "title": "结果",
