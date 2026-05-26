@@ -2268,6 +2268,46 @@ def apply_global_styles():
           background: transparent !important;
         }
 
+        .crew-run-loop-panel {
+          display: flex;
+          flex-direction: column;
+          gap: 0.42rem;
+          margin-top: 0.6rem;
+          padding: 0.72rem;
+          border: 1px solid rgba(148, 163, 184, 0.16);
+          border-radius: 8px;
+          background: rgba(15, 23, 42, 0.34);
+        }
+
+        .crew-run-loop-round {
+          border: 1px solid rgba(148, 163, 184, 0.14);
+          border-radius: 7px;
+          padding: 0.5rem 0.62rem;
+          color: var(--studio-muted);
+          background: rgba(15, 23, 42, 0.42);
+          font-size: 0.84rem;
+          font-weight: 650;
+        }
+
+        .crew-run-loop-round.is-running {
+          color: #dbeafe;
+          border-color: rgba(96, 165, 250, 0.28);
+          background: rgba(37, 99, 235, 0.14);
+        }
+
+        .crew-run-loop-round.is-success {
+          color: #bbf7d0;
+          border-color: rgba(34, 197, 94, 0.24);
+          background: rgba(22, 101, 52, 0.16);
+        }
+
+        .crew-run-loop-round.is-failed,
+        .crew-run-loop-round.is-stopped {
+          color: #fecaca;
+          border-color: rgba(248, 113, 113, 0.24);
+          background: rgba(127, 29, 29, 0.16);
+        }
+
         @media (max-width: 900px) {
           .crew-run-title-row {
             display: block;

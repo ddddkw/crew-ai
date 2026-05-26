@@ -241,6 +241,40 @@ class PageCrewRun:
         )
         return bool(ss.loop_target_placeholder)
 
+    def draw_loop_progress(self):
+        if not ss.loop_rounds:
+            return
+
+        total = max([round_info.get("total", 1) for round_info in ss.loop_rounds] or [1])
+        completed = len([
+            round_info for round_info in ss.loop_rounds
+            if round_info.get("status") in {"success", "failed", "stopped"}
+        ])
+        progress = min(1.0, completed / max(1, total))
+
+        st.markdown(f"#### {t('crew_run.loop_progress')}")
+        st.progress(progress)
+        rows = []
+        status_labels = {
+            "waiting": t("crew_run.loop_status_waiting"),
+            "running": t("crew_run.loop_status_running"),
+            "success": t("crew_run.loop_status_success"),
+            "failed": t("crew_run.loop_status_failed"),
+            "stopped": t("crew_run.loop_status_stopped"),
+        }
+        for round_info in ss.loop_rounds:
+            status = round_info.get("status", "waiting")
+            label = status_labels.get(status, status)
+            rows.append(
+                f'<div class="crew-run-loop-round is-{status}">'
+                f'{t("crew_run.loop_round_status", index=round_info.get("index"), total=round_info.get("total"), status=label)}'
+                f'</div>'
+            )
+        st.markdown(
+            f'<div class="crew-run-loop-panel">{"".join(rows)}</div>',
+            unsafe_allow_html=True,
+        )
+
     def build_loop_config(self):
         return LoopConfig(
             enabled=bool(ss.loop_enabled),
@@ -328,6 +362,7 @@ class PageCrewRun:
                     st.error(t("crew.not_valid"))
                 loop_config_valid = self.draw_loop_controls(selected_crew)
                 self.control_buttons(selected_crew, loop_config_valid=loop_config_valid)
+                self.draw_loop_progress()
 
     def control_buttons(self, selected_crew, loop_config_valid=True):
         run_col, stop_col = st.columns(2)

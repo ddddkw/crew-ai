@@ -138,10 +138,16 @@ class WorkbenchUiTests(unittest.TestCase):
 
     def test_execution_page_has_cockpit_sections(self):
         source = (ROOT / "app" / "pg_crew_run.py").read_text(encoding="utf-8")
+        style_source = (ROOT / "app" / "ui_styles.py").read_text(encoding="utf-8")
 
         self.assertIn("def draw_cockpit_header", source)
         self.assertIn("crew-run-cockpit", source)
         self.assertIn("crew-run-log-panel", source)
+        self.assertIn("def draw_loop_progress", source)
+        self.assertIn("crew-run-loop-panel", source)
+        self.assertIn("crew-run-loop-round", source)
+        self.assertIn(".crew-run-loop-panel", style_source)
+        self.assertIn(".crew-run-loop-round", style_source)
 
     def test_crew_run_page_exposes_loop_controls(self):
         source = (ROOT / "app" / "pg_crew_run.py").read_text(encoding="utf-8")
