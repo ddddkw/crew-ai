@@ -100,6 +100,28 @@ class PageCrewRun:
             if hasattr(ss, 'console_capture'):
                 ss.console_capture.stop()
 
+    def run_crew_loop_thread(self, selected_crew, inputs, loop_config, message_queue, stop_event):
+        if (str(os.getenv('AGENTOPS_ENABLED')).lower() in ['true', '1']) and not ss.get('agentops_failed', False):
+            import agentops
+            agentops.start_session()
+        try:
+            run_crew_loop(
+                crew_factory=lambda: selected_crew.get_crewai_crew(full_output=True),
+                base_inputs=inputs,
+                config=loop_config,
+                message_queue=message_queue,
+                stop_event=stop_event,
+            )
+        except Exception as e:
+            if (str(os.getenv('AGENTOPS_ENABLED')).lower() in ['true', '1']) and not ss.get('agentops_failed', False):
+                agentops.end_session()
+            stack_trace = traceback.format_exc()
+            print(f"Error running crew loop: {str(e)}\n{stack_trace}")
+            message_queue.put({"type": "loop_failed", "result": f"Error running crew loop: {str(e)}", "stack_trace": stack_trace})
+        finally:
+            if hasattr(ss, 'console_capture'):
+                ss.console_capture.stop()
+
     def get_mycrew_by_name(self, crewname):
         return next((crew for crew in ss.crews if crew.name == crewname), None)
 
@@ -219,6 +241,55 @@ class PageCrewRun:
         )
         return bool(ss.loop_target_placeholder)
 
+    def build_loop_config(self):
+        return LoopConfig(
+            enabled=bool(ss.loop_enabled),
+            count=int(ss.loop_count or 1),
+            target_placeholder=ss.loop_target_placeholder if ss.loop_enabled else None,
+            loop_id=f"L_{rnd_id()}",
+        )
+
+    def current_inputs(self):
+        return {key.split('_', 1)[1]: value for key, value in ss.placeholders.items() if key.startswith("placeholder_")}
+
+    def update_loop_round(self, round_status):
+        if not round_status:
+            return
+        rounds = [round_info for round_info in ss.loop_rounds if round_info.get("index") != round_status.get("index")]
+        rounds.append(round_status)
+        ss.loop_rounds = sorted(rounds, key=lambda item: item.get("index", 0))
+
+    def apply_loop_queue_message(self, message):
+        message_type = message.get("type")
+        if message_type in {"loop_round_start", "loop_round_success", "loop_stopped"}:
+            self.update_loop_round(message.get("round"))
+
+        if message_type == "loop_round_success":
+            loop_metadata = dict(message.get("loop") or {})
+            loop_metadata["round_input"] = dict((message.get("round") or {}).get("input") or {})
+            ss.result = {"result": message.get("result"), "loop": loop_metadata}
+            return
+
+        if message_type == "loop_complete":
+            loop_metadata = dict(message.get("loop") or {})
+            loop_metadata["round_input"] = dict((message.get("round") or {}).get("input") or {})
+            ss.result = {"result": message.get("result"), "loop": loop_metadata}
+            ss.running = False
+            ss.crew_thread = None
+            return
+
+        if message_type == "loop_failed":
+            self.update_loop_round(message.get("round"))
+            ss.result = message.get("result")
+            ss.running = False
+            ss.crew_thread = None
+            return
+
+        if message_type == "loop_stopped":
+            ss.running = False
+            ss.crew_thread = None
+            return
+
     def draw_crews(self):
         if 'crews' not in ss or not ss.crews:
             st.write(t("crew_run.no_crews"))
@@ -271,41 +342,60 @@ class PageCrewRun:
             stop_clicked = st.button(t('crew_run.stop_button'), disabled=not ss.running, use_container_width=True)
 
         if run_clicked:
-            inputs = {key.split('_')[1]: value for key, value in ss.placeholders.items()}
+            inputs = self.current_inputs()
             ss.result = None
-            
-            try:
-                crew = selected_crew.get_crewai_crew(full_output=True)
-            except Exception as e:
-                st.exception(e)
-                traceback.print_exc()
-                return
+            ss.loop_rounds = []
+            ss.loop_stop_event = threading.Event()
+            loop_config = self.build_loop_config()
+
+            if not loop_config.enabled:
+                try:
+                    crew = selected_crew.get_crewai_crew(full_output=True)
+                except Exception as e:
+                    st.exception(e)
+                    traceback.print_exc()
+                    return
 
             ss.console_capture = ConsoleCapture()
             ss.console_capture.start()
             ss.console_output = []  # Reset výstupu
 
             ss.running = True
-            ss.crew_thread = threading.Thread(
-                target=self.run_crew,
-                kwargs={
-                    "crewai_crew": crew,
-                    "inputs": inputs,
-                    "message_queue": ss.message_queue
-                }
-            )
+            if loop_config.enabled:
+                ss.crew_thread = threading.Thread(
+                    target=self.run_crew_loop_thread,
+                    kwargs={
+                        "selected_crew": selected_crew,
+                        "inputs": inputs,
+                        "loop_config": loop_config,
+                        "message_queue": ss.message_queue,
+                        "stop_event": ss.loop_stop_event,
+                    },
+                )
+            else:
+                ss.crew_thread = threading.Thread(
+                    target=self.run_crew,
+                    kwargs={
+                        "crewai_crew": crew,
+                        "inputs": inputs,
+                        "message_queue": ss.message_queue,
+                    },
+                )
             ss.crew_thread.start()
             ss.result = None
             ss.running = True            
             st.rerun()
 
         if stop_clicked:
+            if ss.loop_stop_event is not None:
+                ss.loop_stop_event.set()
             self.force_stop_thread(ss.crew_thread)
             if hasattr(ss, 'console_capture'):
                 ss.console_capture.stop()
             ss.message_queue.queue.clear()
             ss.running = False
             ss.crew_thread = None
+            ss.loop_stop_event = None
             ss.result = None
             st.success(t("crew_run.success_stop"))
             st.rerun()
@@ -339,6 +429,24 @@ class PageCrewRun:
             return serialized
         return str(result)
 
+    def poll_run_queue(self):
+        if not (ss.running and ss.crew_thread is not None):
+            return
+        try:
+            message = ss.message_queue.get_nowait()
+        except queue.Empty:
+            return
+
+        if isinstance(message, dict) and str(message.get("type", "")).startswith("loop_"):
+            self.apply_loop_queue_message(message)
+            return
+
+        ss.result = message
+        ss.running = False
+        ss.crew_thread = None
+        if hasattr(ss, 'console_capture'):
+            ss.console_capture.stop()
+
     def display_result(self):
         kickoff_page = t("page.kickoff")
         if ss.running and ss.page != kickoff_page:
@@ -358,6 +466,8 @@ class PageCrewRun:
             st.markdown('<div class="crew-run-log-panel">', unsafe_allow_html=True)
             st.code(console_text, language=None)
             st.markdown('</div>', unsafe_allow_html=True)
+
+        self.poll_run_queue()
 
         if ss.result is not None:
             if isinstance(ss.result, dict):
@@ -385,13 +495,17 @@ class PageCrewRun:
                             placeholder_key = f'placeholder_{placeholder}'
                             if placeholder_key in ss.placeholders:
                                 relevant_placeholders[placeholder_key] = ss.placeholders[placeholder_key]
+
+                    stored_inputs = {key.split('_', 1)[1]: value for key, value in relevant_placeholders.items()}
+                    if isinstance(ss.result, dict) and "loop" in ss.result:
+                        stored_inputs = ss.result["loop"].get("round_input", stored_inputs)
                     
                     # Create a new Result instance with serialized result
                     result = Result(
                         id=f"R_{rnd_id()}",
                         crew_id=ss.selected_crew_name,
                         crew_name=ss.selected_crew_name,
-                        inputs={key.split('_')[1]: value for key, value in relevant_placeholders.items()},
+                        inputs=stored_inputs,
                         result=self.serialize_result(ss.result, curr_crew)  # Serialize the result before saving
                     )
                     
@@ -461,6 +575,10 @@ class PageCrewRun:
                     """
                     st.components.v1.html(js, height=0)
 
+                if ss.running and ss.crew_thread is not None:
+                    time.sleep(1)
+                    st.rerun()
+
             else:
                 st.error(ss.result)
         elif ss.running and ss.crew_thread is not None:
@@ -470,16 +588,8 @@ class PageCrewRun:
                     if new_output:
                         ss.console_output.extend(new_output)
 
-                try:
-                    message = ss.message_queue.get_nowait()
-                    ss.result = message
-                    ss.running = False
-                    if hasattr(ss, 'console_capture'):
-                        ss.console_capture.stop()
-                    st.rerun()
-                except queue.Empty:
-                    time.sleep(1)
-                    st.rerun()
+                self.poll_run_queue()
+                st.rerun()
 
     @staticmethod
     def force_stop_thread(thread):
