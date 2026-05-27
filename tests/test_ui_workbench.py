@@ -141,13 +141,42 @@ class WorkbenchUiTests(unittest.TestCase):
         style_source = (ROOT / "app" / "ui_styles.py").read_text(encoding="utf-8")
 
         self.assertIn("def draw_cockpit_header", source)
+        self.assertIn("def draw_running_lock_notice", source)
+        self.assertIn('t("crew_run.running_lock_notice")', source)
         self.assertIn("crew-run-cockpit", source)
+        self.assertIn("crew-run-lock-notice", source)
         self.assertIn("crew-run-log-panel", source)
         self.assertIn("def draw_loop_progress", source)
         self.assertIn("crew-run-loop-panel", source)
         self.assertIn("crew-run-loop-round", source)
+        self.assertIn(".crew-run-lock-notice", style_source)
         self.assertIn(".crew-run-loop-panel", style_source)
         self.assertIn(".crew-run-loop-round", style_source)
+
+    def test_execution_page_uses_multi_run_cards_instead_of_global_lock(self):
+        source = (ROOT / "app" / "pg_crew_run.py").read_text(encoding="utf-8")
+
+        self.assertIn("'crew_runs': {}", source)
+        self.assertIn("'crew_run_order': []", source)
+        self.assertIn("def draw_run_cards(self):", source)
+        self.assertIn("def run_card_title(self, run_state):", source)
+        self.assertIn('with st.expander(self.run_card_title(run_state), expanded=status == "running"):', source)
+        self.assertNotIn('with st.container(border=True, key=f"crew-run-card-{run_id}"):', source)
+        self.assertIn("def start_run(self, selected_crew, inputs, loop_config):", source)
+        self.assertIn("def stop_run(self, run_state):", source)
+        self.assertNotIn("disabled=ss.running", source)
+        self.assertNotIn("ss.console_capture = ConsoleCapture()", source)
+
+    def test_disabled_form_controls_stay_readable_when_locked(self):
+        style_source = (ROOT / "app" / "ui_styles.py").read_text(encoding="utf-8")
+
+        self.assertIn(".stTextInput input:disabled", style_source)
+        self.assertIn(".stTextArea textarea:disabled", style_source)
+        self.assertIn(".stNumberInput input:disabled", style_source)
+        self.assertIn('div[data-baseweb="select"]:has([aria-disabled="true"]) > div', style_source)
+        self.assertIn('[data-testid="stCheckbox"]:has(input:disabled)', style_source)
+        self.assertIn("-webkit-text-fill-color: var(--studio-text) !important;", style_source)
+        self.assertIn("box-shadow: inset 3px 0 0 rgba(96, 165, 250, 0.48)", style_source)
 
     def test_crew_run_page_exposes_loop_controls(self):
         source = (ROOT / "app" / "pg_crew_run.py").read_text(encoding="utf-8")
@@ -190,6 +219,10 @@ class WorkbenchUiTests(unittest.TestCase):
         self.assertIn('"loop_status_success": "Success"', en)
         self.assertIn('"loop_status_failed": "Failed"', en)
         self.assertIn('"loop_status_stopped": "Stopped"', en)
+        self.assertIn('"running_lock_notice": "已有运行实例正在执行。你可以继续编辑输入并启动新的运行；每个运行实例可在自己的卡片中单独停止。"', zh)
+        self.assertIn('"running_lock_notice": "One or more runs are active. You can keep editing inputs and start another run; stop each run from its own card."', en)
+        self.assertIn('"run_instances": "运行实例"', zh)
+        self.assertIn('"run_instances": "Run instances"', en)
 
     def test_crew_run_loop_target_resets_when_placeholders_change(self):
         app_path = str(ROOT / "app")

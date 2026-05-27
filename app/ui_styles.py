@@ -907,6 +907,37 @@ def apply_global_styles():
           background-color: #111c2e;
         }
 
+        .stTextInput input:disabled,
+        .stTextArea textarea:disabled,
+        .stNumberInput input:disabled,
+        input:disabled:not([type="checkbox"]):not([type="radio"]),
+        textarea:disabled,
+        div[data-baseweb="select"]:has([aria-disabled="true"]) > div,
+        div[data-baseweb="select"]:has(input:disabled) > div {
+          opacity: 1 !important;
+          color: var(--studio-text) !important;
+          -webkit-text-fill-color: var(--studio-text) !important;
+          background-color: rgba(17, 28, 46, 0.92) !important;
+          border-color: rgba(96, 165, 250, 0.22) !important;
+          box-shadow: inset 3px 0 0 rgba(96, 165, 250, 0.48);
+          cursor: default !important;
+        }
+
+        div[data-baseweb="select"]:has([aria-disabled="true"]) *,
+        div[data-baseweb="select"]:has(input:disabled) * {
+          opacity: 1 !important;
+          color: var(--studio-text) !important;
+          -webkit-text-fill-color: var(--studio-text) !important;
+        }
+
+        [data-testid="stCheckbox"]:has(input:disabled),
+        [data-testid="stCheckbox"]:has(input:disabled) label,
+        [data-testid="stCheckbox"]:has(input:disabled) p {
+          opacity: 1 !important;
+          color: var(--studio-text) !important;
+          -webkit-text-fill-color: var(--studio-text) !important;
+        }
+
         .dev-session-workbench {
           display: none;
           grid-template-columns: minmax(16rem, clamp(17rem, 21vw, 21rem)) minmax(0, 1fr);
@@ -2256,6 +2287,18 @@ def apply_global_styles():
           margin-bottom: 12px;
         }
 
+        .crew-run-lock-notice {
+          border: 1px solid rgba(96, 165, 250, 0.24);
+          border-radius: 8px;
+          background: rgba(37, 99, 235, 0.12);
+          color: #dbeafe;
+          padding: 0.68rem 0.78rem;
+          margin: 0 0 0.85rem;
+          font-size: 0.86rem;
+          font-weight: 640;
+          box-shadow: inset 3px 0 0 rgba(96, 165, 250, 0.62);
+        }
+
         .crew-run-log-panel {
           border: 1px solid var(--studio-border);
           border-radius: 8px;
@@ -2305,6 +2348,61 @@ def apply_global_styles():
         .crew-run-loop-round.is-stopped {
           color: #fecaca;
           border-color: rgba(248, 113, 113, 0.24);
+          background: rgba(127, 29, 29, 0.16);
+        }
+
+        .crew-run-instance-card {
+          margin-bottom: 0.4rem;
+        }
+
+        .crew-run-instance-header {
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          gap: 0.8rem;
+        }
+
+        .crew-run-instance-title {
+          color: white;
+          font-size: 1rem;
+          font-weight: 720;
+          line-height: 1.25;
+          overflow-wrap: anywhere;
+        }
+
+        .crew-run-instance-meta {
+          color: var(--studio-muted);
+          font-size: 0.8rem;
+          margin-top: 0.22rem;
+        }
+
+        .crew-run-instance-status {
+          border: 1px solid rgba(148, 163, 184, 0.22);
+          border-radius: 999px;
+          padding: 0.28rem 0.58rem;
+          background: rgba(15, 23, 42, 0.68);
+          color: var(--studio-muted);
+          font-size: 0.78rem;
+          font-weight: 700;
+          white-space: nowrap;
+        }
+
+        .crew-run-instance-status.is-running {
+          color: #dbeafe;
+          border-color: rgba(96, 165, 250, 0.34);
+          background: rgba(37, 99, 235, 0.16);
+        }
+
+        .crew-run-instance-status.is-completed {
+          color: #bbf7d0;
+          border-color: rgba(34, 197, 94, 0.28);
+          background: rgba(22, 101, 52, 0.16);
+        }
+
+        .crew-run-instance-status.is-failed,
+        .crew-run-instance-status.is-stopped {
+          color: #fecaca;
+          border-color: rgba(248, 113, 113, 0.28);
           background: rgba(127, 29, 29, 0.16);
         }
 

@@ -1,0 +1,81 @@
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8501
+  Network URL: http://172.20.10.3:8501
+  External URL: http://212.135.214.6:8501
+
++--------------------------------- LLM Error ---------------------------------+
+|                                                                             |
+|  [+-CrewAIEventsBus--------------------------------] LLM Error  Sync handler error in on_llm_call_failed: --------------------------------'gbk'-+
+ codec can't 
+encode character |'\u274c'                                                                              in position |0
+: illegal multibyte sequence
+|  [CrewAIEventsBus] Sync handler error in on_llm_call_failed: 'gbk' codec can't 
+encode character '\u274c' in position 0: illegal multibyte sequence
++--------------------------------- LLM Error ---------------------------------+
+|                                                                             |
+|  +-[--------------------------------CrewAIEventsBus LLM Error ]-------------------------------- Sync handler error in on_llm_call_failed: -+'gbk'
+ codec can't 
+encode character |'\u274c'                                                                              in position |0
+: illegal multibyte sequence
+|  [CrewAIEventsBus] Sync handler error in on_llm_call_failed: 'gbk' codec can't 
+encode character '\u274c' in position 0: illegal multibyte sequence
++------------------------- Traceback (most recent call last) --------------------------+
+| C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\streamlit\ru |
+| ntime\scriptrunner\exec_code.py:129 in exec_func_with_error_handling                 |
+|                                                                                      |
+| C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\venv\Lib\site-packages\streamlit\ru |
+| ntime\scriptrunner\script_runner.py:669 in code_to_exec                              |
+|                                                                                      |
+| C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\app\app.py:244 in <module>          |
+|                                                                                      |
+|   241     pages()[ss.page]().draw()                                                  |
+|   242                                                                                |
+|   243 if __name__ == '__main__':                                                     |
+| > 244     main()                                                                     |
+|   245                                                                                |
+|                                                                                      |
+| C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\app\app.py:240 in main              |
+|                                                                                      |
+|   237     draw_sidebar()                                                             |
+|   238     page_key = selected_page_key()                                             |
+|   239     redirect_to_kickoff_if_running(page_key)                                   |
+| > 240     ensure_page_data(page_key)                                                 |
+|   241     pages()[ss.page]().draw()                                                  |
+|   242                                                                                |
+|   243 if __name__ == '__main__':                                                     |
+|                                                                                      |
+| C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\app\app.py:145 in ensure_page_data  |
+|                                                                                      |
+|   142                                                                                |
+|   143 def ensure_page_data(page_key):                                                |
+|   144     for state_key, loader in PAGE_EXTRA_DATA_LOADERS.get(page_key, ()):        |
+| > 145         _load_state_value(state_key, loader)                                   |
+|   146                                                                                |
+|   147     loader_entry = PAGE_DATA_LOADERS.get(page_key)                             |
+|   148     if loader_entry is not None:                                               |
+|                                                                                      |
+| C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\app\app.py:140 in _load_state_value |
+|                                                                                      |
+|   137                                                                                |
+|   138 def _load_state_value(state_key, loader):                                      |
+|   139     if state_key not in ss:                                                    |
+| > 140         ss[state_key] = loader()                                               |
+|   141                                                                                |
+|   142                                                                                |
+|   143 def ensure_page_data(page_key):                                                |
+|                                                                                      |
+| C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\app\db_utils.py:110 in              |
+| load_knowledge_sources                                                               |
+|                                                                                      |
+|   107     save_entity('knowledge_source', knowledge_source.id, data)                 |
+|   108                                                                                |
+|   109 def load_knowledge_sources():                                                  |
+| > 110     from my_knowledge_source import MyKnowledgeSource                          |
+|   111     rows = load_entities('knowledge_source')                                   |
+|   112     knowledge_sources = []                                                     |
+|   113     for row in rows:                                                           |
++--------------------------------------------------------------------------------------+
+ImportError: cannot import name 'MyKnowledgeSource' from 'my_knowledge_source' 
+(C:\codeProjects\CrewAI-Studio\CrewAI-Studio-main\app\my_knowledge_source.py)

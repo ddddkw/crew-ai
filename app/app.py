@@ -159,6 +159,8 @@ def maintain_crew_run_session_state():
         'result': None,
         'running': False,
         'message_queue': queue.Queue(),
+        'crew_runs': {},
+        'crew_run_order': [],
         'selected_crew_name': None,
         'placeholders': {},
         'console_output': [],
@@ -184,6 +186,8 @@ def selected_page_key():
 
 
 def redirect_to_kickoff_if_running(page_key):
+    if isinstance(ss.get("crew_runs"), dict):
+        return
     if ss.get("running") and page_key != "page.kickoff":
         ss.page = t("page.kickoff")
         st.rerun()

@@ -1,0 +1,5 @@
+USER_AGENT environment variable not set, consider setting it to identify your requests.
+ERROR:root:OpenAI API call failed: 'NoneType' object is not subscriptable
+ERROR:root:OpenAI API call failed: 'NoneType' object is not subscriptable
+ERROR:root:OpenAI API call failed: 'NoneType' object is not subscriptable
+ERROR:root:OpenAI API call failed: 'NoneType' object is not subscriptable
